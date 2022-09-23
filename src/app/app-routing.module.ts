@@ -1,7 +1,11 @@
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', component:NavbarComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
