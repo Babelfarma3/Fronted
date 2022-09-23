@@ -1,0 +1,10 @@
+body{
+    background-image: url('/assets/img/fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+img{
+    display: block;
+    margin: auto;
+    padding: 150px 150px;
+}

@@ -1,14 +1,6 @@
-
-body{
-    background-image: url('/assets/img/fondo.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 mat-toolbar{
     background-color: rgba(0, 0, 0, 0.3);
 }
-
 
 button{
     margin: auto;
@@ -16,8 +8,3 @@ button{
     width: 250px;
 }
 
-img{
-    display: block;
-    margin: auto;
-    padding: 225px 225px;
-}
