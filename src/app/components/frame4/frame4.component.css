@@ -1,0 +1,31 @@
+body{
+    background-image: url('/assets/img/fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.example-card {
+    max-width: 400px;
+    margin: 130px auto;
+}
+
+button{
+    height: 50px;
+    margin: auto;
+}
+
+.usuario{
+    display: flex;
+
+}
+
+.img1{
+    width: 50%;
+    height: 50%;
+}
+
+.img2{
+    width: 35%;
+    height: 35%;
+    padding-right: 45px;
+}
