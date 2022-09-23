@@ -5,7 +5,13 @@ body{
 }
 .example-card {
     max-width: 400px;
-    margin: 130px auto;
+}
+
+.main-div{
+    height: 88vh;
+    place-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 p{

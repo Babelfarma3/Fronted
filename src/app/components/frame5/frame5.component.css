@@ -15,6 +15,13 @@ body{
     font-weight: 300;
     color: var(--color-dark-xx);
     letter-spacing:.05rem ;
+    padding: 50px 50px;
+}
+
+.main-div{
+    height: 88vh;
+    display: flex;
+    justify-content: center;
 }
 
 .bg-light{
