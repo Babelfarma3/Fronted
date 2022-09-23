@@ -15,13 +15,6 @@ body{
     font-weight: 300;
     color: var(--color-dark-xx);
     letter-spacing:.05rem ;
-    padding: 50px 50px;
-}
-
-.main-div{
-    height: 88vh;
-    display: flex;
-    justify-content: center;
 }
 
 .bg-light{
@@ -34,9 +27,13 @@ body{
 }
 
 .p-6{
-    padding: 4rem 7rem;
+    padding-top: 3rem;
+    padding-right: 3rem;
 }
 
+.contact-box{
+    padding: 0.1rem;
+}
 
 .btn{
     font-weight: 400;
@@ -54,7 +51,7 @@ body{
     background-color: lightgray;
     border: 2px solid var(--color-dark-xx);
     border-radius: .2rem;
-
+    padding: 1.3rem 1rem;
 }
 
 .register-bg{
