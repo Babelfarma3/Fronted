@@ -11,6 +11,7 @@ import { Frame4Component } from './components/frame4/frame4.component';
 import { Frame5Component } from './components/frame5/frame5.component';
 import { Frame6Component } from './components/frame6/frame6.component';
 import { Frame8Component } from './components/frame8/frame8.component';
+import { Frame3Component } from './components/frame3/frame3.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { Frame8Component } from './components/frame8/frame8.component';
     Frame5Component,
     Frame6Component,
     Frame8Component,
+    Frame3Component,
   ],
   imports: [
     BrowserModule,

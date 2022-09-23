@@ -1,3 +1,4 @@
+import { Frame3Component } from './components/frame3/frame3.component';
 import { Frame8Component } from './components/frame8/frame8.component';
 import { Frame6Component } from './components/frame6/frame6.component';
 import { Frame5Component } from './components/frame5/frame5.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'registrotipo', component: Frame4Component},
   {path: 'registroComprador', component: Frame5Component},
   {path: 'registroDueñoFarmacia', component: Frame6Component},
-  {path: 'Login', component: Frame8Component}
+  {path: 'Login', component: Frame8Component},
+  {path: 'Contacatanos', component: Frame3Component}
 ];
 
 @NgModule({
