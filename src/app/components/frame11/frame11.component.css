@@ -1,0 +1,68 @@
+body{
+    background-image: url('/assets/img/fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.line{
+    display: flex;
+}
+
+.example-card1 {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-130%,-38%);
+    width: 500px;
+    height: 630px;
+    border-radius: 2%;
+    background-color: #3D85BF;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    text-align: left;
+}
+
+.example-card2 {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(30%,-38%);
+    width: 500px;
+    height: 630px;
+    border-radius: 2%;
+    background-color: #3D85BF;
+
+}
+
+.img1{
+    width: 60%;
+    display: block;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin: auto;
+}
+
+.img2{
+    width: 90%;
+    display: block;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin: auto;
+}
+
+.parrafo{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
