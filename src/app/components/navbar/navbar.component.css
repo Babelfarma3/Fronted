@@ -4,7 +4,13 @@ mat-toolbar{
 
 button{
     margin: auto;
-    height: auto;
     width: 250px;
 }
 
+@media screen and (max-width: 415px){
+    button{
+        margin: 2% auto;
+        font-size: 10px;
+        text-align: center;
+    }
+}

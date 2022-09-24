@@ -1,12 +1,27 @@
 body{
     background-image: url('/assets/img/fondo.png');
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
 }
-img{
-    display: block;
-    width: 30%;
-    height: 65%;
-    padding-top: 5%;
-    margin: auto;
+
+.contenedor{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
 }
+
+img{
+    width: 30%;
+    height: auto;
+    margin: 25%;
+}
+
+@media screen and (max-width: 415px){
+    img{
+        padding-top: 50%;
+    }
+
+}
+
