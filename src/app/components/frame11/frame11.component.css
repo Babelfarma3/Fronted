@@ -21,8 +21,8 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .container .uno{
