@@ -10,7 +10,7 @@ body{
     font-size: 'Roboto', sans-serif;
     background-image: url('/assets/img/fondo.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     font-size: 1.1rem;
     font-weight: 300;
     color: var(--color-dark-xx);
@@ -27,12 +27,15 @@ body{
 }
 
 .p-6{
-    padding-top: 3rem;
-    padding-right: 3rem;
+    padding: 4rem 7rem;
 }
 
 .contact-box{
+
     padding: auto;
+
+    padding: 0rem;
+
 }
 
 .btn{
@@ -58,4 +61,6 @@ body{
     background-image: url('/assets/img/logo.png');
     background-repeat: no-repeat;
     background-position: center;
+    
 }
+

@@ -31,7 +31,7 @@ body{
 }
 
 .contact-box{
-
+    padding: 0rem;
 }
 
 .btn{
@@ -50,6 +50,7 @@ body{
     background-color: lightgray;
     border: 2px solid var(--color-dark-xx);
     border-radius: .2rem;
+    padding: 1.3rem 1rem;
 }
 
 .register-bg{
