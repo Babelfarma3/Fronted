@@ -40,6 +40,7 @@ mat-form-field{
     background-color: white;
     width: auto;
     color: #0A66B0;
+    cursor: pointer;
 }
 
 .imagenes{
@@ -52,4 +53,17 @@ mat-form-field{
     background-color: white;
     width: auto;
     color: #C52033;
+    cursor: pointer;
+}
+
+.compra{
+    width: 6%;
+    padding-right: 25px;
+    border-radius: 20px;
+    align-items: right;
+    cursor: pointer;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
 }
