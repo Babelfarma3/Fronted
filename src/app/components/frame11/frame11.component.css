@@ -13,9 +13,8 @@ body{
 
 .example-card1 {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-130%,-38%);
+    top: 23.5%;
+    left: 10%;
     width: 500px;
     border-radius: 2%;
     background-color: #3D85BF;
@@ -31,11 +30,9 @@ body{
 }
 
 .example-card2 {
-    
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(30%,-38%);
+    top: 27%;
+    left: 60%;
     width: 500px;
     border-radius: 2%;
     background-color: #3D85BF;
