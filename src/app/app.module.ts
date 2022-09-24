@@ -14,6 +14,7 @@ import { Frame8Component } from './components/frame8/frame8.component';
 import { Frame3Component } from './components/frame3/frame3.component';
 import { NavbarcompradorComponent } from './components/navbarcomprador/navbarcomprador.component';
 import { Frame11Component } from './components/frame11/frame11.component';
+import { Frame25Component } from './components/frame25/frame25.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { Frame11Component } from './components/frame11/frame11.component';
     Frame3Component,
     NavbarcompradorComponent,
     Frame11Component,
+    Frame25Component,
   ],
   imports: [
     BrowserModule,
