@@ -12,4 +12,6 @@ export class Frame13Component implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
 }

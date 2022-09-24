@@ -93,6 +93,7 @@ body {
 	padding: .8rem 1.5rem;
 	letter-spacing: .1rem;
 	align-self: flex-end;
+    cursor: pointer;
 }
 
 /*media queries*/
@@ -104,4 +105,5 @@ body {
 		align-items: center;
 		height:auto;
 	}
-  }
+}
+
