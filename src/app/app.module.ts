@@ -21,6 +21,8 @@ import { NavbarfarmaciaComponent } from './components/navbarfarmacia/navbarfarma
 import { Frame18Component } from './components/frame18/frame18.component';
 import { Frame26Component } from './components/frame26/frame26.component';
 import { Frame7Component } from './components/frame7/frame7.component';
+import { Frame22Component } from './components/frame22/frame22.component';
+import { Frame2Component } from './components/frame2/frame2.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { Frame7Component } from './components/frame7/frame7.component';
       Frame18Component,
       Frame26Component,
       Frame7Component,
+      Frame22Component,
+      Frame2Component,
 
   ],
   imports: [

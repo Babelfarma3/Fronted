@@ -1,3 +1,5 @@
+import { Frame2Component } from './components/frame2/frame2.component';
+import { Frame22Component } from './components/frame22/frame22.component';
 import { Frame7Component } from './components/frame7/frame7.component';
 import { Frame26Component } from './components/frame26/frame26.component';
 import { Frame18Component } from './components/frame18/frame18.component';
@@ -20,6 +22,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path: '', component: Frame1Component},
   {path: 'registrotipo', component: Frame4Component},
+  {path: 'Informacion', component:Frame2Component},
   {path: 'registroComprador', component: Frame5Component},
   {path: 'registroDueñoFarmacia', component: Frame6Component},
   {path: 'Login', component: Frame8Component},
@@ -30,7 +33,8 @@ const routes: Routes = [
   {path: 'Carrito', component: Frame14Component},
   {path: 'RegistarProducto', component:Frame18Component},
   {path: 'ActualizarProducto', component:Frame26Component},
-  {path: 'Farmacia', component: Frame7Component}
+  {path: 'Farmacia', component: Frame7Component},
+  {path: 'MedicamentosRecomendados', component: Frame22Component},
 ];
 
 @NgModule({
