@@ -31,7 +31,11 @@ body{
 }
 
 .contact-box{
+
+    padding: auto;
+
     padding: 0rem;
+
 }
 
 .btn{
