@@ -5,19 +5,21 @@ body{
 }
 
 .line{
+
     display: flex;
+
 }
 
 .example-card1 {
-    margin: auto;
+    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-130%,-38%);
     width: 500px;
-    height: 630px;
     border-radius: 2%;
     background-color: #3D85BF;
+    margin: auto;
 }
 
 .title{
@@ -29,16 +31,15 @@ body{
 }
 
 .example-card2 {
-    margin: auto;
+    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(30%,-38%);
     width: 500px;
-    height: 630px;
     border-radius: 2%;
     background-color: #3D85BF;
-
+    margin: auto;
 }
 
 .img1{
