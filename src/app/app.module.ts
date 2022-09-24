@@ -16,7 +16,6 @@ import { NavbarcompradorComponent } from './components/navbarcomprador/navbarcom
 import { Frame11Component } from './components/frame11/frame11.component';
 import { Frame25Component } from './components/frame25/frame25.component';
 import { Frame13Component } from './components/frame13/frame13.component';
-import { EditProductComponent } from './components/frame25/edit-product/edit-product.component';
 import { Frame14Component } from './components/frame14/frame14.component';
 
 
@@ -34,7 +33,7 @@ import { Frame14Component } from './components/frame14/frame14.component';
     Frame11Component,
     Frame25Component,
     Frame13Component,
-    EditProductComponent,
+
     Frame14Component,
 
   ],

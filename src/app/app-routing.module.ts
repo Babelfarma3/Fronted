@@ -1,6 +1,5 @@
 import { Frame14Component } from './components/frame14/frame14.component';
 import { Frame13Component } from './components/frame13/frame13.component';
-import { EditProductComponent } from './components/frame25/edit-product/edit-product.component';
 import { Frame25Component } from './components/frame25/frame25.component';
 import { Frame11Component } from './components/frame11/frame11.component';
 import { Frame3Component } from './components/frame3/frame3.component';
@@ -25,7 +24,6 @@ const routes: Routes = [
   {path: 'Inicio', component: Frame11Component},
   {path: 'ListaDeProductos', component: Frame25Component},
   {path: 'Busqueda', component: Frame13Component},
-  {path: 'EditarProducto', component: EditProductComponent},
   {path: 'Carrito', component: Frame14Component},
 
 ];
