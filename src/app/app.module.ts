@@ -17,6 +17,7 @@ import { Frame11Component } from './components/frame11/frame11.component';
 import { Frame25Component } from './components/frame25/frame25.component';
 import { Frame13Component } from './components/frame13/frame13.component';
 import { Frame14Component } from './components/frame14/frame14.component';
+import { NavbarfarmaciaComponent } from './components/navbarfarmacia/navbarfarmacia.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { Frame14Component } from './components/frame14/frame14.component';
     Frame13Component,
 
     Frame14Component,
+      NavbarfarmaciaComponent,
 
   ],
   imports: [
