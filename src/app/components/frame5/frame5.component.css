@@ -27,12 +27,11 @@ body{
 }
 
 .p-6{
-    padding-top: 3rem;
-    padding-right: 3rem;
+    padding: 4rem 7rem;
 }
 
 .contact-box{
-    padding: 0.1rem;
+    padding: 0rem;
 }
 
 .btn{
@@ -58,4 +57,6 @@ body{
     background-image: url('/assets/img/logo.png');
     background-repeat: no-repeat;
     background-position: center;
+    
 }
+
