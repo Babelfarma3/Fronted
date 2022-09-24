@@ -1,7 +1,7 @@
 <mat-toolbar>
-    <img src="/assets/img/logo.png">
+    <img src="/assets/img/logo.png" class="logo">
     <div class="columna">
-        <div>
+        <div class="c1">
             <input type="text" class="buscador" placeholder="¿Qué estas buscando?">
             <mat-form-field appearance="fill">
                 <mat-label>Seleccione su ubicación</mat-label>
@@ -15,18 +15,22 @@
             </mat-form-field>
         </div>
         <div>
-            <mat-chip-list aria-label="Dog selection">
-                <mat-chip>
-                  <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
-                  Dog one
+            <mat-chip-list >
+                <mat-chip class="opciones">
+                  <img matChipAvatar src="/assets/img/Bienestar.PNG" class="imagenes"/>
+                  &nbsp;Bienestar
                 </mat-chip>
-                <mat-chip color="primary">
-                  <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
-                  Dog two
+                <mat-chip class="opciones">
+                  <img matChipAvatar src="/assets/img/farmacia.PNG" class="imagenes"/>
+                  &nbsp;Farmacia
                 </mat-chip>
-                <mat-chip color="accent">
-                  <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
-                  Dog three
+                <mat-chip class="opciones">
+                  <img matChipAvatar src="/assets/img/covid.PNG" alt="Photo of a Shiba Inu"/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protección COVID-19
+                </mat-chip>
+                <mat-chip class="opciones1">
+                    <img matChipAvatar src="/assets/img/farmacia.PNG" alt="Photo of a Shiba Inu"/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Botica 24 Horas                  
                 </mat-chip>
               </mat-chip-list>
         </div>
