@@ -20,6 +20,7 @@ import { Frame14Component } from './components/frame14/frame14.component';
 import { NavbarfarmaciaComponent } from './components/navbarfarmacia/navbarfarmacia.component';
 import { Frame18Component } from './components/frame18/frame18.component';
 import { Frame26Component } from './components/frame26/frame26.component';
+import { Frame7Component } from './components/frame7/frame7.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { Frame26Component } from './components/frame26/frame26.component';
       NavbarfarmaciaComponent,
       Frame18Component,
       Frame26Component,
+      Frame7Component,
 
   ],
   imports: [

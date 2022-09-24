@@ -1,3 +1,4 @@
+import { Frame7Component } from './components/frame7/frame7.component';
 import { Frame26Component } from './components/frame26/frame26.component';
 import { Frame18Component } from './components/frame18/frame18.component';
 import { Frame14Component } from './components/frame14/frame14.component';
@@ -23,12 +24,13 @@ const routes: Routes = [
   {path: 'registroDueñoFarmacia', component: Frame6Component},
   {path: 'Login', component: Frame8Component},
   {path: 'Contacatanos', component: Frame3Component},
-  {path: 'Inicio', component: Frame11Component},
+  {path: 'Comprador', component: Frame11Component},
   {path: 'ListaDeProductos', component: Frame25Component},
   {path: 'Busqueda', component: Frame13Component},
   {path: 'Carrito', component: Frame14Component},
   {path: 'RegistarProducto', component:Frame18Component},
-  {path: 'ActualizarProducto', component:Frame26Component}
+  {path: 'ActualizarProducto', component:Frame26Component},
+  {path: 'Farmacia', component: Frame7Component}
 ];
 
 @NgModule({
