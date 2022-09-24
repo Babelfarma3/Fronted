@@ -11,14 +11,16 @@ body{
     justify-content: center;
 }
 
-.example-card1 {
-    position: absolute;
-    top: 23.5%;
-    left: 10%;
-    width: 500px;
-    border-radius: 2%;
-    background-color: #3D85BF;
+.uno{
     margin: auto;
+    width: 500px;
+    height: auto;
+    position: relative;
+    border-radius: 2%;
+}
+
+.example-card1 {
+    background-color: #3D85BF;
 }
 
 .title{
@@ -29,14 +31,16 @@ body{
     text-align: left;
 }
 
-.example-card2 {
-    position: absolute;
-    top: 27%;
-    left: 60%;
-    width: 500px;
-    border-radius: 2%;
-    background-color: #3D85BF;
+.dos{
     margin: auto;
+    width: 500px;
+    height: auto;
+    position: relative;
+    border-radius: 2%;
+}
+
+.example-card2 {
+    background-color: #3D85BF;
 }
 
 .img1{
