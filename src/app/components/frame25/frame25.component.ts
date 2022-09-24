@@ -9,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./frame25.component.css']
 })
 export class Frame25Component implements OnInit {
-  displayedColumns: string[] = ['codigo', 'nombre', 'precio', 'existencia', 'stock'];
+  displayedColumns: string[] = ['codigo', 'nombre', 'precio', 'stock'];
   dataSource = new MatTableDataSource<Product>();
 
   products: Product[] = [];
