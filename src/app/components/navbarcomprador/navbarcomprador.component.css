@@ -14,7 +14,6 @@ mat-form-field{
     padding-right: 15px;
     padding-left: 15px;
     align-items: center;
-    width: 400px;
     font-size: 15px;
 }
 
@@ -23,7 +22,6 @@ mat-form-field{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
     font-size: 20px; 
-    width: 400px;
 }
 
 .columna{
