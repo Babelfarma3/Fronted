@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream
 import { Frame13Component } from './components/frame13/frame13.component';
-=======
 import { EditProductComponent } from './components/frame25/edit-product/edit-product.component';
->>>>>>> Stashed changes
 import { Frame25Component } from './components/frame25/frame25.component';
 import { Frame11Component } from './components/frame11/frame11.component';
 import { Frame3Component } from './components/frame3/frame3.component';
@@ -26,11 +23,8 @@ const routes: Routes = [
   {path: 'Contacatanos', component: Frame3Component},
   {path: 'Inicio', component: Frame11Component},
   {path: 'ListaDeProductos', component: Frame25Component},
-<<<<<<< Updated upstream
   {path: 'Busqueda', component: Frame13Component},
-=======
   {path: 'EditarProducto', component: EditProductComponent},
->>>>>>> Stashed changes
 ];
 
 @NgModule({
