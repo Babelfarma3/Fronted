@@ -20,7 +20,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 180px auto;
+    margin: auto;
 }
 
 .container .uno{
