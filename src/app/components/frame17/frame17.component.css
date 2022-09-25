@@ -13,18 +13,24 @@ color: #FFFFFF;
 }
 
 
-.fondo{
+.contenedor{
     width: 70%;
     height: auto;
-    
-    margin: 0 auto;
+    margin: 50px auto;
     text-align: center;
-}
-
-.contenedor{
-    width: 100%;
-    height: auto;
-    padding: 5%;
+    padding: 3%;
     background-color: #34A7D8;
+    border-radius: 15px;
 }
 
+@media only screen and (max-width: 650px)
+  {
+    .contenedor{
+        width: 100%;
+        padding: 0;
+    }
+
+    p{
+        font-size: 30px;
+    }
+  }
