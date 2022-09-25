@@ -1,0 +1,42 @@
+body{
+    background-image: url('/assets/img/fondo.png');
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+.title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    color: black;
+}
+
+.parrafo{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    color: black;
+}
+    
+    
+
+.contenedor{
+    width: 70%;
+    height: auto;
+    
+    margin: 0 auto;
+    text-align: center;
+}
+
+.carta{
+    width: 100%;
+    height: auto;
+    padding: 5%;
+}
+
+button{
+    padding: 2 2 2 2;
+    margin: 20px;
+}
