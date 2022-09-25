@@ -38,6 +38,15 @@
       "correo": "diego.barja79@gmail.com",
       "celular": 986016337,
       "contrasenia": "contraseña:v"
+    },
+    {
+      "id": 74996429,
+      "nombres": "Angel",
+      "apellidoPaterno": "Sosa",
+      "apellidoMaterno": "Ostos",
+      "correo": "gabrielo.09.angel@gmail.com",
+      "celular": 929176371,
+      "contrasenia": "123"
     }
   ],
   "farmacias": []
