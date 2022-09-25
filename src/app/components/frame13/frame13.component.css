@@ -1,9 +1,4 @@
-app-navbarcomprador{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index: 1000;
-}
+
 
 :root{
 	--white-text:#fff;
@@ -44,7 +39,6 @@ body {
 	border-radius: 1rem;
 	display: flex;	
 	margin: 1.5rem;
-	overflow: hidden;
 	width: 30rem;
 	height: 19rem;
 }
@@ -64,8 +58,8 @@ body {
 
 .left-column img{	
     margin: auto;
-    height: 50%;
-    width: 100%;
+    height: 150px;
+    width: 100px;
     transform: translate(0%,50%);
 }
 
@@ -98,7 +92,7 @@ body {
 
 /*media queries*/
 
-@media (max-width: 1030px) {
+@media (max-width: 1400px) {
 	.container{
 		flex-direction: column;
 		justify-content: center;
