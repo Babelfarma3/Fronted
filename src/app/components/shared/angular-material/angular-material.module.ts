@@ -10,6 +10,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { HttpClientModule } from '@angular/common/http'
 
 
 
@@ -27,6 +30,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
+    MatSnackBarModule,
+    MatPaginatorModule,
+    HttpClientModule,
   ],
   exports:[
     MatToolbarModule, 
@@ -39,6 +45,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
+    MatSnackBarModule,
+    MatPaginatorModule,
+    HttpClientModule,
 ]
 })
 export class AngularMaterialModule { }

@@ -1,6 +1,8 @@
+import { getTestBed } from '@angular/core/testing';
+import { MatPaginator } from '@angular/material/paginator';
 import { ProductService } from './../../services/product.service';
 import { Product } from './../../models/product';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -9,10 +11,12 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./frame25.component.css']
 })
 export class Frame25Component implements OnInit {
-  displayedColumns: string[] = ['codigo', 'nombre', 'precio', 'stock'];
+  displayedColumns: string[] = ['id', 'nombre', 'precio', 'stock'];
   dataSource = new MatTableDataSource<Product>();
 
-  products: Product[] = [];
+  products!: Product[];
+
+  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
   constructor(private productService: ProductService) { }
 
@@ -21,12 +25,21 @@ export class Frame25Component implements OnInit {
   } 
 
   getProducts() {
-    this.products = this.productService.getProducts();
-    this.dataSource = new MatTableDataSource(this.products);
+    this.productService.getProducts()
+    .subscribe((data: Product[])=>{
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+    });
   }
+  
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  deleteProduct(index: number)
+  {
+
   }
 }

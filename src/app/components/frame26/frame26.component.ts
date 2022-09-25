@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Query } from '@angular/core';
 
 @Component({
   selector: 'app-frame26',
@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Frame26Component implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  constructor(){}
 
+  ngOnInit(): void {}
 }
