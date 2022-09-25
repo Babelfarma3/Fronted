@@ -3,6 +3,7 @@ mat-toolbar{
     height: auto;
     padding-bottom: 15px;
     padding-top: 15px;
+
 }
 
 .logo{
@@ -13,6 +14,7 @@ mat-toolbar{
 
 .columna{
     display: flexbox;
+    
 }
 
 
@@ -35,4 +37,13 @@ mat-toolbar{
     border-radius: 20px;
     align-items: right;
     cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 870px)
+{
+  .logo{
+    display: none;
+  }
 }
