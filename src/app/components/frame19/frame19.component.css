@@ -1,6 +1,5 @@
 body{
     background-image: url('/assets/img/fondo.png');
-    background-repeat: repeat-y;
     background-size: cover;
 }
 
@@ -23,20 +22,38 @@ body{
     
 
 .contenedor{
-    width: 70%;
-    height: auto;
-    
-    margin: 0 auto;
+    background-image: url('/assets/img/fondo.png');
+    background-size: cover;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .carta{
-    width: 100%;
+    width: 70%;
     height: auto;
-    padding: 5%;
+    margin-top: 50px;
+    
 }
 
+
 button{
-    padding: 2 2 2 2;
+    padding: 10px;
     margin: 20px;
+}
+
+@media only screen and (max-width: 500px)
+{
+    img{
+        width: 70%;
+    }
+    
+    .carta{
+        width:100%;
+    }
+
+    .parrafo{
+        font-size: 30px;
+    }
+
 }
