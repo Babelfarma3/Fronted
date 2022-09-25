@@ -34,6 +34,14 @@
       "precio": "S/2.50",
       "stock": 10,
       "descripcion": ""
+    },
+    {
+      "id":6,
+      "nombre": "Panadol Forte",
+      "precio": "S/15.00",
+      "stock": 10,
+      "descripcion": "Panadol forte para la gripe"
+
     }
   ],
   "clientes": [
