@@ -1,3 +1,4 @@
+import { Frame15Component } from './components/frame15/frame15.component';
 import { Frame2Component } from './components/frame2/frame2.component';
 import { Frame22Component } from './components/frame22/frame22.component';
 import { Frame7Component } from './components/frame7/frame7.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'ActualizarProducto', component:Frame26Component},
   {path: 'Farmacia', component: Frame7Component},
   {path: 'MedicamentosRecomendados', component: Frame22Component},
+  {path: 'CarritoCompras', component: Frame15Component}
 ];
 
 @NgModule({

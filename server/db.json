@@ -27,6 +27,13 @@
       "precio": "S/12.00",
       "stock": 12,
       "descripcion": "qwerty"
+    },
+    {
+      "id": 5,
+      "nombre": "Aspirina",
+      "precio": "S/2.50",
+      "stock": 10,
+      "descripcion": ""
     }
   ],
   "clientes": [
