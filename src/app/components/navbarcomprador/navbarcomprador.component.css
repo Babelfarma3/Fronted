@@ -4,6 +4,9 @@ mat-toolbar{
     width: 100%;
     padding-bottom: 15px;
     padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .logo{
@@ -33,6 +36,7 @@ mat-form-field{
     place-items: center;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .opciones{
@@ -56,13 +60,26 @@ mat-form-field{
 }
 
 .compra{
-    width: 6%;
+    height: 50px;
+    width: 50px;
+    
     padding-right: 25px;
     border-radius: 20px;
-    align-items: right;
-    cursor: pointer;
+
 }
 
-.example-spacer {
-    flex: 1 1 auto;
+
+
+@media only screen and (max-width: 870px)
+{
+  .logo{
+    display: none;
+  }
+
+  .compra{
+    height: 35px;
+    width: 35px;
+    margin-top: 10px;
+  }
+
 }

@@ -8,9 +8,6 @@
 
 body{
     font-size: 'Roboto', sans-serif;
-    background-image: url('/assets/img/fondo.png');
-    background-repeat: no-repeat;
-    background-size: cover;
     font-size: 1.1rem;
     font-weight: 300;
     color: var(--color-dark-xx);
@@ -32,6 +29,8 @@ body{
 
 .contact-box{
     padding: 0rem;
+    background-image: url('/assets/img/fondo.png');
+    background-size: cover;
 }
 
 .btn{
