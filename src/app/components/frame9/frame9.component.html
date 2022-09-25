@@ -1,14 +1,19 @@
 <body>
 <div class="contenedor">
-<div class="main-div">
+<div [formGroup]="myForm" class="main-div">
     <mat-card class="example-card">
         <p class="title">Recuperar contraseña</p>
         <img src="/assets/img/logo.png">
-        <input type="number" class="form-control" placeholder="Ingresa tu número de DNI/RUC">
-        <input type="email" class="form-control" placeholder="Ingresa tu correo electronico">
-        <input type="password" class="form-control" placeholder="Ingresa tu nueva contraseña">
+        <input formControlName="id" type="number" class="form-control" placeholder="Ingresa tu número de DNI/RUC">
+        <input formControlName="correo" type="email" class="form-control" placeholder="Ingresa tu correo electronico">
+        <input formControlName="contrasenia" type="password" class="form-control" placeholder="Ingresa tu nueva contraseña">
         <input type="password" class="form-control" placeholder="Confirma tu contraseña">
-        <button mat-raised-button routerLink="/Login">Actualizar cuenta</button>
+        <button 
+        mat-raised-button 
+        type="button"
+        (click)="updateContrasenia()">
+        Actualizar contraseña
+        </button>
     </mat-card>
 
    </div>
