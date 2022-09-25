@@ -16,7 +16,7 @@ export class Frame18Component implements OnInit {
     private fb: FormBuilder,
     private productService: ProductService,
     private snackBar: MatSnackBar,
-    private router:Router,
+    private router: Router,
   ){ 
     this.reactiveForm();
   }
@@ -26,7 +26,7 @@ export class Frame18Component implements OnInit {
 
   reactiveForm() {
     this.myForm = this.fb.group({
-      codigo:[''],
+      id:[''],
       nombre: ['', Validators.required],
       precio: ['', Validators.required],
       stock: ['', Validators.required],

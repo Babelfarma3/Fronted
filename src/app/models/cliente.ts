@@ -1,9 +1,9 @@
 export interface Cliente {
+    id: number;
     nombres: string;
     apellidoPaterno: string;
     apellidoMaterno: string;
-    dni: number;
     correo: string;
     celular: number;
-    fechaNacimiento: Date;
+    contrasenia: string
 }

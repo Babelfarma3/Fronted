@@ -1,7 +1,7 @@
 export interface Farmacia {
+    id: number;
     nombreEstablecimiento: string;
     direccion: string;
-    ruc: number;
     correoContacto: string;
     telefonoContacto: number;
 }
