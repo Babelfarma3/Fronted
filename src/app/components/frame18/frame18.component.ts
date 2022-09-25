@@ -4,6 +4,7 @@ import { ProductService } from './../../services/product.service';
 import { Form, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-frame18',
@@ -27,10 +28,10 @@ export class Frame18Component implements OnInit {
   reactiveForm() {
     this.myForm = this.fb.group({
       id:[''],
-      nombre: ['', Validators.required],
-      precio: ['', Validators.required],
-      stock: ['', Validators.required],
-      descripcion: ['', Validators.required],
+      nombre: ['', [Validators.required]],
+      precio: ['', [Validators.required]],
+      stock: ['', [Validators.required]],
+      descripcion: ['', [Validators.required]],
     })
   }
 

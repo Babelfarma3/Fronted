@@ -1,8 +1,6 @@
 import { Farmacia } from './../../models/farmacia';
 import { FarmaciaService } from './../../services/farmacia.service';
-import { Cliente } from './../../models/cliente';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ClienteService } from './../../services/cliente.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';

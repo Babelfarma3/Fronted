@@ -43,7 +43,6 @@ import { Frame19Component } from './components/frame19/frame19.component';
     Frame11Component,
     Frame25Component,
     Frame13Component,
-
     Frame14Component,
       NavbarfarmaciaComponent,
       Frame18Component,

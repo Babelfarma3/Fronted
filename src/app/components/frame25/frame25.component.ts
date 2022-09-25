@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./frame25.component.css']
 })
 export class Frame25Component implements OnInit {
-  displayedColumns: string[] = ['id', 'nombre', 'precio', 'stock'];
+  displayedColumns: string[] = ['id', 'nombre', 'precio', 'stock', 'opciones'];
   dataSource = new MatTableDataSource<Product>();
 
   products!: Product[];
@@ -38,8 +38,12 @@ export class Frame25Component implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  deleteProduct(index: number)
-  {
-
+  deleteProduct(id: number){
+    this.productService.deleteProduct(id)
+    .subscribe(()=>{
+      this.dataSource.data=this.dataSource.data.filter((p: Product)=>{
+        return p.id !== id ? p : false;
+      })
+    })
   }
 }

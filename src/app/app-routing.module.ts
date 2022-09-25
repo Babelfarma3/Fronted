@@ -36,7 +36,7 @@ const routes: Routes = [
   {path: 'Busqueda', component: Frame13Component},
   {path: 'Carrito', component: Frame14Component},
   {path: 'RegistarProducto', component:Frame18Component},
-  {path: 'ActualizarProducto', component:Frame26Component},
+  {path: 'ActualizarProducto/:id', component:Frame26Component},
   {path: 'Farmacia', component: Frame7Component},
   {path: 'MedicamentosRecomendados', component: Frame22Component},
   {path: 'CarritoCompras', component: Frame15Component},
