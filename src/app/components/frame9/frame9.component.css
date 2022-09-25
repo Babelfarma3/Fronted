@@ -1,23 +1,26 @@
 body{
     background-image: url('/assets/img/fondo.png');
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .contenedor{
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
-    text-align: center;
+    background-image: url('/assets/img/fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .main-div{
-    margin-top: 20px;
+    padding-top:30px;
     place-items: center;
     display: flex;
     justify-content: center;
-    max-width: 100%;
+    background-image: url('/assets/img/fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 

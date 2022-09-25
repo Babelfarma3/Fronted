@@ -8,8 +8,9 @@
 
 body{
     background-image: url('/assets/img/fondo.png');
-    background-repeat:repeat-y;
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 
@@ -28,7 +29,10 @@ body{
 }
 
 .contact-box{
-    padding-top: 7%;
+    background-image: url('/assets/img/fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .btn{
