@@ -1,88 +1,52 @@
 
 body{
     background-image: url('/assets/img/fondo.png');
-    letter-spacing: 0.03em;
-    line-height: 1.6;
     background-size: cover;
 }
 
 .container{
-    width: 100%;
-    max-width: 1200px;
-    height: 470px;
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-.container .uno{
-    width: 400px;
-    height: 430px;
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 20px;
-    text-align: center;
-
+    justify-content:space-around;
 }
 
 
-.example-card1 {
+.container mat-card{
     background-color: #3D85BF;
-
-}
-
-h4{
-    color: white;
-    text-align: left;
-    font-weight: bold;
-    font-size: 25px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.container .dos{
-    width: 400px;
-    height: 430px;
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 20px;
+    width: 500px;
+    height: 500px;
     text-align: center;
-
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
-.example-card2 {
-    background-color: #3D85BF;
-}
-
-
-.titulo{
+h1{
     color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+p{
+    color: white;
 }
 
 img{
-    width: 90%;
+    width: 500px;
+    height: 400px;
 }
 
 .parrafo{
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 17px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 70px 0;
 }
 
 .total{
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 22px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 150px;
 }
+
+@media only screen and (max-width: 1000px)
+  {
+    img{
+        max-width: 95%;
+        height: 300px;
+    }
+  }
