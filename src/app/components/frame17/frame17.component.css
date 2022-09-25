@@ -1,5 +1,17 @@
 body{
+    position: relative;
     background-image: url('/assets/img/fondo.png');
     background-repeat: repeat-y;
     background-size: cover;
 }
+
+.contenedor{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: 5%;
+    top: 40%;
+    left: 20%;
+    margin: -25px 0 0 -25px;
+}
+

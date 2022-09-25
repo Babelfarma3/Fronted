@@ -1,9 +1,17 @@
 body{
     background-image: url('/assets/img/fondo.png');
-    background-size:cover;
     background-repeat: repeat-y;
-    height: auto;
+    background-size: cover;
 }
+
+.contenedor{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+}
+
 .example-card {
     max-width: 400px;
     padding: 75px 30px;
