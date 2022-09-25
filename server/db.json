@@ -56,5 +56,15 @@
       "contrasenia": "123"
     }
   ],
-  "farmacias": []
+  "farmacias": [
+    {
+      "id": 1234567890,
+      "nombresDuenio": "Pricila Yacori",
+      "apellidosDuenio": "Lucero Lucero",
+      "nombreEstablecimiento": "Farma Vida",
+      "direccion": "Av. Primavera",
+      "correoContacto": "pri.lu@farmavida.com",
+      "contrasenia": "1234567890"
+    }
+  ]
 }

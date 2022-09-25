@@ -35,6 +35,7 @@ export class Frame5Component implements OnInit {
       contrasenia: ['', Validators.required],
     })
   }
+  
   saveCliente(){
     const cliente: Cliente={
       id: this.myForm.get('id')!.value,

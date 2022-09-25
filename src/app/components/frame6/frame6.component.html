@@ -14,36 +14,36 @@
 
                 <p class="text-muted mb-5">Ingrese la siguiente información para registrarte.</p>
 
-                <form>
+                <form [formGroup]="myForm">
                     <div class="form-row mb-2">
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">Nombre del dueño<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre del dueño">
+                            <input formControlName="nombresDuenio" type="text" class="form-control" placeholder="Ingrese el nombre del dueño">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">Apellidos del dueño<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" placeholder="Ingrese los apellidos del dueño">
+                            <input formControlName="apellidosDuenio" type="text" class="form-control" placeholder="Ingrese los apellidos del dueño">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">Nombre del establecimiento<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" placeholder="Ingrese nombre del establecimiento">
+                            <input formControlName="nombreEstablecimiento" type="text" class="form-control" placeholder="Ingrese nombre del establecimiento">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">Dirección del establecimiento<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" placeholder="Ingrese nombre del establecimiento">
+                            <input formControlName="direccion" type="text" class="form-control" placeholder="Ingrese nombre del establecimiento">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">Correo electrónico del establecimiento<span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" placeholder="Ingrese el correo electrónico">
+                            <input formControlName="correoContacto" type="email" class="form-control" placeholder="Ingrese el correo electrónico">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">RUC<span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" placeholder="Ingrese su número RUC">
+                            <input formControlName="id" type="number" class="form-control" placeholder="Ingrese su número RUC">
                         </div>
                     </div>
                     <div class="form-group mb-3">
                         <label class="font-weight-bold">Contraseña<span class="text-danger">*</span></label>
-                        <input type="password" class="form-control" placeholder="Ingresa tu contraseña">
+                        <input formControlName="contrasenia" type="password" class="form-control" placeholder="Ingresa tu contraseña">
                     </div>
                     <div class="form-group mb-3">
                         <label class="font-weight-bold">Confirmar contraseña<span class="text-danger">*</span></label>
@@ -55,7 +55,13 @@
                             <label class="form-check-label text-muted">Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad</label>
                         </div>
                     </div>
-                    <button class="btn btn-primary" style="background-color: blue" routerLink="/Login">Registrate</button>
+                    <button 
+                    class="btn btn-primary" 
+                    style="background-color: blue" 
+                    type="button"
+                    (click)="saveFarmacia()">
+                    Registrate
+                    </button>
                 </form>
             </div>
         </div>
