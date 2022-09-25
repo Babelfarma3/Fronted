@@ -73,6 +73,15 @@
       "direccion": "Av. Primavera",
       "correoContacto": "pri.lu@farmavida.com",
       "contrasenia": "1234567890"
+    },
+    {
+      "id": 44884874,
+      "nombresDuenio": "fr",
+      "apellidosDuenio": "fr",
+      "nombreEstablecimiento": "fr",
+      "direccion": "fr",
+      "correoContacto": "fr",
+      "contrasenia": "ferfer"
     }
   ]
 }
