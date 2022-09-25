@@ -1,3 +1,4 @@
+import { Frame9Component } from './components/frame9/frame9.component';
 import { Frame17Component } from './components/frame17/frame17.component';
 import { Frame15Component } from './components/frame15/frame15.component';
 import { Frame2Component } from './components/frame2/frame2.component';
@@ -17,7 +18,7 @@ import { Frame4Component } from './components/frame4/frame4.component';
 import { Frame1Component } from './components/frame1/frame1.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path: 'MedicamentosRecomendados', component: Frame22Component},
   {path: 'CarritoCompras', component: Frame15Component},
   {path: 'RutaFarmacia', component: Frame17Component},
+  {path: 'RecuperaCuenta', component: Frame9Component},
 ];
 
 @NgModule({

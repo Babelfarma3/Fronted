@@ -25,6 +25,8 @@ import { Frame22Component } from './components/frame22/frame22.component';
 import { Frame2Component } from './components/frame2/frame2.component';
 import { Frame15Component } from './components/frame15/frame15.component';
 import { Frame17Component } from './components/frame17/frame17.component';
+import { Frame9Component } from './components/frame9/frame9.component';
+import { Frame19Component } from './components/frame19/frame19.component';
 
 
 @NgModule({
@@ -51,6 +53,8 @@ import { Frame17Component } from './components/frame17/frame17.component';
       Frame2Component,
       Frame15Component,
       Frame17Component,
+      Frame9Component,
+      Frame19Component,
 
   ],
   imports: [
