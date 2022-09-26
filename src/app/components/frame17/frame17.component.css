@@ -1,9 +1,10 @@
 body{
+    width: 100%;
+    height: 100vh;
     background-image: url('/assets/img/fondo.png');
-    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: auto;
+    background-attachment: fixed;
 }
 
 p{
@@ -12,6 +13,13 @@ font-weight: 600;
 font-size: 40px;
 line-height: 48px;
 color: #FFFFFF;
+}
+
+.fondo{
+    background-image: url('/assets/img/fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 
