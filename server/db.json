@@ -1,13 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "nombre": "Paracetamol 500mg",
-      "precio": "S/1.00",
-      "stock": 15,
-      "descripcion": ""
-    },
-    {
       "id": 2,
       "nombre": "Orfidal 1mg",
       "precio": "S/5.00",
@@ -29,12 +22,18 @@
       "descripcion": ""
     },
     {
-      "id":6,
+      "id": 6,
       "nombre": "Panadol Forte",
       "precio": "S/15.00",
       "stock": 10,
       "descripcion": "Panadol forte para la gripe"
-
+    },
+    {
+      "id": 7,
+      "nombre": "Rifosina",
+      "precio": "S/35.50",
+      "stock": 15,
+      "descripcion": ""
     }
   ],
   "clientes": [
@@ -55,6 +54,15 @@
       "correo": "gabrielo.09.angel@gmail.com",
       "celular": 929176371,
       "contrasenia": "123"
+    },
+    {
+      "id": 5165165,
+      "nombres": "hyth",
+      "apellidoPaterno": "ty",
+      "apellidoMaterno": "hyt",
+      "correo": "htyht",
+      "celular": 621515,
+      "contrasenia": "htyhh"
     }
   ],
   "farmacias": [
