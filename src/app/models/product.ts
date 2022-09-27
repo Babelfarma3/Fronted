@@ -1,5 +1,5 @@
 export interface Product {
-    id: number; //DNI
+    id: number;
     nombre: string;
     precio: string;
     stock: number;
