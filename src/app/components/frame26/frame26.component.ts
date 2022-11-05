@@ -31,7 +31,7 @@ export class Frame26Component implements OnInit {
         this.product = data;
         this.myForm = this.fb.group({
           nombre: [this.product.nombre, [Validators.required]],
-          precio: [this.product.precio, [Validators.required]],
+          precio: [this.product.precio, [Validators.required, Validators.maxLength]],
           stock: [this.product.stock, [Validators.required]],
           descripcion: [this.product.descripcion, [Validators.required]],
         })

@@ -1,9 +1,9 @@
 export interface Farmacia {
-    id: number; //RUC
-    nombresDuenio: string;
-    apellidosDuenio: string;
+    id: number;
+    ruc: number;
     nombreEstablecimiento: string;
     direccion: string;
     correoContacto: string;
-    contrasenia: string;
+    telefonoContacto: number;
+    distrito: any;
 }

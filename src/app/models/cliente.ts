@@ -1,9 +1,13 @@
 export interface Cliente {
-    id: number; //DNI
+    id: number;
+    dni: number;
     nombres: string;
     apellidoPaterno: string;
     apellidoMaterno: string;
+    sexo: string;
     correo: string;
     celular: number;
-    contrasenia: string;
+    fechaNacimiento: Date;
+    direccion: string;
+    distrito: any;
 }

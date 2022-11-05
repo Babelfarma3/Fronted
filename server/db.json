@@ -4,7 +4,7 @@
       "id": 2,
       "nombre": "Orfidal 1mg",
       "precio": "S/5.00",
-      "stock": 18,
+      "stock": 20,
       "descripcion": ""
     },
     {
@@ -63,6 +63,15 @@
       "correo": "htyht",
       "celular": 621515,
       "contrasenia": "htyhh"
+    },
+    {
+      "id": 12345678,
+      "nombres": "Annsherly",
+      "apellidoPaterno": "Acuña",
+      "apellidoMaterno": "Alvites",
+      "correo": "email@example.com",
+      "celular": 987654321,
+      "contrasenia": "qwertyuiop"
     }
   ],
   "farmacias": [

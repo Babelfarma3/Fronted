@@ -17,7 +17,7 @@ export class Frame25Component implements OnInit {
   products!: Product[];
 
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
-
+  
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
