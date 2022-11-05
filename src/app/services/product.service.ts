@@ -7,29 +7,29 @@ import { environment } from '../../environments/environment'
   providedIn: 'root'
 })
 export class ProductService {
-  productsPath: string = environment.productsPath;
+  basePath: string = environment.basePath;
   constructor(private http: HttpClient) { }
 
   getProducts(){
-    return this.http.get<Product[]>(this.productsPath);
+    return this.http.get<Product[]>(`${this.basePath}/productos/$`);
   }
 
   getProductId(id: any) {
-    return this.http.get<Product>(`${this.productsPath}/${id}`);
+    return this.http.get<Product>(`${this.basePath}/productos/${id}`);
   }
 
   addProduct(product: Product) {
     return this.http.post<Product>(
-      this.productsPath,
+      `${this.basePath}/productos$`,
       product
     );
   }
 
   updateProduct(id: any, product: Product){
-    return this.http.put<Product>(`${this.productsPath}/${id}`, product);
+    return this.http.put<Product>(`${this.basePath}/productos/${id}`, product);
   }
   
   deleteProduct(id: any){
-    return this.http.delete<Product>(`${this.productsPath}/${id}`);
+    return this.http.delete<Product>(`${this.basePath}/productos/${id}`);
   }
 }

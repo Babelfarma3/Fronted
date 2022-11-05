@@ -7,26 +7,26 @@ import { environment } from '../../environments/environment'
   providedIn: 'root'
 })
 export class ClienteService {
-  clientesPath: string = environment.clientesPath;
+  basePath: string = environment.basePath;
 
   constructor(private http:HttpClient) { }
 
   getClientes(){
-    return this.http.get<Cliente[]>(this.clientesPath);
+    return this.http.get<Cliente[]>(this.basePath);
   }
 
   getClienteId(id: any) {
-    return this.http.get<Cliente>(`${this.clientesPath}/${id}`);
+    return this.http.get<Cliente>(`${this.basePath}/clientes/${id}`);
   }
 
   addCliente(cliente: Cliente){
     return this.http.post<Cliente>(
-      this.clientesPath,
+      `${this.basePath}/clientes$`,
       cliente
     )
   }
 
   updateContrasenia(id: any, cliente: Cliente){
-    return this.http.put<Cliente>(`${this.clientesPath}/${id}/${cliente.correo}`, cliente);
+    return this.http.put<Cliente>(`${this.basePath}/clientes/${id}/${cliente.correo}`, cliente);
   }
 }

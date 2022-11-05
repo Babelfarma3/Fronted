@@ -44,7 +44,7 @@ export class Frame5Component implements OnInit {
       apellidoMaterno: this.myForm.get('apellidoMaterno')!.value,
       correo: this.myForm.get('correo')!.value,
       celular: this.myForm.get('celular')!.value,
-      contrasenia: this.myForm.get('contrasenia')!.value,
+      //contrasenia: this.myForm.get('contrasenia')!.value,
     }
     this.clienteService.addCliente(cliente).subscribe({
       next:(data)=>{

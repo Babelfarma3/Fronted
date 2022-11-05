@@ -7,13 +7,29 @@ import { environment } from '../../environments/environment'
   providedIn: 'root'
 })
 export class FarmaciaService {
-  farmaciasPath: string = environment.farmaciasPath;
+  basePath: string = environment.basePath;
   constructor(private http:HttpClient) { }
+
+  getFarmacias(){
+    return this.http.get<Farmacia[]>(`${this.basePath}/farmacias/$`);
+  }
+
+  getFarmaciaId(id: any){
+    return this.http.get<Farmacia>(`${this.basePath}/farmacias/$`);
+  }
 
   addFarmacia(farmacia: Farmacia) {
     return this.http.post<Farmacia>(
-      this.farmaciasPath,
+      `${this.basePath}/farmacias$`,
       farmacia
     )
+  }
+
+  updateFarmacia(id: any, farmacia: Farmacia){
+    return this.http.put<Farmacia>(`${this.basePath}/farmacias/${id}`, farmacia);
+  }
+
+  deleteFarmacia(id: any){
+    return this.http.delete<Farmacia>(`${this.basePath}/farmacias/${id}`);
   }
 }
