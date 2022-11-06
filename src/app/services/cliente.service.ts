@@ -21,7 +21,7 @@ export class ClienteService {
 
   addCliente(cliente: Cliente){
     return this.http.post<Cliente>(
-      `${this.basePath}/clientes$`,
+      `${this.basePath}/clientes`,
       cliente
     )
   }

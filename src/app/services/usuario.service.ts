@@ -11,16 +11,16 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   getUsuarios(){
-    return this.http.get<Usuario>(`${this.basePath}/usuarios/$`);
+    return this.http.get<Usuario>(`${this.basePath}/usuarios`);
   }
 
-  getUsuarioId(){
+  getUsuarioId(id: any){
     return this.http.get<Usuario>(`${this.basePath}/usuarios/${id}`);
   }
 
   addUsuario(usuario: Usuario){
     return this.http.post<Usuario>(
-      `${this.basePath}/usuarios$`,
+      `${this.basePath}/usuarios`,
       usuario
       );
   }
