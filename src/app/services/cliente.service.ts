@@ -19,6 +19,14 @@ export class ClienteService {
     return this.http.get<Cliente>(`${this.basePath}/clientes/${id}`);
   }
 
+  getClienteDni(dni: any){
+    return this.http.get<Cliente>(`${this.basePath}/clientes/${dni}`);
+  }
+
+  getClienteSexo(sexo: string){
+    return this.http.get<Cliente>(`${this.basePath}/clientes/${sexo}`);
+  }
+
   addCliente(cliente: Cliente){
     return this.http.post<Cliente>(
       `${this.basePath}/clientes`,
@@ -26,7 +34,11 @@ export class ClienteService {
     )
   }
 
-  updateContrasenia(id: any, cliente: Cliente){
-    return this.http.put<Cliente>(`${this.basePath}/clientes/${id}/${cliente.correo}`, cliente);
+  updateCliente(id: any, cliente: Cliente){
+    return this.http.put<Cliente>(`${this.basePath}/clientes/${id}`, cliente);
+  }
+
+  deleteCliente(id: any){
+    return this.http.delete<Cliente>(`${this.basePath}/clientes/${id}`);
   }
 }

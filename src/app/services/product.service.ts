@@ -11,16 +11,28 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProducts(){
-    return this.http.get<Product[]>(`${this.basePath}/productos/$`);
+    return this.http.get<Product[]>(`${this.basePath}/productos`);
   }
 
-  getProductId(id: any) {
-    return this.http.get<Product>(`${this.basePath}/productos/${id}`);
+  getProductoNombre(nombre: string){
+    return this.http.get<Product>(`${this.basePath}/productos/${nombre}`);
+  }
+
+  getProductoCategoria(categoria: string){
+    return this.http.get<Product>(`${this.basePath}/productos/${categoria}`);
+  }
+
+  getProductoStock(stock: any){
+    return this.http.get<Product>(`${this.basePath}/productos/${stock}`);
+  }
+
+  getProductoPrecio(precio: any){
+    return this.http.get<Product>(`${this.basePath}/productos/${precio}`);
   }
 
   addProduct(product: Product) {
     return this.http.post<Product>(
-      `${this.basePath}/productos$`,
+      `${this.basePath}/productos`,
       product
     );
   }

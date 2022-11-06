@@ -11,16 +11,32 @@ export class FarmaciaService {
   constructor(private http:HttpClient) { }
 
   getFarmacias(){
-    return this.http.get<Farmacia[]>(`${this.basePath}/farmacias/$`);
+    return this.http.get<Farmacia[]>(`${this.basePath}/farmacias`);
   }
 
   getFarmaciaId(id: any){
-    return this.http.get<Farmacia>(`${this.basePath}/farmacias/$`);
+    return this.http.get<Farmacia>(`${this.basePath}/farmacias/${id}`);
+  }
+
+  getFarmaciaDireccion(direccion: string){
+    return this.http.get<Farmacia>(`${this.basePath}/farmacias/${direccion}`);
+  }
+
+  getFarmaciaNombre(nombre: string){
+    return this.http.get<Farmacia>(`${this.basePath}/farmacias/${nombre}`);
+  }
+
+  getFarmaciaDistrito(distrito: string){
+    return this.http.get<Farmacia>(`${this.basePath}/farmacias/${distrito}`);
+  }
+
+  getFarmaciaProductos(producto: string){
+    return this.http.get<Farmacia>(`${this.basePath}/farmacias/${producto}`);
   }
 
   addFarmacia(farmacia: Farmacia) {
     return this.http.post<Farmacia>(
-      `${this.basePath}/farmacias$`,
+      `${this.basePath}/farmacias`,
       farmacia
     )
   }

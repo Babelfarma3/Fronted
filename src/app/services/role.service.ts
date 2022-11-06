@@ -11,25 +11,10 @@ export class RoleService {
   constructor(private http: HttpClient) { }
 
   getRoles(){
-    return this.http.get<Role[]>(`${this.basePath}/roles/$`);
+    return this.http.get<Role[]>(`${this.basePath}/roles`);
   }
 
   getRoleId(id: any){
     return this.http.get<Role>(`${this.basePath}/roles/${id}`);
-  }
-
-  addRole(role: Role){
-    return this.http.post<Role>(
-      `${this.basePath}/roles$`,
-      role
-      );
-  }
-
-  updateRole(id: any, role: Role){
-    return this.http.put<Role>(`${this.basePath}/roles/${id}`, role);
-  }
-
-  deleteRole(id: any){
-    return this.http.delete<Role>(`${this.basePath}/roles/${id}`);
   }
 }

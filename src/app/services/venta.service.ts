@@ -11,16 +11,12 @@ export class VentaService {
   constructor(private http: HttpClient) { }
 
   getVentas(){
-    return this.http.get<Venta[]>(`${this.basePath}/ventas/$`);
-  }
-
-  getVentaId(id: any){
-    return this.http.get<Venta>(`${this.basePath}/ventas/${id}`);
+    return this.http.get<Venta[]>(`${this.basePath}/ventas`);
   }
 
   addVenta(venta: Venta){
     return this.http.post<Venta>(
-      `${this.basePath}/ventas$`,
+      `${this.basePath}/ventas`,
       venta
     );
   }

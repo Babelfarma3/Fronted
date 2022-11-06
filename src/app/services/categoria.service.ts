@@ -32,4 +32,9 @@ export class CategoriaService {
   deleteCategoria(id: any){
     return this.http.delete<Categoria>(`${this.basePath}/categorias/${id}`);
   }
+
+  getCategoria(categoria: string){
+    return this.http.get<Categoria>(`${this.basePath}/categorias/${categoria}`);
+
+  }
 }
