@@ -12,20 +12,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class Frame26Component implements OnInit {
   myForm!: FormGroup;
+  /*
   product!: Product;
-  idProduct: any;
+  idProduct: any;*/
   constructor(
+    /*
     private fb: FormBuilder,
     private productService: ProductService,
     private snackBar: MatSnackBar,
     private router: Router,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute,*/
   ){
 
   }
 
   ngOnInit(): void {
-    this.idProduct = this.route.snapshot.paramMap.get('id');
+    /*this.idProduct = this.route.snapshot.paramMap.get('id');
     this.productService.getProductId(this.idProduct)
       .subscribe((data)=>{
         this.product = data;
@@ -35,9 +37,9 @@ export class Frame26Component implements OnInit {
           stock: [this.product.stock, [Validators.required]],
           descripcion: [this.product.descripcion, [Validators.required]],
         })
-      })
+      })*/
   }
-
+/*
   updateProduct(){
     const product: Product={
       id: 0,
@@ -55,5 +57,5 @@ export class Frame26Component implements OnInit {
         console.log(err);
       }
     });
-  }
+  }*/
 }

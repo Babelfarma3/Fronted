@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSnackBarModule,
     MatPaginatorModule,
     HttpClientModule,
+    MatAutocompleteModule
   ],
   exports:[
     MatToolbarModule, 
@@ -48,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSnackBarModule,
     MatPaginatorModule,
     HttpClientModule,
+    MatAutocompleteModule
 ]
 })
 export class AngularMaterialModule { }

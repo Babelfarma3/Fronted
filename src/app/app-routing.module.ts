@@ -1,3 +1,8 @@
+import { BoletaComponent } from './components/boleta/boleta.component';
+import { FarmaciaventasComponent } from './components/farmaciaventas/farmaciaventas.component';
+import { ClientesfarmciaComponent } from './components/clientesfarmcia/clientesfarmcia.component';
+import { ActualizarfarmaciaComponent } from './components/actualizarfarmacia/actualizarfarmacia.component';
+import { ActualizarclienteComponent } from './components/actualizarcliente/actualizarcliente.component';
 import { Frame19Component } from './components/frame19/frame19.component';
 import { Frame9Component } from './components/frame9/frame9.component';
 import { Frame17Component } from './components/frame17/frame17.component';
@@ -43,6 +48,11 @@ const routes: Routes = [
   {path: 'RutaFarmacia', component: Frame17Component}, 
   {path: 'RecuperaCuenta', component: Frame9Component},
   {path: 'CompraFinalizada', component: Frame19Component},
+  {path: 'ActualizarDatosCliente', component: ActualizarclienteComponent},
+  {path: 'ActualizarDatosFarmacia', component: ActualizarfarmaciaComponent},
+  {path: 'ClientesDeFarmacia', component: ClientesfarmciaComponent},
+  {path: 'VentasDeFarmacia', component: FarmaciaventasComponent},
+  {path: 'boleta', component: BoletaComponent}
 ];
 
 @NgModule({

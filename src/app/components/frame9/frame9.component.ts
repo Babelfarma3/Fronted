@@ -14,28 +14,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Frame9Component implements OnInit {
   myForm!: FormGroup;
-  cliente!: Cliente;
+  /*cliente!: Cliente;
   nombre!: string;
   apellidoPaterno!: string;
   apellidoMaterno!: string;
   celular!: number;
-  idCliente: any;
+  idCliente: any;*/
   constructor(
+    /*
     private fb: FormBuilder,
     private clienteService: ClienteService,
     private snackBar: MatSnackBar,
     private router: Router,
-  ) {
+  */
+    ) {
   }
 
   ngOnInit(): void {
+    /*
     this.myForm = this.fb.group({
       id: ['', [Validators.required]],
       correo: ['', [Validators.required]],
       contrasenia: ['', [Validators.required]]
-    })
+    })*/
   }
-
+ /*
   updateContrasenia(){
     this.idCliente = this.myForm.get('id');
     this.clienteService.getClienteId(this.idCliente)
@@ -62,4 +65,5 @@ export class Frame9Component implements OnInit {
       }
     })
   }
+  */
 }

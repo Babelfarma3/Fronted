@@ -27,6 +27,11 @@ import { Frame15Component } from './components/frame15/frame15.component';
 import { Frame17Component } from './components/frame17/frame17.component';
 import { Frame9Component } from './components/frame9/frame9.component';
 import { Frame19Component } from './components/frame19/frame19.component';
+import { ActualizarclienteComponent } from './components/actualizarcliente/actualizarcliente.component';
+import { ActualizarfarmaciaComponent } from './components/actualizarfarmacia/actualizarfarmacia.component';
+import { ClientesfarmciaComponent } from './components/clientesfarmcia/clientesfarmcia.component';
+import { FarmaciaventasComponent } from './components/farmaciaventas/farmaciaventas.component';
+import { BoletaComponent } from './components/boleta/boleta.component';
 
 
 @NgModule({
@@ -54,6 +59,11 @@ import { Frame19Component } from './components/frame19/frame19.component';
       Frame17Component,
       Frame9Component,
       Frame19Component,
+      ActualizarclienteComponent,
+      ActualizarfarmaciaComponent,
+      ClientesfarmciaComponent,
+      FarmaciaventasComponent,
+      BoletaComponent,
 
   ],
   imports: [

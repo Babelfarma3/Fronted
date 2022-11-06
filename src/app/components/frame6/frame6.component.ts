@@ -26,6 +26,7 @@ export class Frame6Component implements OnInit {
 
   reactiveForm(){
     this.myForm = this.fb.group({
+      /*
       id: ['', Validators.required],
       nombresDuenio: ['', Validators.required],
       apellidosDuenio: ['', Validators.required],
@@ -33,9 +34,10 @@ export class Frame6Component implements OnInit {
       direccion: ['', Validators.required],
       correoContacto: ['', Validators.required],
       contrasenia: ['', Validators.required],
+      */
     })
   }
-    
+    /*
   saveFarmacia(){
       const farmacia: Farmacia={
         id: this.myForm.get('id')!.value,
@@ -56,4 +58,5 @@ export class Frame6Component implements OnInit {
         }
       })
     }
+    */
 }

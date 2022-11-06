@@ -14,17 +14,19 @@ import { NavbarComponent } from '../navbar/navbar.component';
 export class Frame18Component implements OnInit {
     myForm!: FormGroup;
   constructor(
+    /*
     private fb: FormBuilder,
     private productService: ProductService,
     private snackBar: MatSnackBar,
     private router: Router,
+    */
   ){ 
-    this.reactiveForm();
+    //this.reactiveForm();
   }
 
   ngOnInit(): void {
   }
-
+/*
   reactiveForm() {
     this.myForm = this.fb.group({
       id:[''],
@@ -52,5 +54,5 @@ export class Frame18Component implements OnInit {
         console.log(err);
       }
     });
-  }
+  }*/
 }
