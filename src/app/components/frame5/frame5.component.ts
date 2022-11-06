@@ -1,3 +1,5 @@
+import { DistritoService } from './../../services/distrito.service';
+import { Distrito } from './../../models/distrito';
 import { UsuarioService } from './../../services/usuario.service';
 import { Usuario } from './../../models/usuario';
 import { Cliente } from './../../models/cliente';
@@ -14,10 +16,12 @@ import { Router } from '@angular/router';
 })
 export class Frame5Component implements OnInit {
     myForm!: FormGroup;
+    distritos: Distrito[] = [];
   constructor(
     private fb: FormBuilder,
     private clienteService: ClienteService,
     private usuarioService: UsuarioService,
+    private distritoService: DistritoService,
     private snackBar: MatSnackBar,
     private router: Router,
   ){
@@ -25,6 +29,8 @@ export class Frame5Component implements OnInit {
   }
 
   ngOnInit(): void {
+    this.reactiveForm();
+    this.getDistritos();
   }
 
   reactiveForm(){
@@ -44,6 +50,18 @@ export class Frame5Component implements OnInit {
       confContrasenia: ['', Validators.required],
     })
   }
+
+  getDistritos(){
+    this.distritoService.getDistrito().subscribe(
+      (data: any) => {
+        this.distritos = data;
+      },
+      (error: any) => {
+        console.log('error al consultar distritos');
+      }
+    );
+  }
+
   saveCliente(){
     const cliente: Cliente={
       id: 0,
@@ -60,6 +78,8 @@ export class Frame5Component implements OnInit {
     }
     this.clienteService.addCliente(cliente).subscribe({
       next:(data)=>{
+        this.snackBar.open('Se ha registrado correctamente', '', {duration: 3000});
+        this.router.navigate(['/Comprador'])
       },
       error:(err)=>{
         console.log(err);
@@ -75,8 +95,6 @@ export class Frame5Component implements OnInit {
     }
     this.usuarioService.addUsuario(usuario).subscribe({
       next:(data)=>{
-        this.snackBar.open('Se ha registrado correctamente', '', {duration: 3000});
-        this.router.navigate(['/Comprador'])
       },
       error:(err)=>{
         console.log(err);
@@ -87,8 +105,8 @@ export class Frame5Component implements OnInit {
     const contrasenia: string = this.myForm.get('contrasenia')!.value;
     const confContrasenia: string = this.myForm.get('confContrasenia')!.value;
     if(contrasenia == confContrasenia){
-      this.saveCliente();
       this.saveUsuario();
+      this.saveCliente();
     }
     else{
       this.snackBar.open('Las contraseñas ingresadas no coinciden', '', {duration: 5000});

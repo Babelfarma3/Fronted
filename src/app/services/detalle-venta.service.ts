@@ -12,16 +12,12 @@ export class DetalleVentaService {
   constructor(private http: HttpClient) { }
 
   getDetalleVenta(){
-    return this.http.get<DetalleVenta[]>(`${this.basePath}/detallesVenta/$`);
-  }
-
-  getDetalleVentaId(id: any){
-    return this.http.get<DetalleVenta>(`${this.basePath}/detallesVenta/$`);
+    return this.http.get<DetalleVenta[]>(`${this.basePath}/detallesVenta`);
   }
 
   addDetalleVenta(id: any, detalleVenta: DetalleVenta){
     return this.http.post<DetalleVenta>(
-      `${this.basePath}/detallesVenta$`,
+      `${this.basePath}/detallesVenta`,
       detalleVenta
     );
   }
