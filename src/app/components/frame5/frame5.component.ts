@@ -1,3 +1,6 @@
+import { Role } from './../../models/role';
+import { Distrito } from './../../models/distrito';
+import { DistritoService } from './../../services/distrito.service';
 import { Cliente } from './../../models/cliente';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ClienteService } from './../../services/cliente.service';
@@ -11,58 +14,91 @@ import { Router } from '@angular/router';
   styleUrls: ['./frame5.component.css']
 })
 export class Frame5Component implements OnInit {
-    myForm!: FormGroup;
+  myForm!: FormGroup;
+  idDistrito!: number;
+  distritos!: Distrito[];
+  idUsuario!:number;
+
   constructor(
     private fb: FormBuilder,
-    private clienteService: ClienteService,
+    private clienteService: ClienteService ,
+    private distritoService: DistritoService,
     private snackBar: MatSnackBar,
-    private router: Router,
-  ){
+    private router: Router
+  ) { 
     this.reactiveForm();
+    this.getDistritos();
   }
 
   ngOnInit(): void {
   }
 
-  reactiveForm(){
+  reactiveForm() {
     this.myForm = this.fb.group({
-      /*
-      id:['', Validators.required],
-      nombres: ['', Validators.required],
-      apellidoPaterno: ['', Validators.required],
-      apellidoMaterno: ['', Validators.required],
-      correo: ['', Validators.required],
-      celular: ['', Validators.required],
-      contrasenia: ['', Validators.required],
-      */
-    })
+      id: [''],
+      dni: ['', [Validators.required]],
+      nombres: ['', [Validators.required]],
+      apellidoPaterno: ['', [Validators.required]],
+      apellidoMaterno: ['', [Validators.required]],
+      sexo: ['', [Validators.required]],
+      correo: ['', [Validators.required]],
+      celular: ['', [Validators.required]],
+      fechaNacimiento: ['', [Validators.required]],
+      direccion: ['', [Validators.required]],
+      contraseña: ['', [Validators.required]],
+      distrito: ['', [Validators.required]],
+
+
+    });
   }
-  /*
+
+
   saveCliente(){
     let r = new Role();
-    r.id = 2;
+    r.id= 2;
 
     let d= new Distrito();
     d.id= this.idDistrito;
 
-    const cliente: Cliente={
-      id: this.myForm.get('id')!.value,
+    
+    const cliente: Cliente = {
+      id: 0,
+      dni: this.myForm.get('dni')!.value,
       nombres: this.myForm.get('nombres')!.value,
       apellidoPaterno: this.myForm.get('apellidoPaterno')!.value,
       apellidoMaterno: this.myForm.get('apellidoMaterno')!.value,
+      sexo: this.myForm.get('sexo')!.value,
       correo: this.myForm.get('correo')!.value,
       celular: this.myForm.get('celular')!.value,
-      //contrasenia: this.myForm.get('contrasenia')!.value,
-    }
+      fechaNacimiento: this.myForm.get('fechaNacimiento')!.value,
+      direccion: this.myForm.get('direccion')!.value,
+      distrito:d,
+      contrasenia: this.myForm.get('contraseña')!.value,
+      role:r
+    };
+
+  
+
     this.clienteService.addCliente(cliente).subscribe({
-      next:(data)=>{
-        this.snackBar.open('Se ha registrado correctamente', '', {duration: 3000});
-        this.router.navigate(['/Comprador'])
+      next: (data) => {
+        this.snackBar.open('El cliente fue registrado con exito!', '', {
+          duration: 3000,
+        });
+        this.router.navigate(['/Registro']);
       },
-      error:(err)=>{
+      error: (err) => {
         console.log(err);
-      }
-    })
-  } 
-  */
+      },
+    });
+
+
+  }
+
+  getDistritos(): void{
+    this.distritoService.getDistrito().subscribe((data: Distrito[]) => {
+      this.distritos=data;
+
+  });
+
+  }
 }
