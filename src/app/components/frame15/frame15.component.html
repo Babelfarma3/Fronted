@@ -14,16 +14,40 @@
                         <br>
                         <p class="normal">Vendido por Farmacia Angel</p>
                     </div>
-                    <div style="display:flex; margin: auto;">
-                        <button mat-raised-button class="boton" routerLink="/RutaFarmacia">Compra Online</button>
-                        <button mat-raised-button class="boton">Recojo en tienda</button>
-                        <button mat-raised-button class="boton1">Eliminar</button>
-                    </div>
+                    <div style="display:inline-block; margin: auto; ">
+                        <div style="display:flex; margin-top: 3%;">
+                            <button mat-raised-button class="boton" routerLink="/RutaFarmacia">Recojo en tienda</button>
+                            <button mat-raised-button class="boton" id="verificar2">Compra Online</button>
+                            <button mat-raised-button class="boton1">Eliminar</button>
+                        </div>
+                        <div style="display:flex; margin-top: 3%;">
+                            <section class="example-section">
+                                <mat-slide-toggle class="example-margin" id="envio" [(ngModel)]="disabled">Envío</mat-slide-toggle>
+                            </section>
+                        <input type="text" class="direccion" id="direccion" placeholder="Ingresar su dirección"
+                            [checked]="checked"
+                            [disabled]="disabled">
+                        </div>
+                        <div style="display:flex; margin-top: 3%;">
+                            <label class="distrito" >Distrito</label>
+                            <select
+                            [disabled]="disabled"  name="distrito" class="box" id="distrito" placeholder="Ingresa tu distrito">
+                                <option>Lince</option>
+                                <option>El Agustino</option>
+                            </select>
+                        </div>
 
+                        
+
+                    </div>
                 </div>
                 <hr>
                 <p class="normal">Subtotal: &nbsp; &nbsp; &nbsp; S/ 15.40</p>
             </mat-card>
+            
         </div>
+        
     </div>
+
+
 </body>

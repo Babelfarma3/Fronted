@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Query, NgModule } from '@angular/core';
+import {ThemePalette} from '@angular/material/core';
 
 @Component({
   selector: 'app-frame15',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./frame15.component.css']
 })
 export class Frame15Component implements OnInit {
-
-  constructor() { }
+  constructor(
+    
+  ) { }
 
   ngOnInit(): void {
-  }
 
+  }
+  checked = false;
+  disabled = false;
 }

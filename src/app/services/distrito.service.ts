@@ -11,7 +11,7 @@ export class DistritoService {
   constructor(private http: HttpClient) { }
 
   getDistrito(){
-    return this.http.get<Distrito[]>(`${this.basePath}/distritos/$`);
+    return this.http.get<Distrito[]>(`${this.basePath}/distritos`);
   }
 
   getDistritoId(id: any){
@@ -20,7 +20,7 @@ export class DistritoService {
 
   addDistrito(distrito: Distrito){
     return this.http.post<Distrito>(
-      `${this.basePath}/distritos/$`,
+      `${this.basePath}/distritos`,
       distrito
       );
   }

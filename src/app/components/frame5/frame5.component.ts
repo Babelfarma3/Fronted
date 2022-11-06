@@ -1,3 +1,6 @@
+import { DistritoService } from './../../services/distrito.service';
+import { Distrito } from './../../models/distrito';
+import { Role } from './../../models/role';
 import { Cliente } from './../../models/cliente';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ClienteService } from './../../services/cliente.service';
@@ -12,9 +15,12 @@ import { Router } from '@angular/router';
 })
 export class Frame5Component implements OnInit {
     myForm!: FormGroup;
+    distritos: Distrito[] = [];
+    idDistrito!: number;
   constructor(
     private fb: FormBuilder,
     private clienteService: ClienteService,
+    private distritoService: DistritoService,
     private snackBar: MatSnackBar,
     private router: Router,
   ){
@@ -22,31 +28,59 @@ export class Frame5Component implements OnInit {
   }
 
   ngOnInit(): void {
+    this.reactiveForm();
+    this.getDistritos();
+  }
+
+  getDistritos(){
+    this.distritoService.getDistrito().subscribe(
+      (data: any) => {
+        this.distritos = data;
+      },
+      (error: any) => {
+        console.log('error al consultar distritos');
+      }
+    );
   }
 
   reactiveForm(){
     this.myForm = this.fb.group({
-      /*
-      id:['', Validators.required],
+      id:[''],
+      dni: ['', Validators.required],
       nombres: ['', Validators.required],
       apellidoPaterno: ['', Validators.required],
       apellidoMaterno: ['', Validators.required],
+      sexo: ['', Validators.required],
       correo: ['', Validators.required],
       celular: ['', Validators.required],
+      fechaNacimiento: ['', Validators.required],
+      direccion: ['', Validators.required],
+      distrito: ['', Validators.required],
       contrasenia: ['', Validators.required],
-      */
     })
   }
-  /*
+  
   saveCliente(){
+    let r = new Role();
+    r.id = 2;
+
+    let d= new Distrito();
+    d.id= this.idDistrito;
+
     const cliente: Cliente={
-      id: this.myForm.get('id')!.value,
+      id: 0,
+      dni: this.myForm.get('dni')!.value,
       nombres: this.myForm.get('nombres')!.value,
       apellidoPaterno: this.myForm.get('apellidoPaterno')!.value,
       apellidoMaterno: this.myForm.get('apellidoMaterno')!.value,
+      sexo: this.myForm.get('sexo')!.value,
       correo: this.myForm.get('correo')!.value,
       celular: this.myForm.get('celular')!.value,
-      //contrasenia: this.myForm.get('contrasenia')!.value,
+      fechaNacimiento: this.myForm.get('fechaNacimiento')!.value,
+      direccion: this.myForm.get('direccion')!.value,
+      distrito: d,
+      contrasenia: this.myForm.get('contrasenia')!.value,
+      role: r,
     }
     this.clienteService.addCliente(cliente).subscribe({
       next:(data)=>{
@@ -57,6 +91,8 @@ export class Frame5Component implements OnInit {
         console.log(err);
       }
     })
+
+
   } 
-  */
+  
 }

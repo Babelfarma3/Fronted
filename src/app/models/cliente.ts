@@ -1,13 +1,15 @@
-export interface Cliente {
-    id: number;
-    dni: number;
-    nombres: string;
-    apellidoPaterno: string;
-    apellidoMaterno: string;
-    sexo: string;
-    correo: string;
-    celular: number;
-    fechaNacimiento: Date;
-    direccion: string;
+export class Cliente {
+    id: number=0;
+    dni: number=0;
+    nombres: string='';
+    apellidoPaterno: string='';
+    apellidoMaterno: string='';
+    sexo: string='';
+    correo: string='';
+    celular: number=0;
+    fechaNacimiento: Date =new Date;
+    direccion: string='';
     distrito: any;
+    contrasenia: string='';
+    role: any;
 }

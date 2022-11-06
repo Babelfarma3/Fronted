@@ -12,7 +12,7 @@ export class ClienteService {
   constructor(private http:HttpClient) { }
 
   getClientes(){
-    return this.http.get<Cliente[]>(this.basePath);
+    return this.http.get<Cliente[]>(`${this.basePath}/clientes`);
   }
 
   getClienteId(id: any) {
@@ -21,7 +21,7 @@ export class ClienteService {
 
   addCliente(cliente: Cliente){
     return this.http.post<Cliente>(
-      `${this.basePath}/clientes$`,
+      `${this.basePath}/clientes`,
       cliente
     )
   }

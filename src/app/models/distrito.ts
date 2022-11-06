@@ -1,4 +1,4 @@
-export interface Distrito {
-    id: number;
-    nombreDistrito: string;
+export class Distrito {
+    id: number=0;
+    nombreDistrito: string='';
 }
