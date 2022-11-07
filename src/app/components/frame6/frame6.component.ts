@@ -53,11 +53,14 @@ export class Frame6Component implements OnInit {
     })
   }
   saveFarmacia(){
-    let r = new Role();
-    r.id= 1;
+    const contraseña: string = this.myForm.get('contraseña')!.value;
+    const confContraseña: string = this.myForm.get('confContraseña')!.value;
+    if(contraseña == confContraseña){
+      let r = new Role();
+      r.id= 1;
 
-    let d= new Distrito();
-    d.id= this.idDistrito;
+      let d= new Distrito();
+      d.id= this.idDistrito;
 
       const farmacia: Farmacia={
         id: 0,
@@ -72,7 +75,7 @@ export class Frame6Component implements OnInit {
         contraseña: this.myForm.get('contraseña')!.value,
         role: r,
       }
-
+    
       this.farmaciaService.addFarmacia(farmacia).subscribe({
         next:(data)=>{
           this.snackBar.open('Se ha registrado correctamente', '', {
@@ -85,4 +88,10 @@ export class Frame6Component implements OnInit {
         },
       });
     }
+    else{
+      this.snackBar.open('Las contraseñas ingresadas no coinciden', '',{
+        duration: 5000,
+      });
+    }
+  }
 }

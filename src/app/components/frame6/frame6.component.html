@@ -49,7 +49,7 @@
                         <label class="font-weight-bold">Distrito<span class="text-danger">*</span></label>
                         <mat-form-field class="form-control" [style.fontSize.px]="16">
                             <mat-label>Seleccione el distrito</mat-label>
-                            <mat-select formControlName="distrito" [(value)]="idDistrito" required>
+                            <mat-select class="select" formControlName="distrito" [(value)]="idDistrito" required>
                               <mat-option *ngFor="let element of distritos" [value]="element.id">
                                 {{element.nombreDistrito}}
                               </mat-option>
