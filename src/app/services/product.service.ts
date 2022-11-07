@@ -37,6 +37,10 @@ export class ProductService {
     );
   }
 
+  getProductId(id: any){
+    return this.http.get<Product>(`${this.basePath}/productos/${id}`);
+  }
+
   updateProduct(id: any, product: Product){
     return this.http.put<Product>(`${this.basePath}/productos/${id}`, product);
   }
