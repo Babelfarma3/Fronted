@@ -1,3 +1,5 @@
+import { CategoriaService } from './../../services/categoria.service';
+import { Categoria } from './../../models/categoria';
 import { Component, OnInit, Query } from '@angular/core';
 import { Product } from './../../models/product';
 import { ProductService } from './../../services/product.service';
@@ -12,34 +14,43 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class Frame26Component implements OnInit {
   myForm!: FormGroup;
-  /*
+  idCategoria!: number;
+  categorias!: Categoria[];
   product!: Product;
-  idProduct: any;*/
+  idProduct!: any;
+
   constructor(
-    /*
     private fb: FormBuilder,
     private productService: ProductService,
+    private categoriaService: CategoriaService,
     private snackBar: MatSnackBar,
     private router: Router,
-    private route: ActivatedRoute,*/
+    private route: ActivatedRoute,
   ){
 
   }
 
   ngOnInit(): void {
-    /*this.idProduct = this.route.snapshot.paramMap.get('id');
+    this.loadProducto();
+    this.getCategorias();
+  }
+
+  loadProducto(){
+    this.idProduct = this.route.snapshot.params['id'];
     this.productService.getProductId(this.idProduct)
       .subscribe((data)=>{
         this.product = data;
         this.myForm = this.fb.group({
+          id: this.product,
           nombre: [this.product.nombre, [Validators.required]],
           precio: [this.product.precio, [Validators.required, Validators.maxLength]],
           stock: [this.product.stock, [Validators.required]],
           descripcion: [this.product.descripcion, [Validators.required]],
+          categoria: [this.product.categoria, [Validators.required]],
         })
-      })*/
+      })
   }
-/*
+
   updateProduct(){
     const product: Product={
       id: 0,
@@ -47,6 +58,7 @@ export class Frame26Component implements OnInit {
       precio: this.myForm.get('precio')!.value,
       stock: this.myForm.get('stock')!.value,
       descripcion: this.myForm.get('descripcion')!.value,
+      categoria: this.product.categoria,
     }
     this.productService.updateProduct(this.idProduct, product).subscribe({
       next: (data)=>{
@@ -57,5 +69,11 @@ export class Frame26Component implements OnInit {
         console.log(err);
       }
     });
-  }*/
+  }
+
+  getCategorias(): void{
+    this.categoriaService.getCategorias().subscribe((data: Categoria[])=>{
+      this.categorias=data;
+    })
+  }
 }
