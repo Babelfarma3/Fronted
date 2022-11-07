@@ -1,28 +1,25 @@
 
 
-:root{
-	--white-text:#fff;
-	--background:#c8e8f1;
-	--black-text:rgb(68, 66, 66)	
-	--prueba: (180deg,#21c8f6,#637bff);
-}
-
-* {
-	padding: 0;
-	margin: 0;
-	text-decoration: none;
-	box-sizing: border-box;
-	border: none;
-}
-
-
 body {
-    width: 100%;
-    height: 100vh;
     background-image: url('/assets/img/fondo.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+.card {
+	background-color: white;
+    border-style:groove;
+	border-radius: 1rem;
+	
+	margin: 1rem;
+	width: 20rem;
+	
+}
+
+.card_title{
+    text-align: center;
+    padding-bottom: 5px;
 }
 
 .container{
@@ -30,89 +27,62 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-	margin-top: 100px;
-	display: flex;
-	justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-.card {
-	background-color: white;
-    border-style:groove;
-	border-radius: 1rem;
-	display: flex;	
-	margin: 1.5rem;
-	width: 30rem;
-	height: 19rem;
-}
-
-.card h6 {
-	opacity: 0.6;	
-	letter-spacing: .1rem;
-	text-transform: uppercase;
-}
-
-.card  h2 {
-	letter-spacing: .1rem;
-	margin: 1rem 0;
-	color: var(black-text);
-}
-
-
-.left-column img{	
-    margin: auto;
-    height: 150px;
-    width: 100px;
-    transform: translate(0%,50%);
-}
-
-
-.right-column {
-	padding: 30px;
-	width: 80%;
-	display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-between;
-	
-}
-
-.right-column p{	
-	font-size: .9rem;
-	color: var(--black-text)
+.button_container{
+    text-align: center;
 }
 
 .button {
 	border-radius: 3rem;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 	color: var(--white-text);
-	font-size: 1.2rem;
+	font-size: 15;
 	padding: .8rem 1.5rem;
 	letter-spacing: .1rem;
-	align-self: flex-end;
     cursor: pointer;
 }
 
-/*media queries*/
-
-@media (max-width: 1400px) {
-	.container{
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height:auto;
-	}
+.info_general{
+    display: flex; 
+    justify-content: space-between;
 }
 
+.image_container{
+    width: 140px;
+    height: 130px;
+    background-color: grey;
+    border-radius: 10%;
+    max-width: 50%;
+}
+
+.info{
+    padding: 5px;
+    max-width: 50%;
+}
 
 @media only screen and (max-width: 500px)
   {
 
-	.container{
-		margin-top: 0;
-
-	}
+	
 	.card{
-		max-width: 95%;
+		width: 100%;
+        margin: 1rem 0;
+        
 	}
+
+    .info{
+        text-align: right;
+        width: 50%;
+    }
+
+
+    .image_container{
+        width: 50%;
+        height: 100px;
+    }
+	
   }

@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">Sexo:<span class="text-danger">*</span></label>
-                                <select name="sexo" class="box" id="sexo" >
+                                <select name="sexo" class="box" formControlName="sexo" >
                                         <option>Masculino</option>
                                         <option>Femenino</option>
                                 </select>
@@ -52,26 +52,25 @@
                         </div>
                         <div class="form-group mb-3">
                             <label class="font-weight-bold">Dirección<span class="text-danger">*</span></label>
-                            <input formControlName="direccion" type="text" class="form-control" placeholder="Ingresa tu dirección">
+                            <input formControlName="direccion" placeholder="Ingrese su dirección" type="text" class="form-control">
                         </div>
                         <div class="form-group mb-3">
                             <label class="font-weight-bold">Distrito<span class="text-danger">*</span></label>
-                            <mat-form-field class="form-control" [style.fontSize.px]="16">
-                                <mat-label>Seleccione el distrito</mat-label>
-                                <mat-select formControlName="distrito" [(value)]="idDistrito" required>
+
+                                <mat-select class="select" formControlName="distrito" placeholder="Seleccione su distrito"  [(value)]="idDistrito" required>
                                   <mat-option *ngFor="let element of distritos" [value]="element.id">
                                     {{element.nombreDistrito}}
                                   </mat-option>
                                 </mat-select>
-                              </mat-form-field>
+
                         </div>
                         <div class="form-group mb-3">
                             <label class="font-weight-bold">Contraseña<span class="text-danger">*</span></label>
-                            <input formControlName="contrasenia" type="password" class="form-control" placeholder="Ingresa tu contraseña">
+                            <input formControlName="contraseña" type="password" class="form-control" placeholder="Ingresa tu contraseña">
                         </div>
                         <div class="form-group mb-3">
                             <label class="font-weight-bold">Confirmar contraseña<span class="text-danger">*</span></label>
-                            <input formControlName="confContrasenia" type="password" class="form-control" placeholder="Repita su contraseña">
+                            <input type="password" class="form-control" placeholder="Repita su contraseña">
                         </div>
                         <div class="form-group mb-5">
                             <div class="form-check">

@@ -11,7 +11,7 @@ export class CategoriaService {
   constructor(private http: HttpClient) { }
 
   getCategorias(){
-    return this.http.get<Categoria[]>(`${this.basePath}/categorias/`);
+    return this.http.get<Categoria[]>(`${this.basePath}/categorias`);
   }
 
   getCategoriaId(id: any){
@@ -35,6 +35,5 @@ export class CategoriaService {
 
   getCategoria(categoria: string){
     return this.http.get<Categoria>(`${this.basePath}/categorias/${categoria}`);
-
   }
 }

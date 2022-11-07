@@ -80,7 +80,7 @@ export class Frame5Component implements OnInit {
         this.snackBar.open('El cliente fue registrado con exito!', '', {
           duration: 3000,
         });
-        this.router.navigate(['/Registro']);
+        this.router.navigate(['/Login']);
       },
       error: (err) => {
         console.log(err);

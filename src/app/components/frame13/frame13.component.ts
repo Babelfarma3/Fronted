@@ -1,3 +1,5 @@
+import { ProductService } from './../../services/product.service';
+import { Product } from './../../models/product';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Frame13Component implements OnInit {
 
-  constructor() { }
+  products!:Product[];
+
+
+  constructor(
+    private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
+    this.getProducts()
   }
 
+
+  getProducts(){
+    this.productService.getProducts().subscribe((data: Product[]) => {
+      this.products = data;
+    });
+
+
+  }
   
 
 }
