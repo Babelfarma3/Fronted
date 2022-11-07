@@ -17,7 +17,6 @@ export class Frame5Component implements OnInit {
   myForm!: FormGroup;
   idDistrito!: number;
   distritos!: Distrito[];
-  idUsuario!:number;
 
   constructor(
     private fb: FormBuilder,
@@ -47,8 +46,6 @@ export class Frame5Component implements OnInit {
       direccion: ['', [Validators.required]],
       contraseña: ['', [Validators.required]],
       distrito: ['', [Validators.required]],
-
-
     });
   }
 
@@ -60,7 +57,6 @@ export class Frame5Component implements OnInit {
     let d= new Distrito();
     d.id= this.idDistrito;
 
-    
     const cliente: Cliente = {
       id: 0,
       dni: this.myForm.get('dni')!.value,
@@ -73,8 +69,8 @@ export class Frame5Component implements OnInit {
       fechaNacimiento: this.myForm.get('fechaNacimiento')!.value,
       direccion: this.myForm.get('direccion')!.value,
       distrito:d,
-      contrasenia: this.myForm.get('contraseña')!.value,
-      role:r
+      contraseña: this.myForm.get('contraseña')!.value,
+      role:r,
     };
 
   
@@ -97,8 +93,6 @@ export class Frame5Component implements OnInit {
   getDistritos(): void{
     this.distritoService.getDistrito().subscribe((data: Distrito[]) => {
       this.distritos=data;
-
-  });
-
+    });
   }
 }

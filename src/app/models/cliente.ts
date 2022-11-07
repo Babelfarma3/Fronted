@@ -10,6 +10,6 @@ export class Cliente {
     fechaNacimiento: Date =new Date;
     direccion: string='';
     distrito: any;
-    contrasenia: string='';
+    contraseña: string='';
     role: any;
 }

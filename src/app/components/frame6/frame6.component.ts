@@ -1,3 +1,6 @@
+import { Role } from './../../models/role';
+import { DistritoService } from './../../services/distrito.service';
+import { Distrito } from './../../models/distrito';
 import { Farmacia } from './../../models/farmacia';
 import { FarmaciaService } from './../../services/farmacia.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -12,51 +15,74 @@ import { Router } from '@angular/router';
 })
 export class Frame6Component implements OnInit {
   myForm!: FormGroup;
+  idDistrito!: number;
+  distritos!: Distrito[];
+  
   constructor(
     private fb: FormBuilder,
     private farmaciaService: FarmaciaService,
+    private distritoService: DistritoService,
     private snackBar: MatSnackBar,
     private router: Router,
   ) { 
     this.reactiveForm();
+    this.getDistritos();
   }
 
   ngOnInit(): void {
   }
 
+  getDistritos(): void{
+    this.distritoService.getDistrito().subscribe((data: Distrito[]) => {
+      this.distritos=data;
+    });
+  }
+
   reactiveForm(){
     this.myForm = this.fb.group({
-      /*
-      id: ['', Validators.required],
-      nombresDuenio: ['', Validators.required],
-      apellidosDuenio: ['', Validators.required],
-      nombreEstablecimiento: ['', Validators.required],
-      direccion: ['', Validators.required],
-      correoContacto: ['', Validators.required],
-      contrasenia: ['', Validators.required],
-      */
+      id: [''],
+      ruc: ['', [Validators.required]],
+      nombresDuenio: ['', [Validators.required]],
+      apellidosDuenio: ['', [Validators.required]],
+      nombreEstablecimiento: ['', [Validators.required]],
+      direccion: ['', [Validators.required]],
+      distrito: ['', [Validators.required]],
+      correoContacto: ['', [Validators.required]],
+      telefonoContacto: ['', [Validators.required]],
+      contraseña: ['', [Validators.required]],
     })
   }
-    /*
   saveFarmacia(){
+    let r = new Role();
+    r.id= 1;
+
+    let d= new Distrito();
+    d.id= this.idDistrito;
+
       const farmacia: Farmacia={
-        id: this.myForm.get('id')!.value,
+        id: 0,
+        ruc: this.myForm.get('ruc')!.value,
         nombresDuenio: this.myForm.get('nombresDuenio')!.value,
         apellidosDuenio: this.myForm.get('apellidosDuenio')!.value,
         nombreEstablecimiento: this.myForm.get('nombreEstablecimiento')!.value,
         direccion: this.myForm.get('direccion')!.value,
         correoContacto: this.myForm.get('correoContacto')!.value,
-        contrasenia: this.myForm.get('contrasenia')!.value,
+        telefonoContacto: this.myForm.get('telefonoContacto')!.value,
+        distrito: d,
+        contraseña: this.myForm.get('contraseña')!.value,
+        role: r,
       }
+
       this.farmaciaService.addFarmacia(farmacia).subscribe({
         next:(data)=>{
-          this.snackBar.open('Se ha registrado correctamente', '', {duration: 3000});
+          this.snackBar.open('Se ha registrado correctamente', '', {
+            duration: 3000
+          });
           this.router.navigate(['/Farmacia']);
         },
         error:(err)=>{
           console.log(err);
-        }
-      })
+        },
+      });
     }
-    */
 }
