@@ -6,6 +6,6 @@ export interface Farmacia {
     correoContacto: string;
     telefonoContacto: number;
     distrito: any;
-    contrasenia: string;
+    contraseña: string;
     role: any;
 }
