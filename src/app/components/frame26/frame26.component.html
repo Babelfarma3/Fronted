@@ -15,11 +15,11 @@
 
                         <p class="text-muted mb-5">Ingrese la siguiente información para actualizar tu producto.</p>
 
-                        <form  [formGroup]="myForm">
+                        <form  [formGroup]="myForm" class="example-form" autocomplete="off">
                             <div class="form-row mb-2">
                                 <div class="form-group col-md-6">
-                                    <label class="font-weight-bold">Nombre del producto<span class="text-danger">*</span></label>
-                                    <input formControlName="nombre" type="text" class="form-control" placeholder="Ingresa el nombre del producto">
+                                    <label class="font-weight-bold" appearence="fill">Nombre del producto<span class="text-danger">*</span></label>
+                                    <input formControlName="nombre" type="text" id="name" class="form-control" placeholder="Ingresa el nombre del producto" readonly>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="font-weight-bold">Precio<span class="text-danger">*</span></label>
@@ -34,13 +34,6 @@
                                 <label class="font-weight-bold">Descripción del producto<span class="text-danger">*</span></label>
                                 <input formControlName="descripcion" type="text" class="form-control" placeholder="Ingrese la descripción del producto">
                             </div>
-
-                            <label class="font-weight-bold">Categoria<span class="text-danger">*</span></label>
-                            <mat-select class="select" formControlName="categoria" placeholder="Ingresa la categoria" [(value)]="idCategoria" required>
-                                <mat-option *ngFor="let element of categorias" [value]="element.id">
-                                    {{element.categoria}}
-                                </mat-option>
-                            </mat-select>
                             <button 
                               class="btn btn-primary" 
                               style="background-color: #223059"

@@ -38,7 +38,7 @@ export class ProductService {
   }
 
   getProductId(id: any){
-    return this.http.get<Product>(`${this.basePath}/productos/${id}`);
+    return this.http.get<Product>(`${this.basePath}/productos/id/${id}`);
   }
 
   updateProduct(id: any, product: Product){
