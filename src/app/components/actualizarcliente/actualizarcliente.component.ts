@@ -47,7 +47,6 @@ export class ActualizarclienteComponent implements OnInit {
         nombres: [this.cliente.nombres, [Validators.required]],
         apellidoPaterno: [this.cliente.apellidoPaterno, [Validators.required]],
         apellidoMaterno: [this.cliente.apellidoMaterno, [Validators.required]],
-        sexo: [this.cliente.sexo, [Validators.required]],
         correo: [this.cliente.correo, [Validators.required]],
         celular: [this.cliente.celular, [Validators.required]],
         direccion: [this.cliente.direccion, [Validators.required]],
