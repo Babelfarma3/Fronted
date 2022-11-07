@@ -32,6 +32,7 @@ import { ActualizarfarmaciaComponent } from './components/actualizarfarmacia/act
 import { ClientesfarmciaComponent } from './components/clientesfarmcia/clientesfarmcia.component';
 import { FarmaciaventasComponent } from './components/farmaciaventas/farmaciaventas.component';
 import { BoletaComponent } from './components/boleta/boleta.component';
+import { MostrarfarmaciasComponent } from './components/mostrarfarmacias/mostrarfarmacias.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { BoletaComponent } from './components/boleta/boleta.component';
       ClientesfarmciaComponent,
       FarmaciaventasComponent,
       BoletaComponent,
+      MostrarfarmaciasComponent,
 
   ],
   imports: [

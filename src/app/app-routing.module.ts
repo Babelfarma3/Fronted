@@ -1,3 +1,4 @@
+import { MostrarfarmaciasComponent } from './components/mostrarfarmacias/mostrarfarmacias.component';
 import { BoletaComponent } from './components/boleta/boleta.component';
 import { FarmaciaventasComponent } from './components/farmaciaventas/farmaciaventas.component';
 import { ClientesfarmciaComponent } from './components/clientesfarmcia/clientesfarmcia.component';
@@ -52,7 +53,8 @@ const routes: Routes = [
   {path: 'ActualizarDatosFarmacia', component: ActualizarfarmaciaComponent},
   {path: 'ClientesDeFarmacia', component: ClientesfarmciaComponent},
   {path: 'VentasDeFarmacia', component: FarmaciaventasComponent},
-  {path: 'boleta', component: BoletaComponent}
+  {path: 'boleta', component: BoletaComponent},
+  {path:'MostrarFarmacias', component: MostrarfarmaciasComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,21 @@
+<body>
+	<app-navbarcomprador></app-navbarcomprador>
+	<div class="container">
+
+		<mat-card *ngFor="let element of farmacias" class="card">
+			<mat-card-title class="card_title">{{element.nombreEstablecimiento}} </mat-card-title>
+			<div class="info_general">
+			<div class="info">
+			<mat-card-content>Correo de contacto: {{element.correoContacto}}</mat-card-content>
+			<mat-card-content>Teléfono de contacto: {{element.telefonoContacto}}</mat-card-content>
+			<mat-card-content>Distrito: {{element.distrito.nombreDistrito}}</mat-card-content>
+			<mat-card-content>Nombre del Dueño: {{element.nombresDuenio}}</mat-card-content>
+			</div>
+			</div>
+
+		</mat-card>
+		
+	
+	</div>
+</body>
+
