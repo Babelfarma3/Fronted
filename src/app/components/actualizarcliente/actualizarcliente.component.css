@@ -70,6 +70,12 @@ body{
     height: 50px;
 }
 
+.select{
+    background-color: lightgray;
+    border-radius: .2rem;
+    padding: 0.4rem;
+}
+
 .register-bg{
     background-image: url('/assets/img/logo.png');
     background-repeat: no-repeat;

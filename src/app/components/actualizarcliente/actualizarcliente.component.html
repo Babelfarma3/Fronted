@@ -45,41 +45,22 @@
                             <input formControlName="celular" type="number" class="form-control" placeholder="Ingresa tu número de celular">
                         </div>
                         <div class="form-group mb-3">
-                            <label class="font-weight-bold">Seleccione tu fecha de nacimiento<span class="text-danger">*</span></label>
-                            <br>
-                            <input formControlName="fechaNacimiento" type="date" id="start" name="trip-start" value="AAAA-MM-DD">
-                        </div>
-                        <div class="form-group mb-3">
                             <label class="font-weight-bold">Dirección<span class="text-danger">*</span></label>
                             <input formControlName="direccion" placeholder="Ingrese su dirección" type="text" class="form-control">
                         </div>
                         <div class="form-group mb-3">
                             <label class="font-weight-bold">Distrito<span class="text-danger">*</span></label>
-
                                 <mat-select class="select" formControlName="distrito" placeholder="Seleccione su distrito"  [(value)]="idDistrito" required>
                                   <mat-option *ngFor="let element of distritos" [value]="element.id">
                                     {{element.nombreDistrito}}
                                   </mat-option>
                                 </mat-select>
-
-                        </div>
-                        <div class="form-group mb-3">
-                            <label class="font-weight-bold">Contraseña<span class="text-danger">*</span></label>
-                            <input formControlName="contrasenia" type="password" class="form-control" placeholder="Ingresa tu contraseña">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label class="font-weight-bold">Confirmar contraseña<span class="text-danger">*</span></label>
-                            <input formControlName="confContrasenia" type="password" class="form-control" placeholder="Repita su contraseña">
-                        </div>
-                        <div class="form-group mb-5">
-                            <div class="form-check">
-                                <label class="form-check-label text-muted">Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad</label>
-                            </div>
                         </div>
                         <button 
                         class="btn btn-primary" 
                         style="background-color: blue"
-                        type="button">
+                        type="button"
+                        (click)="updateCliente()">
                         Actualizar datos
                         </button>
                     </form>

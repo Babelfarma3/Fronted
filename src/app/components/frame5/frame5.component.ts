@@ -50,7 +50,6 @@ export class Frame5Component implements OnInit {
     });
   }
 
-
   saveCliente(){
     const contraseña: string = this.myForm.get('contraseña')!.value;
     const confContraseña: string = this.myForm.get('confContraseña')!.value;
@@ -76,8 +75,6 @@ export class Frame5Component implements OnInit {
         contraseña: this.myForm.get('contraseña')!.value,
         role:r,
       };
-
-    
 
       this.clienteService.addCliente(cliente).subscribe({
         next: (data) => {

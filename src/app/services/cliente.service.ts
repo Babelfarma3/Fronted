@@ -16,15 +16,15 @@ export class ClienteService {
   }
 
   getClienteId(id: any) {
-    return this.http.get<Cliente>(`${this.basePath}/clientes/${id}`);
+    return this.http.get<Cliente>(`${this.basePath}/clientes/id/${id}`);
   }
 
   getClienteDni(dni: any){
-    return this.http.get<Cliente>(`${this.basePath}/clientes/${dni}`);
+    return this.http.get<Cliente>(`${this.basePath}/clientes/dni/${dni}`);
   }
 
   getClienteSexo(sexo: string){
-    return this.http.get<Cliente>(`${this.basePath}/clientes/${sexo}`);
+    return this.http.get<Cliente>(`${this.basePath}/clientes/sexo/${sexo}`);
   }
 
   addCliente(cliente: Cliente){

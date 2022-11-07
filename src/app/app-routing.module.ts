@@ -48,7 +48,7 @@ const routes: Routes = [
   {path: 'RutaFarmacia', component: Frame17Component}, 
   {path: 'RecuperaCuenta', component: Frame9Component},
   {path: 'CompraFinalizada', component: Frame19Component},
-  {path: 'ActualizarDatosCliente', component: ActualizarclienteComponent},
+  {path: 'ActualizarDatosCliente/:id', component: ActualizarclienteComponent},
   {path: 'ActualizarDatosFarmacia', component: ActualizarfarmaciaComponent},
   {path: 'ClientesDeFarmacia', component: ClientesfarmciaComponent},
   {path: 'VentasDeFarmacia', component: FarmaciaventasComponent},
