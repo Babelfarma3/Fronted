@@ -9,4 +9,5 @@ export class Farmacia {
     telefonoContacto: number = 0;
     distrito: any;
     contraseña: string = '';
+    role: any;
 }
