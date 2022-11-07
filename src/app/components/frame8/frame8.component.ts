@@ -64,12 +64,13 @@ export class Frame8Component implements OnInit {
 
   validate():void{
 
+    var x:number=0;
     let c= this.myForm.get('correo')!.value;
     let p= this.myForm.get('contraseña')!.value;
 
 
-    for(const element of this.clientes) {
-      
+    for(const element of this.clientes) 
+    {
       if(element.correo==c && element.contraseña==p && element.role.id==2)
       {
         this.idClienteIngresado=element.id
@@ -77,14 +78,32 @@ export class Frame8Component implements OnInit {
           duration: 3000,
         });
         this.router.navigate(['/Comprador']);
+        break;
       }
-      else{
+      x++;
+    }
+
+    for(const f of this.farmacias) {
+      if(f.correoContacto==c && f.contraseña==p && f.role.id==1)
+      {
+        this.idFarmaciaIngresada=f.id
+        this.snackBar.open('Ingreso exitoso', '', {
+          duration: 3000,
+        });
+        this.router.navigate(['/Farmacia']);
+        break;
+      }
+       x++;
+    }
+
+    if(x==this.farmacias.length+this.clientes.length)
+    {
+      
         this.snackBar.open('Datos ingresados incorrectos', '', {
           duration: 3000,
         });  
-      }
+     
     }
-
 
 }
 
