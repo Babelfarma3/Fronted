@@ -50,6 +50,7 @@ export class Frame6Component implements OnInit {
       correoContacto: ['', [Validators.required]],
       telefonoContacto: ['', [Validators.required]],
       contraseña: ['', [Validators.required]],
+      confContraseña:['', [Validators.required]]
     })
   }
   saveFarmacia(){
@@ -81,7 +82,7 @@ export class Frame6Component implements OnInit {
           this.snackBar.open('Se ha registrado correctamente', '', {
             duration: 3000
           });
-          this.router.navigate(['/Farmacia']);
+          this.router.navigate(['/Login']);
         },
         error:(err)=>{
           console.log(err);
