@@ -73,7 +73,7 @@ export class Frame5Component implements OnInit {
       fechaNacimiento: this.myForm.get('fechaNacimiento')!.value,
       direccion: this.myForm.get('direccion')!.value,
       distrito:d,
-      contrasenia: this.myForm.get('contraseña')!.value,
+      contraseña: this.myForm.get('contraseña')!.value,
       role:r
     };
 
@@ -84,7 +84,7 @@ export class Frame5Component implements OnInit {
         this.snackBar.open('El cliente fue registrado con exito!', '', {
           duration: 3000,
         });
-        this.router.navigate(['/Registro']);
+        this.router.navigate(['/Login']);
       },
       error: (err) => {
         console.log(err);
