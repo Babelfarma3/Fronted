@@ -52,6 +52,12 @@ body{
     padding: 1.3rem 1rem;
 }
 
+.select{
+    background-color: lightgray;
+    border-radius: .2rem;
+    padding: 0.4rem;
+}
+
 .register-bg{
     background-image: url('/assets/img/logo.png');
     background-repeat: no-repeat;

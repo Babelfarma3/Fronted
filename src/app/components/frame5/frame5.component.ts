@@ -17,7 +17,6 @@ export class Frame5Component implements OnInit {
   myForm!: FormGroup;
   idDistrito!: number;
   distritos!: Distrito[];
-  idUsuario!:number;
 
   constructor(
     private fb: FormBuilder,
@@ -47,58 +46,61 @@ export class Frame5Component implements OnInit {
       direccion: ['', [Validators.required]],
       contraseña: ['', [Validators.required]],
       distrito: ['', [Validators.required]],
-
-
+      confContraseña: ['', [Validators.required]],
     });
   }
 
 
   saveCliente(){
-    let r = new Role();
-    r.id= 2;
+    const contraseña: string = this.myForm.get('contraseña')!.value;
+    const confContraseña: string = this.myForm.get('confContraseña')!.value;
+    if(contraseña == confContraseña){
+      let r = new Role();
+      r.id= 2;
 
-    let d= new Distrito();
-    d.id= this.idDistrito;
+      let d= new Distrito();
+      d.id= this.idDistrito;
+
+      const cliente: Cliente = {
+        id: 0,
+        dni: this.myForm.get('dni')!.value,
+        nombres: this.myForm.get('nombres')!.value,
+        apellidoPaterno: this.myForm.get('apellidoPaterno')!.value,
+        apellidoMaterno: this.myForm.get('apellidoMaterno')!.value,
+        sexo: this.myForm.get('sexo')!.value,
+        correo: this.myForm.get('correo')!.value,
+        celular: this.myForm.get('celular')!.value,
+        fechaNacimiento: this.myForm.get('fechaNacimiento')!.value,
+        direccion: this.myForm.get('direccion')!.value,
+        distrito:d,
+        contraseña: this.myForm.get('contraseña')!.value,
+        role:r,
+      };
 
     
-    const cliente: Cliente = {
-      id: 0,
-      dni: this.myForm.get('dni')!.value,
-      nombres: this.myForm.get('nombres')!.value,
-      apellidoPaterno: this.myForm.get('apellidoPaterno')!.value,
-      apellidoMaterno: this.myForm.get('apellidoMaterno')!.value,
-      sexo: this.myForm.get('sexo')!.value,
-      correo: this.myForm.get('correo')!.value,
-      celular: this.myForm.get('celular')!.value,
-      fechaNacimiento: this.myForm.get('fechaNacimiento')!.value,
-      direccion: this.myForm.get('direccion')!.value,
-      distrito:d,
-      contraseña: this.myForm.get('contraseña')!.value,
-      role:r
-    };
 
-  
-
-    this.clienteService.addCliente(cliente).subscribe({
-      next: (data) => {
-        this.snackBar.open('El cliente fue registrado con exito!', '', {
-          duration: 3000,
-        });
-        this.router.navigate(['/Login']);
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-
-
+      this.clienteService.addCliente(cliente).subscribe({
+        next: (data) => {
+          this.snackBar.open('El cliente fue registrado con exito!', '', {
+            duration: 3000,
+          });
+          this.router.navigate(['/Login']);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+    }
+    else{
+      this.snackBar.open('Las contraseñas ingresadas no coinciden', '',{
+        duration: 5000,
+      });
+    }
   }
 
   getDistritos(): void{
     this.distritoService.getDistrito().subscribe((data: Distrito[]) => {
       this.distritos=data;
-
-  });
-
+    });
   }
 }
