@@ -14,6 +14,17 @@ body{
     letter-spacing:.05rem ;
 }
 
+.box{
+    background-color: lightgray;
+    border: 1px solid var(--color-dark-xx);
+    border-radius: .2rem;
+    padding: 1rem;
+    color: black;
+    width: 100%;
+    font-size: 15px;
+    height: 50px;
+}
+
 .bg-light{
     background-color: var(--color-grey)!important;
 
@@ -28,9 +39,12 @@ body{
 }
 
 .contact-box{
-    padding: 0rem;
+
+    padding: auto;
     background-image: url('/assets/img/fondo.png');
     background-size: cover;
+    padding: 0rem;
+
 }
 
 .btn{
@@ -62,4 +76,5 @@ body{
     background-image: url('/assets/img/logo.png');
     background-repeat: no-repeat;
     background-position: center;
+    
 }

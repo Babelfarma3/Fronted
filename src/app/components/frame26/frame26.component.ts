@@ -27,7 +27,7 @@ export class Frame26Component implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
   ){
-
+    this.loadProducto();
   }
 
   ngOnInit(): void {
