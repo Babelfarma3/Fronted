@@ -1,6 +1,6 @@
 import { DistritoService } from './../../services/distrito.service';
 import { Distrito } from './../../models/distrito';
-import { Form, FormGroup } from '@angular/forms';
+import { Form, FormGroup, FormBuilder } from '@angular/forms';
 import { NavbarcompradorComponent } from './../navbarcomprador/navbarcomprador.component';
 import { FarmaciaService } from './../../services/farmacia.service';
 import { Farmacia } from './../../models/farmacia';
@@ -23,16 +23,27 @@ export class MostrarfarmaciasComponent implements OnInit {
   constructor(
     private distritoService: DistritoService,
     private farmaciaService: FarmaciaService,
-  ) { }
+    private fb: FormBuilder
+  ) { 
+    this.reactiveForm();
+  }
 
   ngOnInit(): void {
     this.getProducts(),
     this.getDistritos()
   }
 
+  reactiveForm() {
+    this.MyForm = this.fb.group({
+      nombreEstablecimiento: [''],
+      direccion: [''],
+      distrito: [''],
+    })
+  }
+
 
   getProducts(){
-  
+    this.reactiveForm();
     
     this.farmaciaService.getFarmacias().subscribe((data: Farmacia[]) => {
       this.farmacias = data;
@@ -46,6 +57,21 @@ export class MostrarfarmaciasComponent implements OnInit {
   }
 
   search() {
+    if (this.tabGroup.selectedIndex == 0) {
+      let nombreEstablecimiento = this.MyForm.value['nombreEstablecimiento'];
+      this.farmaciaService.getFarmaciaNombre(nombreEstablecimiento).subscribe((data)=>{
+        this.farmacias=data;
+      })
+    } 
+    else
+    if (this.tabGroup.selectedIndex == 1) {
+      let direccion = this.MyForm.value['direccion'];
+      this.farmaciaService.getFarmaciaDireccion(direccion).subscribe((data)=>{
+        this.farmacias=data;
+      })
+    } 
+    else
+
     if (this.tabGroup.selectedIndex == 2) {
       let distrito = this.nombreDistrito;
       this.farmaciaService.getFarmaciaDistrito(distrito).subscribe((data)=>{

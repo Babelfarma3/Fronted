@@ -19,11 +19,11 @@ export class FarmaciaService {
   }
 
   getFarmaciaDireccion(direccion: string){
-    return this.http.get<Farmacia>(`${this.basePath}/farmacias/${direccion}`);
+    return this.http.get<Farmacia[]>(`${this.basePath}/farmacias/buscardireccion/${direccion}`);
   }
 
   getFarmaciaNombre(nombre: string){
-    return this.http.get<Farmacia>(`${this.basePath}/farmacias/${nombre}`);
+    return this.http.get<Farmacia[]>(`${this.basePath}/farmacias/buscarnombrefarmacia/${nombre}`);
   }
 
   getFarmaciaDistrito(distrito: string){
