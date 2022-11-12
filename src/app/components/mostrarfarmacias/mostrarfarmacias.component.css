@@ -5,6 +5,10 @@ body {
     background-attachment: fixed;
 }
 
+.Mat_tab_options{
+    background: white;
+    padding: 0 20px;
+}
 .card {
 	background-color: white;
     border-style:groove;

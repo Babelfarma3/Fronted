@@ -1,7 +1,31 @@
 <body>
 	<app-navbarcomprador></app-navbarcomprador>
-	<div class="container">
-
+	
+		<form [formGroup]="MyForm" (submit)="search()" class="Mat_tab_options">
+			<mat-tab-group #tab>
+			  <mat-tab label="Buscar por nombre de establecimiento">
+				<mat-form-field>
+				  <input matInput placeholder="Nombre de establecimiento" formControlName="nombreEstablecimiento" />
+				</mat-form-field>
+			</mat-tab>
+			<mat-tab label="Buscar por dirección">
+				<mat-form-field>
+				  <input matInput placeholder="Dirección" formControlName="direccion" />
+				</mat-form-field>
+			</mat-tab>
+			<mat-tab label="Buscar por distrito">
+				<mat-form-field>
+					<mat-select class="select" formControlName="distrito" placeholder="Seleccione su distrito"  [(value)]="nombreDistrito" required>
+						<mat-option *ngFor="let element of distritos" [value]="element.nombreDistrito">
+						  {{element.nombreDistrito}}
+						</mat-option>
+					  </mat-select>
+				</mat-form-field>
+			</mat-tab>
+		</mat-tab-group>
+		<button mat-raised-button color="primary" type="submit">Buscar</button>
+		</form>
+		<div class="container">
 		<mat-card *ngFor="let element of farmacias" class="card">
 			<mat-card-title class="card_title">{{element.nombreEstablecimiento}} </mat-card-title>
 			<div class="info_general">

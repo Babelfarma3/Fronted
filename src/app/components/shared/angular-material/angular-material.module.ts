@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {FormsModule} from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 @NgModule({
   declarations: [],
@@ -36,7 +38,8 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     MatAutocompleteModule,
     MatSlideToggleModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule
   ],
   exports:[
     MatToolbarModule, 
@@ -54,7 +57,8 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     MatAutocompleteModule,
     MatSlideToggleModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule
 
 ]
 })

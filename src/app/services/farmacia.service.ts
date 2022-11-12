@@ -27,7 +27,7 @@ export class FarmaciaService {
   }
 
   getFarmaciaDistrito(distrito: string){
-    return this.http.get<Farmacia>(`${this.basePath}/farmacias/${distrito}`);
+    return this.http.get<Farmacia[]>(`${this.basePath}/farmacias/buscarpordistrito/${distrito}`);
   }
 
   getFarmaciaProductos(producto: string){
