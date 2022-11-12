@@ -1,3 +1,5 @@
+import { Distrito } from './../../models/distrito';
+import { DistritoService } from './../../services/distrito.service';
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 @Component({
@@ -8,8 +10,18 @@ import {FormControl} from '@angular/forms';
 
 export class NavbarcompradorComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor(private distritoService: DistritoService) { 
+   
+  }
 
   ngOnInit(): void {
+   
   }
+
+  
+
+
+
 }
