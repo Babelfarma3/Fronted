@@ -26,8 +26,8 @@ export class ProductService {
     return this.http.get<Product>(`${this.basePath}/productos/${stock}`);
   }
 
-  getProductoPrecio(precio: any){
-    return this.http.get<Product>(`${this.basePath}/productos/${precio}`);
+  getProductoPrecio(){
+    return this.http.get<Product[]>(`${this.basePath}/productos/precio`);
   }
 
   addProduct(product: Product) {

@@ -43,7 +43,7 @@ export class Frame13Component implements OnInit {
 
   getProducts(){
     this.reactiveForm();
-    this.productService.getProducts().subscribe((data: Product[]) => {
+    this.productService.getProductoPrecio().subscribe((data: Product[]) => {
       this.products = data;
     });
   }
