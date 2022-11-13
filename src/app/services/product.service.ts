@@ -15,11 +15,11 @@ export class ProductService {
   }
 
   getProductoNombre(nombre: string){
-    return this.http.get<Product>(`${this.basePath}/productos/${nombre}`);
+    return this.http.get<Product[]>(`${this.basePath}/productos/nombre/${nombre}`);
   }
 
   getProductoCategoria(categoria: string){
-    return this.http.get<Product>(`${this.basePath}/productos/${categoria}`);
+    return this.http.get<Product[]>(`${this.basePath}/productos/categoria/${categoria}`);
   }
 
   getProductoStock(stock: any){

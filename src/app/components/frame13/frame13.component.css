@@ -22,6 +22,16 @@ body {
     padding-bottom: 5px;
 }
 
+.tab__button{
+    margin: 0 10px;
+}
+
+.Mat_tab_options{
+    background: white;
+    padding: 0 20px;
+}
+
+
 .container{
 	background-image: url('/assets/img/fondo.png');
     background-size: cover;
@@ -84,5 +94,6 @@ body {
         width: 50%;
         height: 100px;
     }
-	
+
+   
   }

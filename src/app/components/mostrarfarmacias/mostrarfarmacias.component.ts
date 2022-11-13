@@ -29,7 +29,7 @@ export class MostrarfarmaciasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getProducts(),
+    this.getFarmacias(),
     this.getDistritos()
   }
 
@@ -42,7 +42,7 @@ export class MostrarfarmaciasComponent implements OnInit {
   }
 
 
-  getProducts(){
+  getFarmacias(){
     this.reactiveForm();
     
     this.farmaciaService.getFarmacias().subscribe((data: Farmacia[]) => {

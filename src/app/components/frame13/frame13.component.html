@@ -1,6 +1,28 @@
 
 <body>
 	<app-navbarcomprador></app-navbarcomprador>
+
+	<form [formGroup]="MyForm" class="Mat_tab_options">
+		<mat-tab-group #tab>
+		  <mat-tab label="Buscar por nombre del producto">
+			<mat-form-field>
+			  <input matInput placeholder="Nombre del producto" formControlName="nombre" />
+			</mat-form-field>
+		</mat-tab>
+		<mat-tab label="Buscar por categoría">
+			<mat-form-field>
+				<mat-select class="select" formControlName="categoria" placeholder="Seleccione su categoría"  [(value)]="nombreCategoria" required>
+					<mat-option *ngFor="let element of categorias" [value]="element.categoria">
+					  {{element.categoria}}
+					</mat-option>
+				  </mat-select>
+			</mat-form-field>
+		</mat-tab>
+	</mat-tab-group>
+	<button class="tab__button" mat-raised-button color="primary" type="submit" (click)="search()">Buscar</button>
+	<button class="tab__button" mat-raised-button color="primary" (click)="getProducts()">Borrar filtros</button>
+	</form>
+
 	<div class="container">
 
 		<mat-card *ngFor="let element of products" class="card">
