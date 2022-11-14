@@ -11,61 +11,54 @@ body{
     font-size: 25px;
 }
 
-img{
-    width: 30%;
-    height: auto;
-}
-.contenedor{
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
-    text-align: center;
-}
-
-.carta{
-    display: flex;
-}
-
-.right{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-
-mat-card{
-    background-color: white;
-    width: 100%;
-    height: auto;
-    margin-top: 100px;
-   
-}
-
 .producto{
+    margin-bottom: 30px;
+    background-color: aqua;
     font-size: 15px;
     font-weight: bolder;
 }
+
+
+mat-card{
+    margin-top: 100px;
+}
+
+.mat_card_container{
+    background-color: white;
+    width: 100%;
+    height: auto;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+
+.right{
+   width: 60%;
+}
+
+.left{
+    width: 40%;
+   
+}
+
+.distrito{
+    text-align: center;
+}
+
+
+
+
 
 .example-h2 {
     margin: 10px;
   }
   
-  .example-section {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    height: 60px;
-  }
   
   .example-margin {
     margin: 10px;
   }
 
-.normal{
-    font-size: 15px;
-    font-weight: bolder;
-}
+
 .box{
     border-radius: .2rem;
     padding: 1rem;

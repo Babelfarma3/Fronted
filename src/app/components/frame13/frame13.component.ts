@@ -1,10 +1,11 @@
+import { CarritoDeComprasService } from './../../services/carrito-de-compras.service';
 import { MatTabGroup } from '@angular/material/tabs';
 import { CategoriaService } from './../../services/categoria.service';
 import { Categoria } from './../../models/categoria';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ProductService } from './../../services/product.service';
 import { Product } from './../../models/product';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-frame13',
@@ -18,7 +19,6 @@ export class Frame13Component implements OnInit {
   products!:Product[];
   nombreCategoria!:string;
   productosCarrito:Product[]=[];
-  productoParaCarrito:Product = new Product();
   
   
   @ViewChild('tab') tabGroup!: MatTabGroup;
@@ -26,7 +26,8 @@ export class Frame13Component implements OnInit {
   constructor(
     private productService: ProductService,
     private categoriaService: CategoriaService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private carritoService: CarritoDeComprasService,
   ) { }
 
   ngOnInit(): void {
@@ -79,7 +80,9 @@ export class Frame13Component implements OnInit {
       this.productosCarrito.push(data);
     })
 
-    console.log(this.productosCarrito)
+
+
+    this.carritoService.setproductosCarrito(this.productosCarrito);
         
   }
 

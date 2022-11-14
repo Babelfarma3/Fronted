@@ -4,17 +4,24 @@
         <div class="carta">
             <mat-card>
                 <p class="title">Babel Farma</p>
+                <div class="mat_card_container">
                 <div class="right">
-                   <img src="/assets/img/panadolrosa.png">
+                 
                     <div class="contenido">
-                        <p class="producto">Panadol 100mg/ml Solución oral gotas</p>
+                        <div class="producto" *ngFor="let element of productosCarrito">
+                            <p class="producto">{{element.nombre}}</p>
                         <br>
-                        <p class="normal">Frasco 15 ML</p>
+                        <p class="normal">{{element.descripcion}}</p>
                         <p class="normal">Cantidad: 1</p>
                         <br>
                         <p class="normal">Vendido por Farmacia Angel</p>
-                    </div>
-                    <div style="display:inline-block; margin: auto; ">
+                        </div>
+                        
+                    </div >
+                </div>
+                
+                <div class="left">
+                    <div  class="opciones">
                         <div style="display:flex; margin-top: 3%;">
                             <button mat-raised-button class="boton" routerLink="/RutaFarmacia">Recojo en tienda</button>
                             <button mat-raised-button class="boton" id="verificar2">Compra Online</button>
@@ -29,18 +36,17 @@
                             [disabled]="disabled">
                         </div>
                         <div style="display:flex; margin-top: 3%;">
-                            <label class="distrito" >Distrito</label>
+                            <label class="distrito">Distrito</label>
                             <select
                             [disabled]="disabled"  name="distrito" class="box" id="distrito" placeholder="Ingresa tu distrito">
                                 <option>Lince</option>
                                 <option>El Agustino</option>
                             </select>
                         </div>
-
-                        
-
                     </div>
                 </div>
+
+            </div>
                 <hr>
                 <p class="normal">Subtotal: &nbsp; &nbsp; &nbsp; S/ 15.40</p>
             </mat-card>
