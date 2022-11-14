@@ -76,10 +76,13 @@ export class Frame13Component implements OnInit {
   AgregarAlCarrito(number: number): void{
 
     this.productService.getProductId(number).subscribe((data)=>{
-      this.productoParaCarrito=data;
+      this.productosCarrito.push(data);
     })
+
+    console.log(this.productosCarrito)
         
   }
 
+ 
 
 }
