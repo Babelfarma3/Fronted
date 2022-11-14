@@ -17,7 +17,10 @@ export class Frame13Component implements OnInit {
   categorias!: Categoria[];
   products!:Product[];
   nombreCategoria!:string;
-
+  productosCarrito:Product[]=[];
+  productoParaCarrito:Product = new Product();
+  
+  
   @ViewChild('tab') tabGroup!: MatTabGroup;
 
   constructor(
@@ -69,6 +72,14 @@ export class Frame13Component implements OnInit {
       })
     } 
   }
-  
+
+  AgregarAlCarrito(number: number): void{
+
+    this.productService.getProductId(number).subscribe((data)=>{
+      this.productoParaCarrito=data;
+    })
+        
+  }
+
 
 }
