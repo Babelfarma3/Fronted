@@ -93,3 +93,10 @@ hr {
     width: 40%;
     margin: auto;
 }
+
+
+.select{
+    padding: 10px;
+    border: 10px;
+    border-color: black;
+}

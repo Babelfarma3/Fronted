@@ -1,3 +1,5 @@
+import { DistritoService } from './../../services/distrito.service';
+import { Distrito } from './../../models/distrito';
 import { Product } from './../../models/product';
 import { CarritoDeComprasService } from './../../services/carrito-de-compras.service';
 import { Component, OnInit, Query, NgModule } from '@angular/core';
@@ -11,14 +13,29 @@ import {ThemePalette} from '@angular/material/core';
 export class Frame15Component implements OnInit {
   constructor(
     private carritoService: CarritoDeComprasService,
-  ) { }
+    private distritoService: DistritoService
+  ) {
+    this.getDistritos();
+   }
 
   productosCarrito:Product[]=[];
+  idDistrito!: number;
+  distritos!: Distrito[];
 
   ngOnInit(): void {
    this.productosCarrito=this.carritoService.getproductosCarrito();
-   console.log(this.productosCarrito)
   }
   checked = false;
   disabled = false;
+
+  vaciarCarrito(){
+    this.productosCarrito= []
+  }
+
+  getDistritos(): void{
+    this.distritoService.getDistrito().subscribe((data: Distrito[]) => {
+      this.distritos=data;
+    });
+  }
+
 }

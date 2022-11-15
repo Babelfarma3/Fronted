@@ -25,7 +25,7 @@
                         <div style="display:flex; margin-top: 3%;">
                             <button mat-raised-button class="boton" routerLink="/RutaFarmacia">Recojo en tienda</button>
                             <button mat-raised-button class="boton" id="verificar2">Compra Online</button>
-                            <button mat-raised-button class="boton1">Eliminar</button>
+                            <button mat-raised-button class="boton1" (click)="vaciarCarrito()">Eliminar</button>
                         </div>
                         <div style="display:flex; margin-top: 3%;">
                             <section class="example-section">
@@ -37,11 +37,11 @@
                         </div>
                         <div style="display:flex; margin-top: 3%;">
                             <label class="distrito">Distrito</label>
-                            <select
-                            [disabled]="disabled"  name="distrito" class="box" id="distrito" placeholder="Ingresa tu distrito">
-                                <option>Lince</option>
-                                <option>El Agustino</option>
-                            </select>
+                            <mat-select class="select example-margin" formControlName="distrito" placeholder="Seleccione su distrito"  [(value)]="idDistrito" required>
+                                <mat-option *ngFor="let element of distritos" [value]="element.id">
+                                  {{element.nombreDistrito}}
+                                </mat-option>
+                              </mat-select>
                         </div>
                     </div>
                 </div>
