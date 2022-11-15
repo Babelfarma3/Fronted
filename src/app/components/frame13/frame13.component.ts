@@ -77,7 +77,13 @@ export class Frame13Component implements OnInit {
   AgregarAlCarrito(number: number): void{
 
     this.productService.getProductId(number).subscribe((data)=>{
+      if(this.productosCarrito.length==0)
       this.productosCarrito.push(data);
+      else
+      if(this.ValidarSinRepeticion(data))
+      this.productosCarrito.push(data);
+
+    
     })
 
 
@@ -86,6 +92,17 @@ export class Frame13Component implements OnInit {
         
   }
 
- 
 
+  ValidarSinRepeticion(product: Product):boolean{
+   
+
+    if(this.productosCarrito)
+    for(let item of this.productosCarrito)
+    {
+      if(item.id==product.id)
+      return false;
+    }
+
+    return true;
+  }
 }
