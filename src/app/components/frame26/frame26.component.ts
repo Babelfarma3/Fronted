@@ -27,13 +27,15 @@ export class Frame26Component implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
   ){
-    this.loadProducto();
+   
   }
 
   ngOnInit(): void {
     this.loadProducto();
     this.getCategorias();
   }
+
+ 
 
   loadProducto(){
     this.idProduct = this.route.snapshot.params['id'];

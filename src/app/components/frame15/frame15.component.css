@@ -105,3 +105,14 @@ hr {
  font-weight: 900;
  font-size: 16px;
 }
+
+@media only screen and (max-width: 900px)
+{
+    .right{
+        width: 100%;
+    }
+
+    .left{
+        width: 100%;
+    }
+}

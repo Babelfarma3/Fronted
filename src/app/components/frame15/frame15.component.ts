@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { DistritoService } from './../../services/distrito.service';
 import { Distrito } from './../../models/distrito';
 import { Product } from './../../models/product';
@@ -11,22 +12,27 @@ import {ThemePalette} from '@angular/material/core';
   styleUrls: ['./frame15.component.css']
 })
 export class Frame15Component implements OnInit {
-  constructor(
-    private carritoService: CarritoDeComprasService,
-    private distritoService: DistritoService
-  ) {
-    this.getDistritos();
-   }
 
   productosCarrito:Product[]=[];
   idDistrito!: number;
   distritos!: Distrito[];
+
+  constructor(
+    private carritoService: CarritoDeComprasService,
+    private distritoService: DistritoService,
+    private fb: FormBuilder,
+  ) {
+    this.getDistritos();
+    
+   }
+
 
   ngOnInit(): void {
    this.productosCarrito=this.carritoService.getproductosCarrito();
   }
   checked = false;
   disabled = false;
+
 
   vaciarCarrito(){
     this.productosCarrito= []

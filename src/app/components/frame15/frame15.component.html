@@ -9,11 +9,11 @@
                  
                     <div class="contenido">
                         <div class="producto" *ngFor="let element of productosCarrito">
-                            <p class="producto">{{element.nombre}}</p>
+                            <h2>{{element.nombre}}</h2>
                         <br>
-                        <p class="normal">{{element.precio}}</p>
-                        <p class="normal">{{element.descripcion}}</p>
-                        <p class="normal">Cantidad: 1</p>
+                        <p class="normal">Precio: S/.{{element.precio}}</p>
+                        <p class="normal">Descripción: {{element.descripcion}}</p>
+                        <input type="number" class="cantidad" placeholder="Cantidad a comprar" value="1">
                         <br>
                         <p class="normal">Vendido por Farmacia Angel</p>
                         </div>
