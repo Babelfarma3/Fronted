@@ -53,7 +53,7 @@ button{
       .container__responsive ul li{
         width: 100%;
         border: 1px solid white;
-        background-color: rgba(109, 159, 253, 0.4);
+        background-color: rgba(109, 159, 253, 0.8);
         position: relative;
         left: -40px;
         text-align: center;
