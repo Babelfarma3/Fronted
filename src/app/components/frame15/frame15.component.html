@@ -38,7 +38,7 @@
                         </div>
                         <div style="display:flex; margin-top: 3%;">
                             <label class="distrito">Distrito</label>
-                            <mat-select class="select example-margin" formControlName="distrito" placeholder="Seleccione su distrito"  [(value)]="idDistrito" required>
+                            <mat-select class="select example-margin" placeholder="Seleccione su distrito"  [(value)]="idDistrito" required>
                                 <mat-option *ngFor="let element of distritos" [value]="element.id">
                                   {{element.nombreDistrito}}
                                 </mat-option>
