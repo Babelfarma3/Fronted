@@ -38,4 +38,16 @@ export class Frame15Component implements OnInit {
     });
   }
 
+  subtotal():number{
+
+    let x= 0;
+
+    this.productosCarrito.forEach(element => {
+      x+=element.precio;
+    });
+
+    return x;
+
+  }
+
 }
