@@ -1,3 +1,4 @@
+import { FarmaciaService } from './../../services/farmacia.service';
 import { CarritoDeComprasService } from './../../services/carrito-de-compras.service';
 import { MatTabGroup } from '@angular/material/tabs';
 import { CategoriaService } from './../../services/categoria.service';
@@ -19,6 +20,7 @@ export class Frame13Component implements OnInit {
   products!:Product[];
   nombreCategoria!:string;
   productosCarrito:Product[]=[];
+  nombreFarmacia:string = "";
   
   
   @ViewChild('tab') tabGroup!: MatTabGroup;
@@ -28,6 +30,7 @@ export class Frame13Component implements OnInit {
     private categoriaService: CategoriaService,
     private fb: FormBuilder,
     private carritoService: CarritoDeComprasService,
+    private farmaciaService: FarmaciaService,
   ) { }
 
   ngOnInit(): void {
@@ -56,6 +59,16 @@ export class Frame13Component implements OnInit {
     this.categoriaService.getCategorias().subscribe((data: Categoria[]) => {
       this.categorias=data;
     });
+  }
+
+  getFarmaciaByProducto(id: any): string{
+
+     this.farmaciaService.getFarmaciaByProductoId(id).subscribe((data)=>{
+      this.nombreFarmacia= data.nombreEstablecimiento;
+     });
+
+   
+    return this.nombreFarmacia;
   }
 
   search() {

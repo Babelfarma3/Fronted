@@ -26,6 +26,10 @@ export class FarmaciaService {
     return this.http.get<Farmacia[]>(`${this.basePath}/farmacias/buscardireccion/${direccion}`);
   }
 
+  getFarmaciaByProductoId(id: any){
+    return this.http.get<Farmacia>(`${this.basePath}/farmacias/buscarporproducto/${id}`);
+  }
+
   getFarmaciaNombre(nombre: string){
     return this.http.get<Farmacia[]>(`${this.basePath}/farmacias/buscarnombrefarmacia/${nombre}`);
   }
