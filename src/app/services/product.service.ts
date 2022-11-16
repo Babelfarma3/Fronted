@@ -30,9 +30,9 @@ export class ProductService {
     return this.http.get<Product[]>(`${this.basePath}/productos/precio`);
   }
 
-  addProduct(product: Product) {
+  addProduct(idFarmacia: any, product: Product) {
     return this.http.post<Product>(
-      `${this.basePath}/productos`,
+      `${this.basePath}/productosregistrados/${idFarmacia}`,
       product
     );
   }

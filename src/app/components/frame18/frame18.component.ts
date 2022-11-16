@@ -1,3 +1,4 @@
+import { FarmaciaService } from './../../services/farmacia.service';
 import { CategoriaService } from './../../services/categoria.service';
 import { Categoria } from './../../models/categoria';
 import { Component, OnInit } from '@angular/core';
@@ -55,7 +56,7 @@ export class Frame18Component implements OnInit {
       descripcion: this.myForm.get('descripcion')!.value,
       categoria: c,
     }
-    this.productService.addProduct(product).subscribe({
+    this.productService.addProduct(1,product).subscribe({
       next: (data)=>{
         this.snackBar.open('Producto registrado exitosamente','',{
           duration: 3000

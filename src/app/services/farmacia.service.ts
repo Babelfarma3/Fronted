@@ -10,6 +10,7 @@ export class FarmaciaService {
   basePath: string = environment.basePath;
   constructor(private http:HttpClient) { }
 
+
   getFarmacias(){
     return this.http.get<Farmacia[]>(`${this.basePath}/farmacias`);
   }
