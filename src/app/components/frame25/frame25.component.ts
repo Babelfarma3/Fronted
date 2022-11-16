@@ -1,3 +1,4 @@
+import { FarmaciaService } from './../../services/farmacia.service';
 import { getTestBed } from '@angular/core/testing';
 import { MatPaginator } from '@angular/material/paginator';
 import { ProductService } from './../../services/product.service';
@@ -18,7 +19,7 @@ export class Frame25Component implements OnInit {
 
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
   
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private farmaciaService: FarmaciaService) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -26,7 +27,7 @@ export class Frame25Component implements OnInit {
 
 
   getProducts() {
-    this.productService.getProducts()
+    this.productService.getProductoFarmacia(this.farmaciaService.getIdFarmacia())
     .subscribe((data: Product[])=>{
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;

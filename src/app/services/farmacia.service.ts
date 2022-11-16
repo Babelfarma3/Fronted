@@ -8,7 +8,10 @@ import { environment } from '../../environments/environment'
 })
 export class FarmaciaService {
   basePath: string = environment.basePath;
+  idFarmacia: any;
   constructor(private http:HttpClient) { }
+
+
 
 
   getFarmacias(){
@@ -49,4 +52,14 @@ export class FarmaciaService {
   deleteFarmacia(id: any){
     return this.http.delete<Farmacia>(`${this.basePath}/farmacias/${id}`);
   }
+
+  setIdFarmacia(id: any){
+    this.idFarmacia = id;
+  }
+
+  getIdFarmacia():any{
+    return this.idFarmacia;
+  }
+
+
 }

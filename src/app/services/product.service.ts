@@ -1,7 +1,9 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { Product } from './../models/product';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment'
+import { Portal } from '@angular/cdk/portal';
 
 @Injectable({
   providedIn: 'root'
@@ -48,4 +50,10 @@ export class ProductService {
   deleteProduct(id: any){
     return this.http.delete<Product>(`${this.basePath}/productos/${id}`);
   }
+
+  getProductoFarmacia(id: any){
+    return this.http.get<Product[]>(`${this.basePath}/productos/farmacia/${id}`);
+  }
+
+
 }

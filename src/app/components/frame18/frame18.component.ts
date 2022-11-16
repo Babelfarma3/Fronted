@@ -25,6 +25,7 @@ export class Frame18Component implements OnInit {
     private categoriaService: CategoriaService,
     private snackBar: MatSnackBar,
     private router: Router,
+    private farmaciaService: FarmaciaService
   ){ 
     this.reactiveForm();
     this.getCategorias();
@@ -56,7 +57,7 @@ export class Frame18Component implements OnInit {
       descripcion: this.myForm.get('descripcion')!.value,
       categoria: c,
     }
-    this.productService.addProduct(1,product).subscribe({
+    this.productService.addProduct(this.farmaciaService.getIdFarmacia(),product).subscribe({
       next: (data)=>{
         this.snackBar.open('Producto registrado exitosamente','',{
           duration: 3000

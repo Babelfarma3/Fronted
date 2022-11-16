@@ -87,6 +87,7 @@ export class Frame8Component implements OnInit {
       if(f.correoContacto==c && f.contraseña==p && f.role.id==1)
       {
         this.idFarmaciaIngresada=f.id
+        this.farmaciaService.setIdFarmacia(this.idFarmaciaIngresada);
         this.snackBar.open('Ingreso exitoso', '', {
           duration: 3000,
         });
