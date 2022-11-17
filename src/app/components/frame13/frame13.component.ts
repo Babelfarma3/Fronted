@@ -46,12 +46,30 @@ export class Frame13Component implements OnInit {
   }
 
 
+  processProductResponse(resp: any) {
+    const dateProduct: Product[] = [];
+
+    let listCProduct = resp;
+
+    listCProduct.forEach((element: Product) => {
+      element.picture = 'data:image/jpeg;base64,' + element.picture;
+      dateProduct.push(element);
+    });
+
+    this.products=dateProduct;
+  }
+
 
   getProducts(){
     this.reactiveForm();
-    this.productService.getProductoPrecio().subscribe((data: Product[]) => {
-      this.products = data;
-    });
+    this.productService.getProductoPrecio().subscribe(
+      (data)=>{
+        this.processProductResponse(data);
+      },
+      (error: any) => {
+        console.log('error en productos: ', error);
+      }
+    );
   }
 
   getCategorias(): void{

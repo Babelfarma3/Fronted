@@ -29,18 +29,14 @@ export class Frame25Component implements OnInit {
   getProducts() {
     this.productService.getProductoFarmacia(this.farmaciaService.getIdFarmacia()).subscribe(
       (data)=>{
-        console.log('respuesta de productos: ', data);
+        //console.log('respuesta de productos: ', data);
         this.processProductResponse(data);
       },
       (error: any) => {
         console.log('error en productos: ', error);
       }
     );
-    /*this.productService.getProductoFarmacia(this.farmaciaService.getIdFarmacia())
-    .subscribe((data: Product[])=>{
-      this.dataSource = new MatTableDataSource(data);
-      this.dataSource.paginator = this.paginator;
-    });*/
+  
   }
   
 

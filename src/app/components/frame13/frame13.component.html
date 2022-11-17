@@ -30,7 +30,9 @@
 		<mat-card *ngFor="let element of products" class="card">
 			<mat-card-title class="card_title">{{element.nombre}} </mat-card-title>
 			<div class="info_general">
+			
 			<div class="image_container">
+					<img  class="image" [src]="element.picture"/>
 			</div>
 			<div class="info">
 			<mat-card-content>Stock: {{element.stock}}</mat-card-content>
