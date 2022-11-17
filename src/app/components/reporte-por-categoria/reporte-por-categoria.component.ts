@@ -1,6 +1,6 @@
-import { Product } from './../../models/product';
-import { FarmaciaService } from './../../services/farmacia.service';
-import { ProductService } from './../../services/product.service';
+import { Product } from '../../models/product';
+import { FarmaciaService } from '../../services/farmacia.service';
+import { ProductService } from '../../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 
