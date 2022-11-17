@@ -61,6 +61,7 @@ export class Frame26Component implements OnInit {
           stock: [this.product.stock, [Validators.required]],
           descripcion: [this.product.descripcion, [Validators.required]],
           categoria: [this.product.categoria, [Validators.required]],
+          picture:[this.product.picture, [Validators.required]],
         })
       })
   }
@@ -73,6 +74,7 @@ export class Frame26Component implements OnInit {
       stock: this.myForm.get('stock')!.value,
       descripcion: this.myForm.get('descripcion')!.value,
       categoria: this.product.categoria,
+      picture: this.product.picture
     }
     this.productService.updateProduct(this.idProduct, product).subscribe({
       next: (data)=>{

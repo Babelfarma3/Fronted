@@ -12,7 +12,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./frame25.component.css']
 })
 export class Frame25Component implements OnInit {
-  displayedColumns: string[] = ['id', 'nombre', 'precio', 'stock', 'opciones'];
+  displayedColumns: string[] = ['id', 'nombre', 'precio', 'stock', 'picture', 'opciones'];
   dataSource = new MatTableDataSource<Product>();
 
   products!: Product[];
@@ -27,13 +27,38 @@ export class Frame25Component implements OnInit {
 
 
   getProducts() {
-    this.productService.getProductoFarmacia(this.farmaciaService.getIdFarmacia())
+    this.productService.getProductoFarmacia(this.farmaciaService.getIdFarmacia()).subscribe(
+      (data)=>{
+        console.log('respuesta de productos: ', data);
+        this.processProductResponse(data);
+      },
+      (error: any) => {
+        console.log('error en productos: ', error);
+      }
+    );
+    /*this.productService.getProductoFarmacia(this.farmaciaService.getIdFarmacia())
     .subscribe((data: Product[])=>{
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
-    });
+    });*/
   }
   
+
+  processProductResponse(resp: any) {
+    const dateProduct: Product[] = [];
+
+    let listCProduct = resp;
+
+    listCProduct.forEach((element: Product) => {
+      //element.category = element.category.name;
+      element.picture = 'data:image/jpeg;base64,' + element.picture;
+      dateProduct.push(element);
+    });
+
+    //set the datasource
+    this.dataSource = new MatTableDataSource<Product>(dateProduct);
+    this.dataSource.paginator = this.paginator;
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

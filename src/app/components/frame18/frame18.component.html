@@ -36,6 +36,23 @@
                                     {{element.categoria}}
                                 </mat-option>
                             </mat-select>
+                        
+                            <div>
+                                <mat-label> Foto: </mat-label>
+                                <label for="file-upload" class="subir"> Subir archivo </label>
+                        
+                                <input
+                                  id="file-upload"
+                                  accept="image/png, image/jpeg"
+                                  (change)="onFileChanged($event)"
+                                  type="file"
+                                  formControlName="picture"
+                                  class="input-file"
+                                />
+                                <span> {{ nameImg }}</span>
+                              </div>
+
+
 
                             <button 
                             class="btn btn-primary" 

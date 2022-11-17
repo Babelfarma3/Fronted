@@ -19,6 +19,9 @@ export class Frame18Component implements OnInit {
     myForm!: FormGroup;
     idCategoria!: number;
     categorias!: Categoria[];
+    selectedFile: any;
+    nameImg: string = '';
+
   constructor(
     private fb: FormBuilder,
     private productService: ProductService,
@@ -42,7 +45,15 @@ export class Frame18Component implements OnInit {
       stock: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       categoria: ['', [Validators.required]],
+      picture: ['', [Validators.required]]
     })
+  }
+
+  onFileChanged(event: any) {
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile);
+
+    this.nameImg = event.target.files[0].name;
   }
 
   saveProduct() {
@@ -55,9 +66,19 @@ export class Frame18Component implements OnInit {
       precio: this.myForm.get('precio')!.value,
       stock: this.myForm.get('stock')!.value,
       descripcion: this.myForm.get('descripcion')!.value,
-      categoria: c,
+      categoria: this.myForm.get('categoria')?.value,
+      picture: this.selectedFile,
     }
-    this.productService.addProduct(this.farmaciaService.getIdFarmacia(),product).subscribe({
+
+    const uploadImageData = new FormData();
+    uploadImageData.append('picture', product.picture, product.picture.name);
+    uploadImageData.append('nombre', product.nombre);
+    uploadImageData.append('precio', product.precio.toString());
+    uploadImageData.append('stock', product.stock.toString());
+    uploadImageData.append('descripcion', product.descripcion);
+    uploadImageData.append('categoryId', product.categoria);
+
+    this.productService.addProduct(this.farmaciaService.getIdFarmacia(), uploadImageData).subscribe({
       next: (data)=>{
         this.snackBar.open('Producto registrado exitosamente','',{
           duration: 3000
@@ -68,6 +89,19 @@ export class Frame18Component implements OnInit {
         console.log(err);
       }
     });
+
+
+    /*this.productService.addProduct(this.farmaciaService.getIdFarmacia(),product).subscribe({
+      next: (data)=>{
+        this.snackBar.open('Producto registrado exitosamente','',{
+          duration: 3000
+        });
+        this.router.navigate(['/ListaDeProductos']);
+      }, 
+      error:(err)=>{
+        console.log(err);
+      }
+    });*/
   }
 
   getCategorias(): void{

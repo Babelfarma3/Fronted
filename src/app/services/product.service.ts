@@ -32,8 +32,8 @@ export class ProductService {
     return this.http.get<Product[]>(`${this.basePath}/productos/precio`);
   }
 
-  addProduct(idFarmacia: any, product: Product) {
-    return this.http.post<Product>(
+  addProduct(idFarmacia: any, product: any) {
+    return this.http.post<Product[]>(
       `${this.basePath}/productosregistrados/${idFarmacia}`,
       product
     );
