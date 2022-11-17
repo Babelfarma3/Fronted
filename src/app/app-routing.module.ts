@@ -1,3 +1,4 @@
+import { ReportePorCategoriaComponent } from './components/reporte-por-categoria/reporte-por-categoria.component';
 import { MostrarfarmaciasComponent } from './components/mostrarfarmacias/mostrarfarmacias.component';
 import { BoletaComponent } from './components/boleta/boleta.component';
 import { FarmaciaventasComponent } from './components/farmaciaventas/farmaciaventas.component';
@@ -54,7 +55,8 @@ const routes: Routes = [
   {path: 'ClientesDeFarmacia', component: ClientesfarmciaComponent},
   {path: 'VentasDeFarmacia', component: FarmaciaventasComponent},
   {path: 'boleta', component: BoletaComponent},
-  {path:'MostrarFarmacias', component: MostrarfarmaciasComponent}
+  {path:'MostrarFarmacias', component: MostrarfarmaciasComponent},
+  {path:'ReporteCategoria', component: ReportePorCategoriaComponent}
 ];
 
 @NgModule({

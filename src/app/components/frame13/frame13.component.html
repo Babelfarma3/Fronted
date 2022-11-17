@@ -37,11 +37,11 @@
 			<mat-card-content>Precio: {{element.precio}}</mat-card-content>
 			<mat-card-content>Descripción: {{element.descripcion}}</mat-card-content>
 			<mat-card-content>Categoría: {{element.categoria.categoria}}</mat-card-content>
-			<mat-card-content>Vendido por: {{getFarmaciaByProducto(element.id)}} </mat-card-content>
+			<mat-card-content>Vendido por:</mat-card-content>
 			</div>
 			</div>
 			<div class="button_container">
-			<button class="button" (click)="getFarmaciaByProducto(element.id)">Agregar al carrito</button>
+			<button class="button" (click)="AgregarAlCarrito(element.id)">Agregar al carrito</button>
 			</div>
 		</mat-card>
 		

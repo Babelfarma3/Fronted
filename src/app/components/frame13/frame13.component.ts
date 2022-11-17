@@ -20,7 +20,6 @@ export class Frame13Component implements OnInit {
   products!:Product[];
   nombreCategoria!:string;
   productosCarrito:Product[]=[];
-  nombreFarmacia:string = "";
   
   
   @ViewChild('tab') tabGroup!: MatTabGroup;
@@ -61,14 +60,12 @@ export class Frame13Component implements OnInit {
     });
   }
 
-  getFarmaciaByProducto(id: any): string{
+  getFarmaciaByProducto(id: number): void {
 
      this.farmaciaService.getFarmaciaByProductoId(id).subscribe((data)=>{
-      this.nombreFarmacia= data.nombreEstablecimiento;
+
      });
 
-   
-    return this.nombreFarmacia;
   }
 
   search() {

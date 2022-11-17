@@ -33,6 +33,7 @@ import { ClientesfarmciaComponent } from './components/clientesfarmcia/clientesf
 import { FarmaciaventasComponent } from './components/farmaciaventas/farmaciaventas.component';
 import { BoletaComponent } from './components/boleta/boleta.component';
 import { MostrarfarmaciasComponent } from './components/mostrarfarmacias/mostrarfarmacias.component';
+import { ReportePorCategoriaComponent } from './components/reporte-por-categoria/reporte-por-categoria.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { MostrarfarmaciasComponent } from './components/mostrarfarmacias/mostrar
       FarmaciaventasComponent,
       BoletaComponent,
       MostrarfarmaciasComponent,
+      ReportePorCategoriaComponent,
 
   ],
   imports: [
