@@ -27,14 +27,26 @@ export class Frame26Component implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
   ){
-   
+    this.reactiveForm();
   }
 
   ngOnInit(): void {
+   
     this.loadProducto();
     this.getCategorias();
   }
 
+  reactiveForm(){
+    this.myForm = this.fb.group({
+      id: this.product,
+      nombre: ['', [Validators.required]],
+      precio: ['', [Validators.required, Validators.maxLength]],
+      stock: ['', [Validators.required]],
+      descripcion: ['', [Validators.required]],
+      categoria: ['', [Validators.required]],
+    }
+    )
+  }
  
 
   loadProducto(){

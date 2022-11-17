@@ -11,3 +11,10 @@ body{
     background-size: cover;
 
 }
+
+.chartContainer{
+    max-height: 500px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
