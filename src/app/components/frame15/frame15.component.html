@@ -7,25 +7,30 @@
                 <div class="mat_card_container">
                 <div class="right">
                  
-                    <div class="contenido">
-                        <div class="producto" *ngFor="let element of productosCarrito">
-                            <h2>{{element.nombre}}</h2>
+                <form [formGroup]="myForm" class="contenido" autocomplete="off">
+                <div class="producto" *ngFor="let element of productosCarrito;let indice = index">
+                    <div class="texto">
+                        <h2>{{element.nombre}}</h2>
                         <br>
                         <p class="normal">Precio: S/.{{element.precio}}</p>
                         <p class="normal">Descripción: {{element.descripcion}}</p>
-                        <input type="number" class="cantidad" placeholder="Cantidad a comprar" value="1">
+                        <input formControlName="cantidad" type="number" class="cantidad" placeholder="Cantidad a comprar" (change)="getSemisuma(indice)">
                         <br>
                         <p class="normal">Vendido por Farmacia Angel</p>
-                        </div>
+                    </div>
+                    <div class="button">
+                        <button mat-raised-button class="boton1" (click)="eliminarProducto(indice)">Eliminar</button>
+                    </div>
+                </div>
                         
-                    </div >
+                </form >
                 </div>
                 
                 <div class="left">
                     <div  class="opciones">
                         <div style="display:flex; margin-top: 3%;">
                             <button mat-raised-button class="boton" routerLink="/RutaFarmacia">Recojo en tienda</button>
-                            <button mat-raised-button class="boton" id="verificar2">Compra Online</button>
+                            <button mat-raised-button class="boton" id="verificar2" (click)="actualizarStock()">Compra Online</button>
                             <button mat-raised-button class="boton1" (click)="vaciarCarrito()">Eliminar</button>
                         </div>
                         <div style="display:flex; margin-top: 3%;">
