@@ -18,6 +18,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {FormsModule} from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 
+//paypal
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [],
@@ -39,7 +41,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatAutocompleteModule,
     MatSlideToggleModule,
     FormsModule,
-    MatTabsModule
+    MatTabsModule,
+    NgxPayPalModule
   ],
   exports:[
     MatToolbarModule, 
@@ -58,8 +61,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatAutocompleteModule,
     MatSlideToggleModule,
     FormsModule,
-    MatTabsModule
-
+    MatTabsModule,
+    NgxPayPalModule
 ]
 })
 export class AngularMaterialModule { }
