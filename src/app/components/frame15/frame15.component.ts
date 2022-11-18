@@ -61,16 +61,16 @@ export class Frame15Component implements OnInit {
     this.payPalConfig = {
       currency: 'USD',
       clientId: environment.clientId,
-      createOrderOnClient: (data) => <ICreateOrderRequest>{
+      createOrderOnClient: (data) => <ICreateOrderRequest><unknown>{
         intent: 'CAPTURE',
         purchase_units: [{
           amount: {
             currency_code: 'USD',
-            value: '9.99',
+            value: this.subtotalInDollars(),
             breakdown: {
               item_total: {
                 currency_code: 'USD',
-                value: '9.99'
+                value: this.subtotalInDollars()
               }
             }
           },
@@ -80,7 +80,7 @@ export class Frame15Component implements OnInit {
             category: 'DIGITAL_GOODS',
             unit_amount: {
               currency_code: 'USD',
-              value: '9.99',
+              value: this.subtotalInDollars(),
             },
           }]
         }]
@@ -148,6 +148,7 @@ export class Frame15Component implements OnInit {
     let cantidad = this.myForm.get('cantidad')!.value;
 
     this.cantidades[indice] = cantidad;
+    console.log(this.subtotalInDollars());
 
   }
 
@@ -177,6 +178,15 @@ export class Frame15Component implements OnInit {
       x += this.cantidades[i] * this.productosCarrito[i].precio;
 
     }
+    return x;
+  }
+
+  subtotalInDollars(): number {
+
+    var x=this.subtotal()/3.80;
+    
+    x=Number(x.toFixed(2));
+
     return x;
   }
 
@@ -212,3 +222,5 @@ export class Frame15Component implements OnInit {
 
   }
 }
+
+
