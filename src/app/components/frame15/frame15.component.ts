@@ -22,6 +22,7 @@ export class Frame15Component implements OnInit {
   subtotalb:any;
   cantidades: any[]=[];
   myForm!: FormGroup;
+  products: Product[]=[];
   
 
   constructor(
@@ -34,7 +35,7 @@ export class Frame15Component implements OnInit {
   ) {
     this.getDistritos();
     this.reactiveForm();
-    this.productosCarrito=this.carritoService.getproductosCarrito();
+    this.mostrarProc();
     this.recuperarValores()
     
    }
@@ -46,6 +47,26 @@ export class Frame15Component implements OnInit {
   }
   checked = false;
   disabled = false;
+
+  mostrarProc(){
+    this.productosCarrito=this.carritoService.getproductosCarrito();
+    this.processProductResponse(this.productosCarrito);
+  }
+
+
+  processProductResponse(resp: any) {
+    const dateProduct: Product[] = [];
+
+    let listCProduct = resp;
+
+    listCProduct.forEach((element: Product) => {
+      element.picture = 'data:image/jpeg;base64,' + element.picture;
+      dateProduct.push(element);
+    });
+
+    this.products=dateProduct;
+  }
+
 
   recuperarValores(){
     for(let i=0;i<this.productosCarrito.length;i++){

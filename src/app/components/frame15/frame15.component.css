@@ -12,15 +12,25 @@ body{
 }
 
 .producto{
-    margin: 2 2 2 2;
-    background-color: aqua;
+    background-color: #C4DFE6;
     font-size: 15px;
     font-weight: bolder;
+    border-radius: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
 }
 
+.carta{
+    margin: auto;
+    width: 80%;
+}
 
 mat-card{
     margin-top: 100px;
+}
+
+.opciones{
+    margin-top: 3%;
 }
 
 .mat_card_container{
@@ -102,8 +112,8 @@ hr {
 }
 
 .normal{
- font-weight: 900;
- font-size: 16px;
+    font-weight: 900;
+    font-size: 16px;
 }
 
 @media only screen and (max-width: 900px)

@@ -5,50 +5,35 @@
                 <mat-card>
                     <p class="title">Babel Farma</p>
                     <div class="mat_card_container">
-                    <div class="right">
                     
-                    <form [formGroup]="myForm" class="contenido" autocomplete="off">
-                    <div class="producto" *ngFor="let element of productosCarrito;let indice = index">
-                        <div class="texto">
-                            <h2>{{element.nombre}}</h2>
-                            <br>
-                            <p class="normal">Precio: S/.{{element.precio}}</p>
-                            <p class="normal">Descripción: {{element.descripcion}}</p>
-                            <input formControlName="cantidad" type="number" class="cantidad" placeholder="Cantidad a comprar" (change)="getSemisuma(indice)">
-                            <br>
-                            <p class="normal">Vendido por Farmacia Angel</p>
-                        </div>
-                        <div class="button">
-                            <button mat-raised-button class="boton1" (click)="eliminarProducto(indice)">Eliminar</button>
-                        </div>
-                    </div>
-                            
-                    </form >
+                    <div class="right">
+                            <form [formGroup]="myForm" class="contenido" autocomplete="off">
+                            <div class="producto" *ngFor="let element of productosCarrito;let indice = index">
+                                <div class="texto">
+                                    <h2>{{element.nombre}}</h2>
+                                    <br>
+                                    <p class="normal">Precio: S/.{{element.precio}}</p>
+                                    <p class="normal">Descripción: {{element.descripcion}}</p>
+                                    <input formControlName="cantidad" type="number" class="cantidad" placeholder="Cantidad a comprar" (change)="getSemisuma(indice)">
+                                    <br>
+                                    <p class="normal">Vendido por Farmacia Angel</p>
+                                </div>
+                                <div class="button">
+                                    <button mat-raised-button class="boton1" (click)="eliminarProducto(indice)">Eliminar</button>
+                                </div>
+                            </div>     
+                            </form >
                     </div>
                     
                     <div class="left">
                         <div  class="opciones">
-                            <div style="display:flex; margin-top: 3%;">
+                            <div style="display:flex; margin: auto; ">
                                 <button mat-raised-button class="boton" routerLink="/RutaFarmacia">Recojo en tienda</button>
                                 <button mat-raised-button class="boton" id="verificar2" (click)="actualizarStock()">Compra Online</button>
                                 <button mat-raised-button class="boton1" (click)="vaciarCarrito()">Eliminar</button>
                             </div>
-                            <div style="display:flex; margin-top: 3%;">
-                                <section class="example-section">
-                                    <mat-slide-toggle class="example-margin" id="envio" [(ngModel)]="disabled">Envío</mat-slide-toggle>
-                                </section>
-                            <input type="text" class="direccion" id="direccion" placeholder="Ingresar su dirección"
-                                [checked]="checked"
-                                [disabled]="disabled">
-                            </div>
-                            <div style="display:flex; margin-top: 3%;">
-                                <label class="distrito">Distrito</label>
-                                <mat-select class="select example-margin" placeholder="Seleccione su distrito"  [(value)]="idDistrito" required>
-                                    <mat-option *ngFor="let element of distritos" [value]="element.id">
-                                    {{element.nombreDistrito}}
-                                    </mat-option>
-                                </mat-select>
-                            </div>
+
+                            
                         </div>
                     </div>
 
