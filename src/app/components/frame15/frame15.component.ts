@@ -50,7 +50,7 @@ export class Frame15Component implements OnInit {
 
   mostrarProc(){
     this.productosCarrito=this.carritoService.getproductosCarrito();
-    this.processProductResponse(this.productosCarrito);
+    
   }
 
 
@@ -64,7 +64,7 @@ export class Frame15Component implements OnInit {
       dateProduct.push(element);
     });
 
-    this.products=dateProduct;
+    this.productosCarrito=dateProduct;
   }
 
 
