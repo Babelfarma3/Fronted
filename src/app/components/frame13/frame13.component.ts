@@ -89,16 +89,25 @@ export class Frame13Component implements OnInit {
   search() {
     if (this.tabGroup.selectedIndex == 0) {
       let nombreProducto = this.MyForm.value['nombre'];
-      this.productService.getProductoNombre(nombreProducto).subscribe((data)=>{
-        this.products=data;
-      })
+      this.productService.getProductoNombre(nombreProducto).subscribe(
+        (data)=>{
+        this.processProductResponse(data);
+      },
+      (error: any) => {
+        console.log('error en productos: ', error);
+      }
+      )
     } 
     else
     if (this.tabGroup.selectedIndex == 1) {
       let categoria = this.nombreCategoria;
       this.productService.getProductoCategoria(categoria).subscribe((data)=>{
-        this.products=data;
-      })
+        this.processProductResponse(data);
+      },
+      (error: any) => {
+        console.log('error en productos: ', error);
+      }
+      )
     } 
   }
 
