@@ -12,7 +12,7 @@ body{
 }
 
 .producto{
-    margin-bottom: 30px;
+    margin: 2 2 2 2;
     background-color: aqua;
     font-size: 15px;
     font-weight: bolder;
