@@ -31,6 +31,7 @@
                                 <button mat-raised-button class="boton" routerLink="/RutaFarmacia">Recojo en tienda</button>
                                 <button mat-raised-button class="boton" id="verificar2" (click)="actualizarStock()">Compra Online</button>
                                 <button mat-raised-button class="boton1" (click)="vaciarCarrito()">Eliminar</button>
+                                <ngx-paypal [config]="payPalConfig"></ngx-paypal>
                             </div>
 
                             
@@ -45,6 +46,5 @@
         </div>
         
     </div>
-
 
 </body>
