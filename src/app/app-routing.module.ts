@@ -39,12 +39,12 @@ const routes: Routes = [
   {path: 'Login', component: Frame8Component}, 
   {path: 'Contacatanos', component: Frame3Component},
   {path: 'Comprador', component: Frame11Component}, 
-  {path: 'ListaDeProductos', component: Frame25Component}, 
+  {path: 'ListaDeProductos/:id', component: Frame25Component}, 
   {path: 'Busqueda', component: Frame13Component}, 
   {path: 'Carrito', component: Frame14Component},
-  {path: 'RegistarProducto', component:Frame18Component},
-  {path: 'ActualizarProducto/:id', component:Frame26Component}, 
-  {path: 'Farmacia', component: Frame7Component},
+  {path: 'RegistarProducto/:id', component:Frame18Component},
+  {path: 'ActualizarProducto/:id/:idFarmacia', component:Frame26Component}, 
+  {path: 'Farmacia/:id', component: Frame7Component},
   {path: 'MedicamentosRecomendados', component: Frame22Component},
   {path: 'CarritoCompras', component: Frame15Component},
   {path: 'RutaFarmacia', component: Frame17Component}, 
@@ -56,7 +56,7 @@ const routes: Routes = [
   {path: 'VentasDeFarmacia', component: FarmaciaventasComponent},
   {path: 'boleta', component: BoletaComponent},
   {path:'MostrarFarmacias', component: MostrarfarmaciasComponent},
-  {path:'ReporteCategoria', component: ReportePorCategoriaComponent}
+  {path:'ReporteCategoria/:id', component: ReportePorCategoriaComponent}
 ];
 
 @NgModule({

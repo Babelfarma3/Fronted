@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarfarmaciaComponent implements OnInit {
 
-  constructor() { }
+  idFarmacia!:any;
+
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.loadId();
+  }
+
+
+  loadId(){
+    this.idFarmacia = this.route.snapshot.params['id'];
   }
 
 }

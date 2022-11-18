@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { FarmaciaService } from './../../services/farmacia.service';
 import { getTestBed } from '@angular/core/testing';
 import { MatPaginator } from '@angular/material/paginator';
@@ -16,10 +17,11 @@ export class Frame25Component implements OnInit {
   dataSource = new MatTableDataSource<Product>();
 
   products!: Product[];
+  idFarmacia!:any;
 
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
   
-  constructor(private productService: ProductService, private farmaciaService: FarmaciaService) { }
+  constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -27,7 +29,8 @@ export class Frame25Component implements OnInit {
 
 
   getProducts() {
-    this.productService.getProductoFarmacia(this.farmaciaService.getIdFarmacia()).subscribe(
+    this.idFarmacia = this.route.snapshot.params['id'];
+    this.productService.getProductoFarmacia(this.idFarmacia).subscribe(
       (data)=>{
         //console.log('respuesta de productos: ', data);
         this.processProductResponse(data);

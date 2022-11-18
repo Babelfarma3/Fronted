@@ -3,10 +3,10 @@
     <div class="columna">
         <div>
             <mat-chip-list >
-              <mat-chip class="opciones" routerLink="/Farmacia">
+              <mat-chip class="opciones" routerLink="/Farmacia/{{idFarmacia}}">
                 &nbsp;Inicio
               </mat-chip>
-                <mat-chip class="opciones" routerLink="/ReporteCategoria">
+                <mat-chip class="opciones" routerLink="/ReporteCategoria/{{idFarmacia}}">
                   Reporte por stock
                 </mat-chip>
                 <mat-chip class="opciones">
@@ -17,10 +17,10 @@
         </div>
         <div>
             <mat-chip-list >
-                <mat-chip class="opciones" routerLink="/RegistarProducto">
+                <mat-chip class="opciones" routerLink="/RegistarProducto/{{idFarmacia}}">
                   &nbsp;Registrar un producto
                 </mat-chip>
-                <mat-chip class="opciones" routerLink="/ListaDeProductos">
+                <mat-chip class="opciones" routerLink="/ListaDeProductos/{{idFarmacia}}">
                   &nbsp;Lista de productos
                 </mat-chip>
                 <mat-chip class="opciones" routerLink="/">

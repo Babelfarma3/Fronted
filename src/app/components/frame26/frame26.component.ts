@@ -18,6 +18,7 @@ export class Frame26Component implements OnInit {
   categorias!: Categoria[];
   product!: Product;
   idProduct!: any;
+  idFarmacia!:any;
 
   constructor(
     private fb: FormBuilder,
@@ -28,12 +29,17 @@ export class Frame26Component implements OnInit {
     private route: ActivatedRoute,
   ){
     this.reactiveForm();
+    this.loadId();
   }
 
   ngOnInit(): void {
    
     this.loadProducto();
     this.getCategorias();
+  }
+
+  loadId(){
+    this.idFarmacia = this.route.snapshot.params['idFarmacia'];
   }
 
   reactiveForm(){
@@ -79,7 +85,7 @@ export class Frame26Component implements OnInit {
     this.productService.updateProduct(this.idProduct, product).subscribe({
       next: (data)=>{
         this.snackBar.open('Producto actualizado exitosamente','',{duration: 3000});
-        this.router.navigate(['/ListaDeProductos']);
+        this.router.navigate([`/ListaDeProductos/${this.idFarmacia}`]);
       }, 
       error:(err)=>{
         console.log(err);

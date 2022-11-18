@@ -6,7 +6,7 @@ import { Product } from './../../models/product';
 import { ProductService } from './../../services/product.service';
 import { Form, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ThisReceiver } from '@angular/compiler';
 
@@ -21,6 +21,7 @@ export class Frame18Component implements OnInit {
     categorias!: Categoria[];
     selectedFile: any;
     nameImg: string = '';
+    idFarmacia!:any;
 
   constructor(
     private fb: FormBuilder,
@@ -28,13 +29,19 @@ export class Frame18Component implements OnInit {
     private categoriaService: CategoriaService,
     private snackBar: MatSnackBar,
     private router: Router,
-    private farmaciaService: FarmaciaService
+    private farmaciaService: FarmaciaService,
+    private route: ActivatedRoute
   ){ 
     this.reactiveForm();
     this.getCategorias();
+    this.loadId()
   }
 
   ngOnInit(): void {
+  }
+
+  loadId(){
+    this.idFarmacia = this.route.snapshot.params['id'];
   }
 
   reactiveForm() {
@@ -78,12 +85,12 @@ export class Frame18Component implements OnInit {
     uploadImageData.append('descripcion', product.descripcion);
     uploadImageData.append('categoryId', product.categoria);
 
-    this.productService.addProduct(this.farmaciaService.getIdFarmacia(), uploadImageData).subscribe({
+    this.productService.addProduct(this.idFarmacia, uploadImageData).subscribe({
       next: (data)=>{
         this.snackBar.open('Producto registrado exitosamente','',{
           duration: 3000
         });
-        this.router.navigate(['/ListaDeProductos']);
+        this.router.navigate([`/ListaDeProductos/${this.idFarmacia}`]);
       }, 
       error:(err)=>{
         console.log(err);

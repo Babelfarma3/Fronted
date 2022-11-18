@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../models/product';
 import { FarmaciaService } from '../../services/farmacia.service';
 import { ProductService } from '../../services/product.service';
@@ -11,11 +12,12 @@ import { Chart, registerables } from 'chart.js';
 })
 export class ReportePorCategoriaComponent implements OnInit {
 
-
+  idFarmacia!:any;
   chartdoughnut: any;
 
   constructor(private productService: ProductService,
-   private farmaciaService: FarmaciaService ) {
+    private route: ActivatedRoute
+  ) {
     Chart.register(...registerables)
    }
 
@@ -24,7 +26,8 @@ export class ReportePorCategoriaComponent implements OnInit {
   }
 
   getProducts(){
-    this.productService.getProductoFarmacia(this.farmaciaService.getIdFarmacia()).subscribe({
+    this.idFarmacia = this.route.snapshot.params['id'];
+    this.productService.getProductoFarmacia(this.idFarmacia).subscribe({
       next: (data)=>{
         this.processProductResponse(data);
       },
