@@ -14,7 +14,7 @@ export class ReportePorCategoriaComponent implements OnInit {
 
   idFarmacia!:any;
   chartdoughnut: any;
-  chartdoughnut1: any;
+  chartBar: any;
 
   constructor(private productService: ProductService,
     private route: ActivatedRoute
@@ -113,11 +113,11 @@ export class ReportePorCategoriaComponent implements OnInit {
         account.push(x);
       }
 
-      console.log(account);
+    
 
 
-    this.chartdoughnut = new Chart('canvas-doughnut1',{
-      type:'doughnut',
+    this.chartBar = new Chart('canvas-bar',{
+      type:'bar',
       data:{
         labels: nameUniqueCategories,
         datasets:[
