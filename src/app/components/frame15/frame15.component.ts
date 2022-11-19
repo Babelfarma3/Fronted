@@ -23,8 +23,8 @@ import { ThemePalette } from '@angular/material/core';
   styleUrls: ['./frame15.component.css']
 })
 export class Frame15Component implements OnInit {
-
-  public payPalConfig?: IPayPalConfig;
+  
+  public payPalConfig!: IPayPalConfig;
   productosCarrito: Product[] = [];
   idDistrito!: number;
   distritos!: Distrito[];
