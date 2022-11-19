@@ -219,7 +219,11 @@ export class Frame15Component implements OnInit {
           id:0,
           fecha: new Date(),
           cliente: c,
-          farmacia: data
+          farmacia: data,
+          producto: this.productosCarrito[i],
+          precioUnit: this.productosCarrito[i].precio,
+          cantidad: this.cantidades[i],
+          precioTotal: (this.productosCarrito[i].precio)* (this.cantidades[i]),
         }
         this.ventaService.addVenta(venta).subscribe(()=>{});
 
@@ -256,5 +260,3 @@ export class Frame15Component implements OnInit {
 
   }
 }
-
-
