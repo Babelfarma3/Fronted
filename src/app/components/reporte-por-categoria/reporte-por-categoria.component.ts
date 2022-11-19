@@ -14,6 +14,7 @@ export class ReportePorCategoriaComponent implements OnInit {
 
   idFarmacia!:any;
   chartdoughnut: any;
+  chartdoughnut1: any;
 
   constructor(private productService: ProductService,
     private route: ActivatedRoute
@@ -30,6 +31,7 @@ export class ReportePorCategoriaComponent implements OnInit {
     this.productService.getProductoFarmacia(this.idFarmacia).subscribe({
       next: (data)=>{
         this.processProductResponse(data);
+        this.processProductCategoryResponse(data);
       },
 
       error: (error) =>{
@@ -38,6 +40,7 @@ export class ReportePorCategoriaComponent implements OnInit {
 
     })
   }
+
 
   processProductResponse(resp: any) {
     const nameProduct: String[]= [];
@@ -75,7 +78,65 @@ export class ReportePorCategoriaComponent implements OnInit {
   
   }
 
-  
-  
+  processProductCategoryResponse(resp: any) {
+    const nameCategory: String[]= [];
+    const nameUniqueCategories: String[]=[];
+    const account: number[] = [];
+    var x=0;
 
+    let listCProduct= resp; 
+
+    
+    listCProduct.forEach((element:Product) => {
+      nameCategory.push(element.categoria.categoria);
+    });
+
+    for(let i = 0 ; i < nameCategory.length ; i++)
+    {
+      if(nameUniqueCategories.includes(nameCategory[i])){
+      
+      }
+      else{
+        nameUniqueCategories.push(nameCategory[i]);
+      }
+    }
+
+  
+      
+      for(let j = 0 ; j < nameUniqueCategories.length ; j++){
+        x=0;
+          for(let i = 0 ; i < listCProduct.length ; i++){
+            if(listCProduct[i].categoria.categoria==nameUniqueCategories[j]){
+              x+=listCProduct[i].stock;
+            }
+        }
+        account.push(x);
+      }
+
+      console.log(account);
+
+
+    this.chartdoughnut = new Chart('canvas-doughnut1',{
+      type:'doughnut',
+      data:{
+        labels: nameUniqueCategories,
+        datasets:[
+          {
+            label:'Categoría',
+            data:account,
+            borderColor: '#3cba8f',
+            backgroundColor:[
+              'rgba(255,99,132,0.9)',
+              'rgba(54,162,235,0.9)',
+              'rgba(255,206,86,0.9)',
+              'rgba(75,192,192,0.9)',
+              'rgba(153,102,0,0.9)',
+              'rgba(255,159,64,0.9)',
+            ]
+          }
+        ]
+      }
+    })
+  
+  }
 }
