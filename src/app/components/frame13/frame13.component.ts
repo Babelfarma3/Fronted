@@ -1,3 +1,4 @@
+import { Farmacia } from './../../models/farmacia';
 import { FarmaciaService } from './../../services/farmacia.service';
 import { CarritoDeComprasService } from './../../services/carrito-de-compras.service';
 import { MatTabGroup } from '@angular/material/tabs';
@@ -17,9 +18,10 @@ export class Frame13Component implements OnInit {
 
   MyForm!: FormGroup;
   categorias!: Categoria[];
-  products!:Product[];
+  products:Product[]=[];
   nombreCategoria!:string;
   productosCarrito:Product[]=[];
+  nombresFarmacias:string[]=[];
   
   
   @ViewChild('tab') tabGroup!: MatTabGroup;
@@ -51,14 +53,25 @@ export class Frame13Component implements OnInit {
 
     let listCProduct = resp;
 
+
     listCProduct.forEach((element: Product) => {
       element.picture = 'data:image/jpeg;base64,' + element.picture;
       dateProduct.push(element);
+      
+      this.farmaciaService.getFarmaciaByProductoId(element.id).subscribe((data:Farmacia)=>{
+        this.nombresFarmacias[element.id]=(data.nombreEstablecimiento);
+      })
+
     });
 
     this.products=dateProduct;
+    console.log(this.nombresFarmacias);
   }
 
+
+  returnNombreFarmacia(id:any): string{
+    return this.nombresFarmacias[id];
+  }
 
   getProducts(){
     this.reactiveForm();
