@@ -101,6 +101,8 @@ export class Frame15Component implements OnInit {
       },
       onClientAuthorization: (data) => {
         console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+        //aqui
+        this.actualizarStock(); 
       },
       onCancel: (data, actions) => {
         console.log('OnCancel', data, actions);
