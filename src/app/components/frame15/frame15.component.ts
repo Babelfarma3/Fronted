@@ -1,3 +1,7 @@
+import { Cliente } from './../../models/cliente';
+import { Farmacia } from './../../models/farmacia';
+import { VentaService } from './../../services/venta.service';
+import { Venta } from './../../models/venta';
 import { environment } from './../../../environments/environment';
 import { IPayPalConfig, ICreateOrderRequest } from './../../../../node_modules/ngx-paypal/lib/models/paypal-models.d';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -36,7 +40,8 @@ export class Frame15Component implements OnInit {
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private ventaService: VentaService
   ) {
     this.getDistritos();
     this.reactiveForm();
@@ -103,6 +108,7 @@ export class Frame15Component implements OnInit {
       onClientAuthorization: (data) => {
         console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
         //aqui
+        this.registrarVentas();
         this.actualizarStock(); 
       },
       onCancel: (data, actions) => {
@@ -197,6 +203,25 @@ export class Frame15Component implements OnInit {
     this.cantidades.splice(indice, 1);
     this.productosCarrito.splice(indice, 1);
 
+  }
+
+  registrarVentas(){
+    let c = new Cliente();
+    c.id= this.route.snapshot.params['id'];
+
+    let d= new Farmacia();
+    d.id= 1;
+    for (let i = 0; i < this.productosCarrito.length; i++) {
+      const venta:Venta={
+        id:0,
+        fecha: new Date(),
+        cliente: c,
+        farmacia: d
+      }
+
+      this.ventaService.addVenta(venta).subscribe(()=>{});
+
+    }
   }
 
   actualizarStock() {
