@@ -1,3 +1,4 @@
+import { FarmaciaService } from './../../services/farmacia.service';
 import { Cliente } from './../../models/cliente';
 import { Farmacia } from './../../models/farmacia';
 import { VentaService } from './../../services/venta.service';
@@ -36,6 +37,7 @@ export class Frame15Component implements OnInit {
   constructor(
     private carritoService: CarritoDeComprasService,
     private distritoService: DistritoService,
+    private farmaciaService: FarmaciaService,
     private productService: ProductService,
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
@@ -208,15 +210,19 @@ export class Frame15Component implements OnInit {
   registrarVentas(){
     let c = new Cliente();
     c.id= this.route.snapshot.params['id'];
-
-    let d= new Farmacia();
-    d.id= 1;
+    
+    
     for (let i = 0; i < this.productosCarrito.length; i++) {
+      let f= new Farmacia();
+      this.farmaciaService.getFarmaciaByProductoId(this.productosCarrito[i].id).subscribe((data)=>{
+        f.id=data.id;
+      });
+      
       const venta:Venta={
         id:0,
         fecha: new Date(),
         cliente: c,
-        farmacia: d
+        farmacia: f
       }
 
       this.ventaService.addVenta(venta).subscribe(()=>{});
