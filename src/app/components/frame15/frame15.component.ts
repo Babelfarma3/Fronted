@@ -215,17 +215,16 @@ export class Frame15Component implements OnInit {
     for (let i = 0; i < this.productosCarrito.length; i++) {
       let f= new Farmacia();
       this.farmaciaService.getFarmaciaByProductoId(this.productosCarrito[i].id).subscribe((data)=>{
-        f.id=data.id;
+        const venta:Venta={
+          id:0,
+          fecha: new Date(),
+          cliente: c,
+          farmacia: data
+        }
+        this.ventaService.addVenta(venta).subscribe(()=>{});
+
       });
       
-      const venta:Venta={
-        id:0,
-        fecha: new Date(),
-        cliente: c,
-        farmacia: f
-      }
-
-      this.ventaService.addVenta(venta).subscribe(()=>{});
 
     }
   }
