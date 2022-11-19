@@ -1,6 +1,6 @@
 import { environment } from './../../../environments/environment';
 import { IPayPalConfig, ICreateOrderRequest } from './../../../../node_modules/ngx-paypal/lib/models/paypal-models.d';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from './../../services/product.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
@@ -27,7 +27,7 @@ export class Frame15Component implements OnInit {
   cantidades: any[] = [];
   myForm!: FormGroup;
   products: Product[] = [];
-
+  idClienteIngresado!: any;
 
   constructor(
     private carritoService: CarritoDeComprasService,
@@ -36,6 +36,7 @@ export class Frame15Component implements OnInit {
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
     private router: Router,
+    private route: ActivatedRoute
   ) {
     this.getDistritos();
     this.reactiveForm();
@@ -199,6 +200,7 @@ export class Frame15Component implements OnInit {
   }
 
   actualizarStock() {
+    this.idClienteIngresado = this.route.snapshot.params['id'];
 
     for (let i = 0; i < this.productosCarrito.length; i++) {
 
@@ -214,7 +216,7 @@ export class Frame15Component implements OnInit {
       this.productService.updateProduct(this.productosCarrito[i].id, product).subscribe({
         next: (data) => {
           this.snackBar.open('Productos comprados con éxito', '', { duration: 3000 });
-          this.router.navigate(['/Busqueda']);
+          this.router.navigate([`/Busqueda/${this.idClienteIngresado}`]);
         },
         error: (err) => {
           console.log(err);

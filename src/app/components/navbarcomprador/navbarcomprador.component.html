@@ -3,10 +3,10 @@
     <div class="columna">
         <div class="c1">
           <mat-chip-list>
-          <mat-chip class="opciones" routerLink="/Comprador">
+          <mat-chip class="opciones" routerLink="/Comprador/{{idComprador}}">
            Inicio
           </mat-chip>
-          <mat-chip class="opciones" routerLink="/Busqueda">
+          <mat-chip class="opciones" routerLink="/Busqueda/{{idComprador}}">
           Buscar Productos
           </mat-chip>
           <mat-chip class="opciones" (click)="salir()">
@@ -17,11 +17,11 @@
         </div>
         <div>
             <mat-chip-list >
-                <mat-chip class="opciones" routerLink="/MedicamentosRecomendados">
+                <mat-chip class="opciones" routerLink="/MedicamentosRecomendados/{{idComprador}}">
                   <img matChipAvatar src="/assets/img/Bienestar.PNG" class="imagenes"/>
                   &nbsp;Medicamentos recomendados
                 </mat-chip>
-                <mat-chip class="opciones" routerLink="/MostrarFarmacias">
+                <mat-chip class="opciones" routerLink="/MostrarFarmacias/{{idComprador}}">
                   <img matChipAvatar src="/assets/img/farmacia.PNG" class="imagenes"/>
                   &nbsp;Farmacia
                 </mat-chip>
@@ -32,5 +32,5 @@
               </mat-chip-list>
         </div>
     </div>
-    <img src="/assets/img/compra.PNG" class="compra" routerLink="/CarritoCompras">
+    <img src="/assets/img/compra.PNG" class="compra" routerLink="/CarritoCompras/{{idComprador}}">
 </mat-toolbar>

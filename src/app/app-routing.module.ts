@@ -38,15 +38,15 @@ const routes: Routes = [
   {path: 'registroDueñoFarmacia', component: Frame6Component},
   {path: 'Login', component: Frame8Component}, 
   {path: 'Contacatanos', component: Frame3Component},
-  {path: 'Comprador', component: Frame11Component}, 
+  {path: 'Comprador/:id', component: Frame11Component}, 
   {path: 'ListaDeProductos/:id', component: Frame25Component}, 
-  {path: 'Busqueda', component: Frame13Component}, 
+  {path: 'Busqueda/:id', component: Frame13Component}, 
   {path: 'Carrito', component: Frame14Component},
   {path: 'RegistarProducto/:id', component:Frame18Component},
   {path: 'ActualizarProducto/:id/:idFarmacia', component:Frame26Component}, 
   {path: 'Farmacia/:id', component: Frame7Component},
-  {path: 'MedicamentosRecomendados', component: Frame22Component},
-  {path: 'CarritoCompras', component: Frame15Component},
+  {path: 'MedicamentosRecomendados/:id', component: Frame22Component},
+  {path: 'CarritoCompras/:id', component: Frame15Component},
   {path: 'RutaFarmacia', component: Frame17Component}, 
   {path: 'RecuperaCuenta', component: Frame9Component},
   {path: 'CompraFinalizada', component: Frame19Component},
@@ -55,7 +55,7 @@ const routes: Routes = [
   {path: 'ClientesDeFarmacia', component: ClientesfarmciaComponent},
   {path: 'VentasDeFarmacia', component: FarmaciaventasComponent},
   {path: 'boleta', component: BoletaComponent},
-  {path:'MostrarFarmacias', component: MostrarfarmaciasComponent},
+  {path:'MostrarFarmacias/:id', component: MostrarfarmaciasComponent},
   {path:'ReporteCategoria/:id', component: ReportePorCategoriaComponent}
 ];
 

@@ -77,7 +77,7 @@ export class Frame8Component implements OnInit {
         this.snackBar.open('Ingreso exitoso', '', {
           duration: 3000,
         });
-        this.router.navigate(['/Comprador']);
+        this.router.navigate([`/Comprador/${this.idClienteIngresado}`]);
         break;
       }
       x++;
