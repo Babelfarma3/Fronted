@@ -19,6 +19,7 @@ export class MostrarventasComponent {
   MyForm!: FormGroup;
   ventas!: Venta[];
   idFarmacia!:any;
+  numeroMes!:any;
 
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
   @ViewChild('tab') tabGroup!: MatTabGroup;
@@ -46,7 +47,10 @@ export class MostrarventasComponent {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     })
-    
+    this.MyForm = this.fb.group({
+      nombre: [''],
+      mes: ['']
+    })
     
   }
 
@@ -54,6 +58,16 @@ export class MostrarventasComponent {
     if (this.tabGroup.selectedIndex == 0) {
       let nombreCliente = this.MyForm.value['nombre'];
       this.ventasService.getVentasByClienteName( nombreCliente,this.idFarmacia).subscribe(
+        (data)=>{
+          this.dataSource = new MatTableDataSource(data);
+      },
+      (error: any) => {
+        console.log('error en productos: ', error);
+      }
+      )
+    } 
+    if (this.tabGroup.selectedIndex == 1) {
+      this.ventasService.getVentasByMes(this.numeroMes,this.idFarmacia).subscribe(
         (data)=>{
           this.dataSource = new MatTableDataSource(data);
       },

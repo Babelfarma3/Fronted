@@ -46,6 +46,7 @@ export class Frame9Component implements OnInit {
     this.clienteService.getClienteDniCorreo(this.myForm.get('id')!.value, this.myForm.get('correo')!.value).subscribe((data: Cliente)=>{
       this.clientes=data;
     });
+    
     if(this.myForm.get('id')!.value<=99999999){
         const cliente: Cliente={
         id: 0,

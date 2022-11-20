@@ -8,9 +8,27 @@
           <input matInput placeholder="Nombre del cliente" formControlName="nombre" (keyup)="search()"/>
         </mat-form-field>
       </mat-tab>
-      <button class="tab__button" mat-raised-button color="primary" type="submit" (click)="search()">Buscar</button>
-	    <button class="tab__button" mat-raised-button color="primary" (click)="getVentas()">Borrar filtros</button>
+      <mat-tab label="Buscar por mes">
+        <mat-form-field>
+          <mat-select class="select" formControlName="mes" placeholder="Seleccione el mes" [(value)]="numeroMes" required >
+            <mat-option [value]="1" (click)="search()">Enero</mat-option>
+            <mat-option [value]="2" (click)="search()">Febrero</mat-option>
+            <mat-option [value]="3" (click)="search()">Marzo</mat-option>
+            <mat-option [value]="4" (click)="search()">Abril</mat-option>
+            <mat-option [value]="5" (click)="search()">Mayo</mat-option>
+            <mat-option [value]="6" (click)="search()">Junio</mat-option>
+            <mat-option [value]="7" (click)="search()">Julio</mat-option>
+            <mat-option [value]="8" (click)="search()">Agosto</mat-option>
+            <mat-option [value]="9" (click)="search()">Septiembre</mat-option>
+            <mat-option [value]="10" (click)="search()">Octubre</mat-option>
+            <mat-option [value]="11" (click)="search()">Noviembre</mat-option>
+            <mat-option [value]="12"  (click)="search()">Diciembre</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+      </mat-tab>
       </mat-tab-group>
+      <button class="tab__button" mat-raised-button color="primary" (click)="getVentas()">Borrar filtros</button>
     </form>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       

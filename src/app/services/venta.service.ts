@@ -24,6 +24,12 @@ export class VentaService {
 
   }
 
+  getVentasByMes(mes:any, idFarmacia:any)
+  {
+    return this.http.get<Venta[]>(`${this.basePath}/ventas/buscarpormes/${mes}/${idFarmacia}`)
+
+  }
+
   addVenta(venta: Venta){
     return this.http.post<Venta>(
       `${this.basePath}/ventas`,
