@@ -38,7 +38,8 @@ export class Frame9Component implements OnInit {
     this.myForm = this.fb.group({
       id: ['', [Validators.required]],
       correo: ['', [Validators.required]],
-      contrasenia: ['', [Validators.required]]
+      contrasenia: ['', [Validators.required]],
+      confContrasenia: ['', [Validators.required]],
     })
   }
 
@@ -46,7 +47,6 @@ export class Frame9Component implements OnInit {
     this.clienteService.getClienteDniCorreo(this.myForm.get('id')!.value, this.myForm.get('correo')!.value).subscribe((data: Cliente)=>{
       this.clientes=data;
     });
-    
     if(this.myForm.get('id')!.value<=99999999){
         const cliente: Cliente={
         id: 0,
@@ -61,11 +61,12 @@ export class Frame9Component implements OnInit {
         direccion: this.clientes.direccion,
         distrito: this.clientes.distrito,
         contraseña: this.myForm.get('contrasenia')!.value,
-        role:this.clientes.role,
+        role:data.role,
       };
-      this.clienteService.updateCliente(this.clientes.id, cliente).subscribe({
+      });
+      this.clienteService.updateCliente(this.clientes.id, this.clientes).subscribe({
         next: (data) => {
-          this.snackBar.open('Se actualizo correctamente la contraseña', '', {
+          this.snackBar.open('Se actualizó correctamente la contraseña', '', {
             duration: 3000,
           });
           this.router.navigate(['/Login']);
@@ -75,13 +76,13 @@ export class Frame9Component implements OnInit {
         },
       });
     }
-    else if(this.myForm.get('id')!.value<=99999999999){
+    else if(this.myForm.get('id')!.value>= 10000000000 && this.myForm.get('id')!.value<=99999999999){
 
     }
     else{
-      this.snackBar.open('Se actualizo correctamente la contraseña', '', {
+      this.snackBar.open('Por favor verifique su RUC/DNI', '', {
         duration: 3000,
       });
     }
-  }  
+  } 
 }
