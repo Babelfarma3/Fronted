@@ -36,6 +36,9 @@ import { MostrarfarmaciasComponent } from './components/mostrarfarmacias/mostrar
 import { ReportePorCategoriaComponent } from './components/reporte-por-categoria/reporte-por-categoria.component';
 import { MostrarventasComponent } from './components/mostrarventas/mostrarventas.component';
 import { ReporteMontoPorMesComponent } from './components/reporte-monto-por-mes/reporte-monto-por-mes.component';
+import { ReporteFarmaciaVentasComponent } from './components/reporte-farmacia-ventas/reporte-farmacia-ventas.component';
+import { ReporteProductoComprasComponent } from './components/reporte-producto-compras/reporte-producto-compras.component';
+import { ReporteProductosVendidosComponent } from './components/reporte-productos-vendidos/reporte-productos-vendidos.component';
 
 
 
@@ -73,6 +76,9 @@ import { ReporteMontoPorMesComponent } from './components/reporte-monto-por-mes/
       ReportePorCategoriaComponent,
       MostrarventasComponent,
       ReporteMontoPorMesComponent,
+      ReporteFarmaciaVentasComponent,
+      ReporteProductoComprasComponent,
+      ReporteProductosVendidosComponent,
 
   ],
   imports: [
