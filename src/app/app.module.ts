@@ -35,6 +35,8 @@ import { BoletaComponent } from './components/boleta/boleta.component';
 import { MostrarfarmaciasComponent } from './components/mostrarfarmacias/mostrarfarmacias.component';
 import { ReportePorCategoriaComponent } from './components/reporte-por-categoria/reporte-por-categoria.component';
 import { MostrarventasComponent } from './components/mostrarventas/mostrarventas.component';
+import { ReporteMontoPorMesComponent } from './components/reporte-monto-por-mes/reporte-monto-por-mes.component';
+
 
 
 @NgModule({
@@ -70,6 +72,7 @@ import { MostrarventasComponent } from './components/mostrarventas/mostrarventas
       MostrarfarmaciasComponent,
       ReportePorCategoriaComponent,
       MostrarventasComponent,
+      ReporteMontoPorMesComponent,
 
   ],
   imports: [
