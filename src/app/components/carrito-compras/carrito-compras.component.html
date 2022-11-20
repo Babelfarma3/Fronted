@@ -16,7 +16,7 @@
                                     <p class="normal">Descripción: {{element.descripcion}}</p>
                                     <input formControlName="cantidad" type="number"  class="cantidad" placeholder="Cantidad a comprar" min="1" max="{{element.stock}}"  (change)="getSemisuma(indice)" onKeypress=" event.returnValue = false;" >
                                     <br>
-                                    <p class="normal">Vendido por Farmacia Angel</p>
+                                    <p class="normal">Vendido por Farmacia {{returnNombreFarmacia(element.id)}}</p>
                                 </div>
                            
                                 <div class="button">
@@ -29,9 +29,8 @@
                     <div class="left">
                         <div  class="opciones">
                             <div style="display:flex; margin: auto; ">
-                                <button mat-raised-button class="boton" routerLink="/RutaFarmacia">Recojo en tienda</button>
-                                <button mat-raised-button class="boton" id="verificar2">Compra Online</button>
-                                <button mat-raised-button class="boton1" (click)="vaciarCarrito()">Eliminar</button>
+                                <button mat-raised-button class="boton btn" routerLink="/RutaFarmacia/{{idClienteIngresado}}">Recojo en tienda</button>
+                                <button mat-raised-button class="boton1 btn" (click)="vaciarCarrito()">Eliminar</button>
                                
                             </div>
                             <div class="paypal">

@@ -106,7 +106,7 @@ export class ActualizarClienteComponent implements OnInit {
           this.snackBar.open('El cliente fue actualizado con exito!', '', {
             duration: 3000,
           });
-          this.router.navigate(['/Login']);
+          this.router.navigate([`/Comprador/${this.idCliente}`]);
         },
         error: (err) => {
           console.log(err);

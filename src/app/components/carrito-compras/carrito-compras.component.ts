@@ -33,6 +33,7 @@ export class CarritoComprasComponent implements OnInit {
   myForm!: FormGroup;
   products: Product[] = [];
   idClienteIngresado!: any;
+  nombresFarmacias:string[]=[];
 
   constructor(
     private carritoService: CarritoDeComprasService,
@@ -45,6 +46,7 @@ export class CarritoComprasComponent implements OnInit {
     private route: ActivatedRoute,
     private ventaService: VentaService
   ) {
+    this. getClienteId()
     this.getDistritos();
     this.reactiveForm();
     this.mostrarProc();
@@ -61,9 +63,18 @@ export class CarritoComprasComponent implements OnInit {
 
   mostrarProc(){
     this.productosCarrito=this.carritoService.getproductosCarrito();
+    this.productosCarrito.forEach((element)=>{
+      this.farmaciaService.getFarmaciaByProductoId(element.id).subscribe((data:Farmacia)=>{
+        this.nombresFarmacias[element.id]=(data.nombreEstablecimiento);
+      })
 
+    })
   }
 
+  getClienteId(){
+    this.idClienteIngresado = this.route.snapshot.params['id'];
+  }
+  
 
   private initConfig(): void {
     this.payPalConfig = {
@@ -128,7 +139,9 @@ export class CarritoComprasComponent implements OnInit {
 
 
 
-
+  returnNombreFarmacia(id:any): string{
+    return this.nombresFarmacias[id];
+  }
 
 
 

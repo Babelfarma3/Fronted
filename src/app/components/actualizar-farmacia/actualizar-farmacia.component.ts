@@ -96,7 +96,7 @@ export class ActualizarFarmaciaComponent implements OnInit {
           this.snackBar.open('La farmacia fue actualizada con exito!', '', {
             duration: 3000,
           });
-          this.router.navigate(['/Login']);
+          this.router.navigate([`/Farmacia/${this.idFarmacia}`]);
         },
         error: (err) => {
           console.log(err);
