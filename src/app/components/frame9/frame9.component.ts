@@ -44,37 +44,37 @@ export class Frame9Component implements OnInit {
   }
 
   updateContrasenia(){
-    this.clienteService.getClienteDniCorreo(this.myForm.get('id')!.value, this.myForm.get('correo')!.value).subscribe((data: Cliente)=>{
-      this.clientes=data;
-    });
-    if(this.myForm.get('id')!.value<=99999999){
-        const cliente: Cliente={
-        id: 0,
-        dni: this.clientes.dni,
-        nombres: this.clientes.nombres,
-        apellidoPaterno: this.clientes.apellidoPaterno,
-        apellidoMaterno: this.clientes.apellidoMaterno,
-        sexo: this.clientes.sexo,
-        correo: this.clientes.correo,
-        celular: this.clientes.celular,
-        fechaNacimiento: this.clientes.fechaNacimiento,
-        direccion: this.clientes.direccion,
-        distrito: this.clientes.distrito,
-        contraseña: this.myForm.get('contrasenia')!.value,
-        role:data.role,
-      };
+    
+    if(this.myForm.get('id')!.value >= 10000000 && this.myForm.get('id')!.value <= 99999999){
+      this.clienteService.getClienteDniCorreo(this.myForm.get('id')!.value, this.myForm.get('correo')!.value).subscribe((data: Cliente)=>{
+        this.clientes={
+          id: data.id,
+          dni: data.dni,
+          nombres: data.nombres,
+          apellidoPaterno: data.apellidoPaterno,
+          apellidoMaterno: data.apellidoMaterno,
+          sexo: data.sexo,
+          correo: data.correo,
+          celular: data.celular,
+          fechaNacimiento: data.fechaNacimiento,
+          direccion: data.direccion,
+          distrito: data.distrito,
+          contraseña: this.myForm.get('contrasenia')!.value,
+          role: data.role,
+        }
+        this.clienteService.updateCliente(this.clientes.id, this.clientes).subscribe({
+          next: (data) => {
+            this.snackBar.open('Se actualizó correctamente la contraseña', '', {
+              duration: 3000,
+            });
+            this.router.navigate(['/Login']);
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
       });
-      this.clienteService.updateCliente(this.clientes.id, this.clientes).subscribe({
-        next: (data) => {
-          this.snackBar.open('Se actualizó correctamente la contraseña', '', {
-            duration: 3000,
-          });
-          this.router.navigate(['/Login']);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
+
     }
     else if(this.myForm.get('id')!.value>= 10000000000 && this.myForm.get('id')!.value<=99999999999){
 
