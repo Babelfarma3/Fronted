@@ -14,6 +14,10 @@ export class VentaService {
     return this.http.get<Venta[]>(`${this.basePath}/ventas`);
   }
 
+  getVentasByIdFarmacia(farmaciaId: any){
+    return this.http.get<Venta[]>(`${this.basePath}/ventas/buscarporfarmacia/${farmaciaId}`)
+  }
+
   addVenta(venta: Venta){
     return this.http.post<Venta>(
       `${this.basePath}/ventas`,
