@@ -17,7 +17,7 @@ body {
 .fondotabla{
     margin: 2%; 
     background-color: white;
-    padding-bottom: 3%;
+    padding: 3% 0;
 }
 
 .mat-form-field{

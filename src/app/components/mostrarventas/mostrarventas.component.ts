@@ -29,16 +29,13 @@ export class MostrarventasComponent {
   getVentas() {
     this.idFarmacia = this.route.snapshot.params['id'];
     this.ventasService.getVentasByIdFarmacia(this.idFarmacia).subscribe((data:Venta[])=>{
-      this.ventas=data;
-      console.log(data);
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     })
-    this.dataSource = new MatTableDataSource<Venta>(this.ventas);
+    
     
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+
 }
 
