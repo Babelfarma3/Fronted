@@ -17,15 +17,15 @@
                     <div class="form-row mb-2">
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">Nombre del dueño<span class="text-danger">*</span></label>
-                            <input formControlName="nombresDuenio" type="text" class="form-control" placeholder="Ingrese el nombre del dueño">
+                            <input formControlName="nombresDuenio" onKeypress="if(event.keyCode == 32 || (event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode >= 97 && event.keyCode <= 122)) event.returnValue = true; else event.returnValue = false;" type="text" class="form-control" placeholder="Ingrese el nombre del dueño">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">Apellidos del dueño<span class="text-danger">*</span></label>
-                            <input formControlName="apellidosDuenio" type="text" class="form-control" placeholder="Ingrese los apellidos del dueño">
+                            <input formControlName="apellidosDuenio" onKeypress="if(event.keyCode == 32 || (event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode >= 97 && event.keyCode <= 122)) event.returnValue = true; else event.returnValue = false;" type="text" class="form-control" placeholder="Ingrese los apellidos del dueño">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">Nombre del establecimiento<span class="text-danger">*</span></label>
-                            <input formControlName="nombreEstablecimiento" type="text" class="form-control" placeholder="Ingrese nombre del establecimiento">
+                            <input formControlName="nombreEstablecimiento" onKeypress="if(event.keyCode == 32 || (event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode >= 97 && event.keyCode <= 122)) event.returnValue = true; else event.returnValue = false;" type="text" class="form-control" placeholder="Ingrese nombre del establecimiento">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">Dirección del establecimiento<span class="text-danger">*</span></label>
@@ -33,21 +33,21 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">Correo electrónico del establecimiento<span class="text-danger">*</span></label>
-                            <input formControlName="correoContacto" type="email" class="form-control" placeholder="Ingrese el correo electrónico">
+                            <input formControlName="correoContacto" onKeypress="if(event.keyCode == 32) event.returnValue = false;" type="email" class="form-control" placeholder="Ingrese el correo electrónico">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="font-weight-bold">RUC<span class="text-danger">*</span></label>
-                            <input formControlName="ruc" type="number" class="form-control" placeholder="Ingrese su número RUC">
+                            <input formControlName="ruc" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" minlength="11" maxlength="11" class="form-control" placeholder="Ingrese su número RUC">
                         </div>
                     </div>
                     <div class="form-group mb-3">
                             <label class="font-weight-bold">Número de celular<span class="text-danger">*</span></label>
-                            <input formControlName="telefonoContacto" type="number" class="form-control" placeholder="Ingresa el número de celular de contacto">
+                            <input formControlName="telefonoContacto" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" minlength="9" maxlength="9" class="form-control" placeholder="Ingresa el número de celular de contacto">
                     </div>
 
                     <div class="form-group mb-3">
                         <label class="font-weight-bold">Distrito<span class="text-danger">*</span></label>
-                            <mat-select class="select" formControlName="distrito" [(value)]="idDistrito" required>
+                            <mat-select class="select" formControlName="distrito" placeholder="Seleccione su distrito" [(value)]="idDistrito" required>
                               <mat-option *ngFor="let element of distritos" [value]="element.id">
                                 {{element.nombreDistrito}}
                               </mat-option>

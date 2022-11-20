@@ -4,7 +4,7 @@
     <mat-card class="example-card">
         <p class="title">Iniciar Sesión</p>
         <img src="/assets/img/logo.png">
-        <input type="email" class="form-control" placeholder="Ingresa tu correo" matInput formControlName="correo" />
+        <input onKeypress="if(event.keyCode == 32) event.returnValue = false;" type="email" class="form-control" placeholder="Ingresa tu correo" matInput formControlName="correo" />
         <input type="password" class="form-control" placeholder="Ingresa tu contraseña" matInput formControlName="contraseña" />
         <button mat-raised-button (click)="validate()">Iniciar Sesión</button>
         <p class="link" routerLink="/RecuperaCuenta">¿Has olvidado tu contraseña?</p>

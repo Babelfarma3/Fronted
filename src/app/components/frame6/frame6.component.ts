@@ -65,7 +65,7 @@ export class Frame6Component implements OnInit {
 
       const farmacia: Farmacia={
         id: 0,
-        ruc: this.myForm.get('ruc')!.value,
+        ruc: Number(this.myForm.get('ruc')!.value),
         nombresDuenio: this.myForm.get('nombresDuenio')!.value,
         apellidosDuenio: this.myForm.get('apellidosDuenio')!.value,
         nombreEstablecimiento: this.myForm.get('nombreEstablecimiento')!.value,

@@ -43,7 +43,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label class="font-weight-bold">Número de celular<span class="text-danger">*</span></label>
-                            <input formControlName="celular"  onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" minlength="9" maxlength="9"  class="form-control" placeholder="Ingresa tu número de celular">
+                            <input formControlName="celular" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" minlength="9" maxlength="9" class="form-control" placeholder="Ingresa tu número de celular">
                         </div>
                         <div class="form-group mb-3">
                             <label class="font-weight-bold">Seleccione tu fecha de nacimiento<span class="text-danger">*</span></label>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label class="font-weight-bold">Distrito<span class="text-danger">*</span></label>
-                                <mat-select class="select" formControlName="distrito" placeholder="Seleccione su distrito"  [(value)]="idDistrito" required>
+                                <mat-select class="select" formControlName="distrito" placeholder="Seleccione su distrito" [(value)]="idDistrito" required>
                                   <mat-option *ngFor="let element of distritos" [value]="element.id">
                                     {{element.nombreDistrito}}
                                   </mat-option>
