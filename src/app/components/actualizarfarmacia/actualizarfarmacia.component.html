@@ -14,6 +14,7 @@
 
                 <p class="text-muted mb-5">Modifique la siguiente información a actualizar.</p>
 
+                <form [formGroup]="myForm">
                     <div class="form-row mb-2">
 
                         <div class="form-group col-md-6">
@@ -27,27 +28,31 @@
                     </div>
                     <div class="form-group mb-3">
                             <label class="font-weight-bold">Número de celular<span class="text-danger">*</span></label>
-                            <input formControlName="celular" type="number" class="form-control" placeholder="Ingresa el número de celular de contacto">
+                            <input formControlName="telefonoContacto" type="number" class="form-control" placeholder="Ingresa el número de celular de contacto">
                     </div>
 
                     <div class="form-group mb-3">
-                            <label class="font-weight-bold">Distrito<span class="text-danger">*</span></label>
-                            <select name="distrito" class="box" id="distrito" placeholder="Ingresa tu distrito">
-                                <option>Lince</option>
-                                <option>El Agustino</option>
-                            </select>
-                    </div>
-                    <div class="form-group mb-5">
-                        <div class="form-check">
-                            <label class="form-check-label text-muted">Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad</label>
-                        </div>
+                        <label class="font-weight-bold">Distrito<span class="text-danger">*</span></label>
+                            <mat-select class="select" formControlName="distrito" placeholder="Seleccione su distrito"  [(value)]="idDistrito" required>
+                              <mat-option *ngFor="let element of distritos" [value]="element.id">
+                                {{element.nombreDistrito}}
+                              </mat-option>
+                            </mat-select>
                     </div>
                     <button 
                     class="btn btn-primary" 
                     style="background-color: blue" 
-                    type="button">
-                    Registrate
+                    type="button" (click)="updateFarmacia()" >
+                    Actualizar
                     </button>
+                    <button 
+                    class="btn btn-primary" 
+                    style="background-color: blue"
+                    type="button"
+                    routerLink="/Farmacia/{{idFarmacia}}">
+                    Cancelar
+                    </button>
+                </form>
             </div>
         </div>
     </div>

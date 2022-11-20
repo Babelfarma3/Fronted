@@ -30,15 +30,36 @@ export class ActualizarclienteComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     ) {
+      this. loadId();
       this.reactiveForm();
+      this.loadCLiente();
       this.getDistritos();
     }
 
   ngOnInit(): void {
   }
 
-  reactiveForm() {
+  loadId(){
     this.idCliente = this.route.snapshot.paramMap.get('id');
+  }
+
+  reactiveForm(){
+    this.myForm = this.fb.group({
+      dni: ['', [Validators.required]],
+      nombres: ['', [Validators.required, Validators.maxLength]],
+      apellidoPaterno: ['', [Validators.required]],
+      apellidoMaterno: ['', [Validators.required]],
+      correo: ['', [Validators.required]],
+      celular: ['', [Validators.required]],
+      direccion: ['', [Validators.required]],
+      distrito: ['', [Validators.required]],
+    }
+    )
+  }
+ 
+
+  loadCLiente() {
+   
     this.clienteService.getClienteId(this.idCliente)
     .subscribe((data)=>{
       this.cliente = data;
@@ -50,8 +71,10 @@ export class ActualizarclienteComponent implements OnInit {
         correo: [this.cliente.correo, [Validators.required]],
         celular: [this.cliente.celular, [Validators.required]],
         direccion: [this.cliente.direccion, [Validators.required]],
-        distrito: [this.cliente.distrito, [Validators.required]],
+        distrito: [this.cliente.distrito.id, [Validators.required]],
+        
       });
+      this.idDistrito= this.cliente.distrito.id;
     })
   }
 

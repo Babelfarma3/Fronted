@@ -56,7 +56,7 @@ const routes: Routes = [
   {path: 'RecuperaCuenta', component: Frame9Component},
   {path: 'CompraFinalizada', component: Frame19Component},
   {path: 'ActualizarDatosCliente/:id', component: ActualizarclienteComponent},
-  {path: 'ActualizarDatosFarmacia', component: ActualizarfarmaciaComponent},
+  {path: 'ActualizarDatosFarmacia/:id', component: ActualizarfarmaciaComponent},
   {path: 'ClientesDeFarmacia', component: ClientesfarmciaComponent},
   {path: 'VentasDeFarmacia', component: FarmaciaventasComponent},
   {path: 'boleta', component: BoletaComponent},

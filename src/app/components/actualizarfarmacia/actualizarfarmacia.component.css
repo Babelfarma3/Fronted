@@ -12,6 +12,10 @@ body{
     font-weight: 300;
     color: var(--color-dark-xx);
     letter-spacing:.05rem ;
+    background-image: url('/assets/img/fondo.png');
+    background-size: cover;
+    padding: 0rem;
+
 }
 
 .bg-light{
@@ -37,9 +41,10 @@ body{
 }
 
 .contact-box{
-    padding: 0rem;
+    padding: auto;
     background-image: url('/assets/img/fondo.png');
     background-size: cover;
+    padding: 0rem;
 }
 
 .btn{
@@ -47,6 +52,7 @@ body{
     padding: 1rem 2rem;
     border-radius: 5rem;
     min-width: 10rem;
+    margin: 10px 10px 10px 0;
 }
 
 .btn-outline-dark{
@@ -65,4 +71,21 @@ body{
     background-image: url('/assets/img/logo.png');
     background-repeat: no-repeat;
     background-position: center;
+}
+
+
+.select{
+    background-color: lightgray;
+    border-radius: .2rem;
+    padding: 0.4rem;
+}
+
+@media only screen and (max-width: 770px)
+{
+    .p-6{
+        padding: 30px!important;
+    }
+ 
+ 
+  
 }

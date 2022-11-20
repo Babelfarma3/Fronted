@@ -19,7 +19,7 @@ export class FarmaciaService {
   }
 
   getFarmaciaId(id: any){
-    return this.http.get<Farmacia>(`${this.basePath}/farmacias/${id}`);
+    return this.http.get<Farmacia>(`${this.basePath}/farmacias/buscarid/${id}`);
   }
 
   getFarmaciaRucCorreo(ruc: any, correo: any){
