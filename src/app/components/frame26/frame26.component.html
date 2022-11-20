@@ -22,11 +22,11 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="font-weight-bold">Precio<span class="text-danger">*</span></label>
-                                    <input formControlName="precio" type="number" class="form-control" placeholder="Ingresa el precio por unidad">
+                                    <input formControlName="precio" onKeypress="if ((event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 46) event.returnValue = true; else event.returnValue = false;" class="form-control" placeholder="Ingresa el precio por unidad">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="font-weight-bold">Stock<span class="text-danger">*</span></label>
-                                    <input formControlName="stock" type="number" class="form-control" placeholder="Ingresa la cantidad disponible">
+                                    <input formControlName="stock" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" type="number" class="form-control" placeholder="Ingresa la cantidad disponible">
                                 </div>
                             </div>
                             <div class="form-group mb-3">
