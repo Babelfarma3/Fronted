@@ -19,8 +19,8 @@ export class ClienteService {
     return this.http.get<Cliente>(`${this.basePath}/clientes/id/${id}`);
   }
 
-  getClienteDni(dni: any){
-    return this.http.get<Cliente>(`${this.basePath}/clientes/dni/${dni}`);
+  getClienteDniCorreo(dni: any, correo: any){
+    return this.http.get<Cliente>(`${this.basePath}/clientes/dni/${dni}/correo/${correo}`);
   }
 
   getClienteSexo(sexo: string){
@@ -41,4 +41,7 @@ export class ClienteService {
   deleteCliente(id: any){
     return this.http.delete<Cliente>(`${this.basePath}/clientes/${id}`);
   }
+
+
+
 }
