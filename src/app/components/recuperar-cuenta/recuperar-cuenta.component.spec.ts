@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Frame9Component } from './frame9.component';
+import { RecuperarCuentaComponent } from './recuperar-cuenta.component';
 
 describe('Frame9Component', () => {
-  let component: Frame9Component;
-  let fixture: ComponentFixture<Frame9Component>;
+  let component: RecuperarCuentaComponent;
+  let fixture: ComponentFixture<RecuperarCuentaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Frame9Component ]
+      declarations: [ RecuperarCuentaComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Frame9Component);
+    fixture = TestBed.createComponent(RecuperarCuentaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

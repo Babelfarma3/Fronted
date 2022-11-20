@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Frame6Component } from './frame6.component';
+import { RegistroFarmaciaComponent } from './registro-farmacia.component';
 
 describe('Frame6Component', () => {
-  let component: Frame6Component;
-  let fixture: ComponentFixture<Frame6Component>;
+  let component: RegistroFarmaciaComponent;
+  let fixture: ComponentFixture<RegistroFarmaciaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Frame6Component ]
+      declarations: [ RegistroFarmaciaComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Frame6Component);
+    fixture = TestBed.createComponent(RegistroFarmaciaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

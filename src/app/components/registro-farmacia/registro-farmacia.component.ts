@@ -9,22 +9,22 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-frame6',
-  templateUrl: './frame6.component.html',
-  styleUrls: ['./frame6.component.css']
+  selector: 'app-registro-farmacia',
+  templateUrl: './registro-farmacia.component.html',
+  styleUrls: ['./registro-farmacia.component.css']
 })
-export class Frame6Component implements OnInit {
+export class RegistroFarmaciaComponent implements OnInit {
   myForm!: FormGroup;
   idDistrito!: number;
   distritos!: Distrito[];
-  
+
   constructor(
     private fb: FormBuilder,
     private farmaciaService: FarmaciaService,
     private distritoService: DistritoService,
     private snackBar: MatSnackBar,
     private router: Router,
-  ) { 
+  ) {
     this.reactiveForm();
     this.getDistritos();
   }
@@ -76,7 +76,7 @@ export class Frame6Component implements OnInit {
         contraseña: this.myForm.get('contraseña')!.value,
         role: r,
       }
-    
+
       this.farmaciaService.addFarmacia(farmacia).subscribe({
         next:(data)=>{
           this.snackBar.open('Se ha registrado correctamente', '', {

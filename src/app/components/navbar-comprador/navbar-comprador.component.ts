@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 @Component({
   selector: 'app-navbar-comprador',
-  templateUrl: './navbarcomprador.component.html',
-  styleUrls: ['./navbarcomprador.component.css']
+  templateUrl: './navbar-comprador.component.html',
+  styleUrls: ['./navbar-comprador.component.css']
 })
 
-export class NavbarcompradorComponent implements OnInit {
+export class NavbarCompradorComponent implements OnInit {
 
   idComprador!:any;
 

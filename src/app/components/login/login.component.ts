@@ -8,11 +8,11 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit, enableProdMode } from '@angular/core';
 
 @Component({
-  selector: 'app-frame8',
-  templateUrl: './frame8.component.html',
-  styleUrls: ['./frame8.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class Frame8Component implements OnInit {
+export class LoginComponent implements OnInit {
 
   idClienteIngresado!:number;
   idFarmaciaIngresada!:number;
@@ -32,13 +32,13 @@ export class Frame8Component implements OnInit {
    }
 
   ngOnInit(): void {
-    
+
   }
 
 
   getClientes(){
     this.clienteService.getClientes().subscribe((data: Cliente[]) => {
-   
+
       this.clientes=data;
 
     });
@@ -47,7 +47,7 @@ export class Frame8Component implements OnInit {
 
   getFarmacias(){
     this.farmaciaService.getFarmacias().subscribe((data: Farmacia[]) => {
-   
+
       this.farmacias=data;
 
     });
@@ -55,7 +55,7 @@ export class Frame8Component implements OnInit {
 
   reactiveForm() {
     this.myForm = this.fb.group({
-   
+
       correo: ['', [Validators.required]],
       contraseña: ['', [Validators.required]],
 
@@ -69,7 +69,7 @@ export class Frame8Component implements OnInit {
     let p= this.myForm.get('contraseña')!.value;
 
 
-    for(const element of this.clientes) 
+    for(const element of this.clientes)
     {
       if(element.correo==c && element.contraseña==p && element.role.id==2)
       {
@@ -98,11 +98,11 @@ export class Frame8Component implements OnInit {
 
     if(x==this.farmacias.length+this.clientes.length)
     {
-      
+
         this.snackBar.open('Datos ingresados incorrectos', '', {
           duration: 3000,
-        });  
-     
+        });
+
     }
 
 }

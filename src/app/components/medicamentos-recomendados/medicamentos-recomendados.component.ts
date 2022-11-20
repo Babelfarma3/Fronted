@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
-  selector: 'app-actualizar-datos-cliente',
-  templateUrl: './frame22.component.html',
-  styleUrls: ['./frame22.component.css'],
+  selector: 'app-medicamentos-recomendados',
+  templateUrl: './medicamentos-recomendados.component.html',
+  styleUrls: ['./medicamentos-recomendados.component.css'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({height: '0px', minHeight: '0'})),
@@ -13,7 +13,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     ]),
   ],
 })
-export class Frame22Component implements OnInit {
+export class MedicamentosRecomendadosComponent implements OnInit {
 
   dataSource = ELEMENT_DATA;
   columnsToDisplay = ['ProblemasDeSaludComunes'];

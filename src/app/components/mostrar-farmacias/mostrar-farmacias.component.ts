@@ -1,18 +1,18 @@
 import { DistritoService } from './../../services/distrito.service';
 import { Distrito } from './../../models/distrito';
 import { Form, FormGroup, FormBuilder } from '@angular/forms';
-import { NavbarcompradorComponent } from '../navbar-comprador/navbarcomprador.component';
+import { NavbarCompradorComponent } from '../navbar-comprador/navbar-comprador.component';
 import { FarmaciaService } from './../../services/farmacia.service';
 import { Farmacia } from './../../models/farmacia';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTabGroup } from '@angular/material/tabs';
 
 @Component({
-  selector: 'app-mostrarfarmacias',
-  templateUrl: './mostrarfarmacias.component.html',
-  styleUrls: ['./mostrarfarmacias.component.css']
+  selector: 'app-mostrar-farmacias',
+  templateUrl: './mostrar-farmacias.component.html',
+  styleUrls: ['./mostrar-farmacias.component.css']
 })
-export class MostrarfarmaciasComponent implements OnInit {
+export class MostrarFarmaciasComponent implements OnInit {
 
   MyForm!: FormGroup;
   farmacias!:Farmacia[];

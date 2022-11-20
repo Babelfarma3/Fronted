@@ -8,11 +8,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-frame26',
-  templateUrl: './frame26.component.html',
-  styleUrls: ['./frame26.component.css']
+  selector: 'app-actualizar-producto',
+  templateUrl: './actualizar-producto.component.html',
+  styleUrls: ['./actualizar-producto.component.css']
 })
-export class Frame26Component implements OnInit {
+export class ActualizarProductoComponent implements OnInit {
   myForm!: FormGroup;
   idCategoria!: number;
   categorias!: Categoria[];
@@ -33,7 +33,7 @@ export class Frame26Component implements OnInit {
   }
 
   ngOnInit(): void {
-   
+
     this.loadProducto();
     this.getCategorias();
   }
@@ -52,7 +52,7 @@ export class Frame26Component implements OnInit {
     }
     )
   }
- 
+
 
   loadProducto(){
     this.idProduct = this.route.snapshot.params['id'];
@@ -85,7 +85,7 @@ export class Frame26Component implements OnInit {
       next: (data)=>{
         this.snackBar.open('Producto actualizado exitosamente','',{duration: 3000});
         this.router.navigate([`/ListaDeProductos/${this.idFarmacia}`]);
-      }, 
+      },
       error:(err)=>{
         console.log(err);
       }

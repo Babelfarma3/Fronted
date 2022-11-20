@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Frame19Component } from './frame19.component';
+import { CompraFinalizadaComponent } from './compra-finalizada.component';
 
 describe('Frame19Component', () => {
-  let component: Frame19Component;
-  let fixture: ComponentFixture<Frame19Component>;
+  let component: CompraFinalizadaComponent;
+  let fixture: ComponentFixture<CompraFinalizadaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Frame19Component ]
+      declarations: [ CompraFinalizadaComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Frame19Component);
+    fixture = TestBed.createComponent(CompraFinalizadaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

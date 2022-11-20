@@ -8,11 +8,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-frame25',
-  templateUrl: './frame25.component.html',
-  styleUrls: ['./frame25.component.css']
+  selector: 'app-lista-productos',
+  templateUrl: './lista-productos.component.html',
+  styleUrls: ['./lista-productos.component.css']
 })
-export class Frame25Component implements OnInit {
+export class ListaProductosComponent implements OnInit {
   displayedColumns: string[] = ['id', 'nombre', 'precio', 'stock', 'picture', 'opciones'];
   dataSource = new MatTableDataSource<Product>();
 
@@ -20,12 +20,12 @@ export class Frame25Component implements OnInit {
   idFarmacia!:any;
 
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
-  
+
   constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getProducts();
-  } 
+  }
 
 
   getProducts() {
@@ -39,9 +39,9 @@ export class Frame25Component implements OnInit {
         console.log('error en productos: ', error);
       }
     );
-  
+
   }
-  
+
 
   processProductResponse(resp: any) {
     const dateProduct: Product[] = [];

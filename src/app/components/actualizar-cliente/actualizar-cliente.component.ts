@@ -10,11 +10,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-actualizarcliente',
-  templateUrl: './actualizarcliente.component.html',
-  styleUrls: ['./actualizarcliente.component.css']
+  selector: 'app-actualizar-cliente',
+  templateUrl: './actualizar-cliente.component.html',
+  styleUrls: ['./actualizar-cliente.component.css']
 })
-export class ActualizarclienteComponent implements OnInit {
+export class ActualizarClienteComponent implements OnInit {
   input = new FormControl('', [Validators.required]);
   myForm!: FormGroup;
   idDistrito!: number;
@@ -22,7 +22,7 @@ export class ActualizarclienteComponent implements OnInit {
   cliente!: Cliente;
   idCliente: any;
 
-  constructor(    
+  constructor(
     private fb: FormBuilder,
     private clienteService: ClienteService ,
     private distritoService: DistritoService,
@@ -56,10 +56,10 @@ export class ActualizarclienteComponent implements OnInit {
     }
     )
   }
- 
+
 
   loadCLiente() {
-   
+
     this.clienteService.getClienteId(this.idCliente)
     .subscribe((data)=>{
       this.cliente = data;
@@ -72,7 +72,7 @@ export class ActualizarclienteComponent implements OnInit {
         celular: [this.cliente.celular, [Validators.required]],
         direccion: [this.cliente.direccion, [Validators.required]],
         distrito: [this.cliente.distrito.id, [Validators.required]],
-        
+
       });
       this.idDistrito= this.cliente.distrito.id;
     })

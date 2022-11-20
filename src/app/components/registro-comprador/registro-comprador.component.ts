@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-frame5',
-  templateUrl: './frame5.component.html',
-  styleUrls: ['./frame5.component.css']
+  selector: 'app-registro-comprador',
+  templateUrl: './registro-comprador.component.html',
+  styleUrls: ['./registro-comprador.component.css']
 })
-export class Frame5Component implements OnInit {
+export class RegistroCompradorComponent implements OnInit {
   myForm!: FormGroup;
   idDistrito!: number;
   distritos!: Distrito[];
@@ -24,7 +24,7 @@ export class Frame5Component implements OnInit {
     private distritoService: DistritoService,
     private snackBar: MatSnackBar,
     private router: Router
-  ) { 
+  ) {
     this.reactiveForm();
     this.getDistritos();
   }

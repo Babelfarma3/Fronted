@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Frame13Component } from './frame13.component';
+import { BusquedaComponent } from './busqueda.component';
 
 describe('Frame13Component', () => {
-  let component: Frame13Component;
-  let fixture: ComponentFixture<Frame13Component>;
+  let component: BusquedaComponent;
+  let fixture: ComponentFixture<BusquedaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Frame13Component ]
+      declarations: [ BusquedaComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Frame13Component);
+    fixture = TestBed.createComponent(BusquedaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -9,11 +9,11 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-actualizarfarmacia',
-  templateUrl: './actualizarfarmacia.component.html',
-  styleUrls: ['./actualizarfarmacia.component.css']
+  selector: 'app-actualizar-farmacia',
+  templateUrl: './actualizar-farmacia.component.html',
+  styleUrls: ['./actualizar-farmacia.component.css']
 })
-export class ActualizarfarmaciaComponent implements OnInit {
+export class ActualizarFarmaciaComponent implements OnInit {
 
   input = new FormControl('', [Validators.required]);
   myForm!: FormGroup;
@@ -29,7 +29,7 @@ export class ActualizarfarmaciaComponent implements OnInit {
     private snackBar: MatSnackBar,
     private router: Router,
     private route: ActivatedRoute,
-  ) { 
+  ) {
     this.loadId();
     this.reactiveForm();
     this.loadFarmacia();
@@ -52,10 +52,10 @@ export class ActualizarfarmaciaComponent implements OnInit {
     }
     )
   }
- 
+
 
   loadFarmacia() {
-   
+
     this.farmaciaService.getFarmaciaId(this.idFarmacia)
     .subscribe((data)=>{
       this.farmacia = data;
@@ -64,7 +64,7 @@ export class ActualizarfarmaciaComponent implements OnInit {
         correoContacto: [this.farmacia.correoContacto, [Validators.required, Validators.maxLength]],
         telefonoContacto: [this.farmacia.telefonoContacto, [Validators.required]],
         distrito: [this.farmacia.distrito.id, [Validators.required]],
-        
+
       });
       this.idDistrito= this.farmacia.distrito.id;
     })

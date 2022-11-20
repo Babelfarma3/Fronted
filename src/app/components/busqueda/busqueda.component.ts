@@ -10,11 +10,11 @@ import { Product } from './../../models/product';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-frame13',
-  templateUrl: './frame13.component.html',
-  styleUrls: ['./frame13.component.css']
+  selector: 'app-busqueda',
+  templateUrl: './busqueda.component.html',
+  styleUrls: ['./busqueda.component.css']
 })
-export class Frame13Component implements OnInit {
+export class BusquedaComponent implements OnInit {
 
   MyForm!: FormGroup;
   categorias!: Categoria[];
@@ -22,8 +22,8 @@ export class Frame13Component implements OnInit {
   nombreCategoria!:string;
   productosCarrito:Product[]=[];
   nombresFarmacias:string[]=[];
-  
-  
+
+
   @ViewChild('tab') tabGroup!: MatTabGroup;
 
   constructor(
@@ -57,7 +57,7 @@ export class Frame13Component implements OnInit {
     listCProduct.forEach((element: Product) => {
       element.picture = 'data:image/jpeg;base64,' + element.picture;
       dateProduct.push(element);
-      
+
       this.farmaciaService.getFarmaciaByProductoId(element.id).subscribe((data:Farmacia)=>{
         this.nombresFarmacias[element.id]=(data.nombreEstablecimiento);
       })
@@ -110,7 +110,7 @@ export class Frame13Component implements OnInit {
         console.log('error en productos: ', error);
       }
       )
-    } 
+    }
     else
     if (this.tabGroup.selectedIndex == 1) {
       let categoria = this.nombreCategoria;
@@ -121,7 +121,7 @@ export class Frame13Component implements OnInit {
         console.log('error en productos: ', error);
       }
       )
-    } 
+    }
   }
 
   AgregarAlCarrito(number: number): void{
@@ -133,18 +133,18 @@ export class Frame13Component implements OnInit {
       if(this.ValidarSinRepeticion(data))
       this.productosCarrito.push(data);
 
-    
+
     })
 
 
 
     this.carritoService.setproductosCarrito(this.productosCarrito);
-        
+
   }
 
 
   ValidarSinRepeticion(product: Product):boolean{
-   
+
 
     if(this.productosCarrito)
     for(let item of this.productosCarrito)

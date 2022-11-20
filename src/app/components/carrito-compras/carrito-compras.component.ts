@@ -18,12 +18,12 @@ import { ThemePalette } from '@angular/material/core';
 
 
 @Component({
-  selector: 'app-frame15',
-  templateUrl: './frame15.component.html',
-  styleUrls: ['./frame15.component.css']
+  selector: 'app-carrito-compras',
+  templateUrl: './carrito-compras.component.html',
+  styleUrls: ['./carrito-compras.component.css']
 })
-export class Frame15Component implements OnInit {
-  
+export class CarritoComprasComponent implements OnInit {
+
   public payPalConfig!: IPayPalConfig;
   productosCarrito: Product[] = [];
   idDistrito!: number;
@@ -61,7 +61,7 @@ export class Frame15Component implements OnInit {
 
   mostrarProc(){
     this.productosCarrito=this.carritoService.getproductosCarrito();
-    
+
   }
 
 
@@ -111,7 +111,7 @@ export class Frame15Component implements OnInit {
         console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
         //aqui
         this.registrarVentas();
-        this.actualizarStock(); 
+        this.actualizarStock();
       },
       onCancel: (data, actions) => {
         console.log('OnCancel', data, actions);
@@ -195,7 +195,7 @@ export class Frame15Component implements OnInit {
   subtotalInDollars(): number {
 
     var x=this.subtotal()/3.80;
-    
+
     x=Number(x.toFixed(2));
 
     return x;
@@ -210,8 +210,8 @@ export class Frame15Component implements OnInit {
   registrarVentas(){
     let c = new Cliente();
     c.id= this.route.snapshot.params['id'];
-    
-    
+
+
     for (let i = 0; i < this.productosCarrito.length; i++) {
       let f= new Farmacia();
       this.farmaciaService.getFarmaciaByProductoId(this.productosCarrito[i].id).subscribe((data)=>{
@@ -228,7 +228,7 @@ export class Frame15Component implements OnInit {
         this.ventaService.addVenta(venta).subscribe(()=>{});
 
       });
-      
+
 
     }
   }

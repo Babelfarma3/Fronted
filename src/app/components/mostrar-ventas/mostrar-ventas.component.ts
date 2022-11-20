@@ -8,11 +8,11 @@ import { Venta } from './../../models/venta';
 import { Component, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-mostrarventas',
-  templateUrl: './mostrarventas.component.html',
-  styleUrls: ['./mostrarventas.component.css']
+  selector: 'app-mostrar-ventas',
+  templateUrl: './mostrar-ventas.component.html',
+  styleUrls: ['./mostrar-ventas.component.css']
 })
-export class MostrarventasComponent {
+export class MostrarVentasComponent {
   displayedColumns: string[] = ['id', 'cantidad', 'fecha', 'precioTotal', 'precioUnit','cliente', 'farmacia','producto'];
   dataSource = new MatTableDataSource<Venta>();
 
@@ -23,17 +23,17 @@ export class MostrarventasComponent {
 
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
   @ViewChild('tab') tabGroup!: MatTabGroup;
-  
-  constructor(private ventasService: VentaService, 
+
+  constructor(private ventasService: VentaService,
     private route: ActivatedRoute,
-    private fb: FormBuilder) { 
+    private fb: FormBuilder) {
        this.reactiveForm()
     }
 
 
   ngOnInit(): void {
     this.getVentas();
-  } 
+  }
 
   reactiveForm() {
     this.MyForm = this.fb.group({
@@ -51,7 +51,7 @@ export class MostrarventasComponent {
       nombre: [''],
       mes: ['']
     })
-    
+
   }
 
   search() {
@@ -65,7 +65,7 @@ export class MostrarventasComponent {
         console.log('error en productos: ', error);
       }
       )
-    } 
+    }
     if (this.tabGroup.selectedIndex == 1) {
       this.ventasService.getVentasByMes(this.numeroMes,this.idFarmacia).subscribe(
         (data)=>{
@@ -75,7 +75,7 @@ export class MostrarventasComponent {
         console.log('error en productos: ', error);
       }
       )
-    } 
+    }
   }
 
 

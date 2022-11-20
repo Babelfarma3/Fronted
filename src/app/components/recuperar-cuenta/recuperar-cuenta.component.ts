@@ -16,7 +16,7 @@ import { Distrito } from 'src/app/models/distrito';
   templateUrl: './recuperar-cuenta.component.html',
   styleUrls: ['./recuperar-cuenta.component.css']
 })
-export class Frame9Component implements OnInit {
+export class RecuperarCuentaComponent implements OnInit {
   myForm!: FormGroup;
   cliente!: Cliente;
   farmacia!: Farmacia;

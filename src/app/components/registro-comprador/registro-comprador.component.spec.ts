@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Frame5Component } from './frame5.component';
+import { RegistroCompradorComponent } from './registro-comprador.component';
 
 describe('Frame5Component', () => {
-  let component: Frame5Component;
-  let fixture: ComponentFixture<Frame5Component>;
+  let component: RegistroCompradorComponent;
+  let fixture: ComponentFixture<RegistroCompradorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Frame5Component ]
+      declarations: [ RegistroCompradorComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Frame5Component);
+    fixture = TestBed.createComponent(RegistroCompradorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

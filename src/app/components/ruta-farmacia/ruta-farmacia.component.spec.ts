@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Frame17Component } from './frame17.component';
+import { RutaFarmaciaComponent } from './ruta-farmacia.component';
 
 describe('Frame17Component', () => {
-  let component: Frame17Component;
-  let fixture: ComponentFixture<Frame17Component>;
+  let component: RutaFarmaciaComponent;
+  let fixture: ComponentFixture<RutaFarmaciaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Frame17Component ]
+      declarations: [ RutaFarmaciaComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Frame17Component);
+    fixture = TestBed.createComponent(RutaFarmaciaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

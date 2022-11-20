@@ -11,11 +11,11 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { ThisReceiver } from '@angular/compiler';
 
 @Component({
-  selector: 'app-frame18',
-  templateUrl: './frame18.component.html',
-  styleUrls: ['./frame18.component.css']
+  selector: 'app-registrar-producto',
+  templateUrl: './registrar-producto.component.html',
+  styleUrls: ['./registrar-producto.component.css']
 })
-export class Frame18Component implements OnInit {
+export class RegistrarProductoComponent implements OnInit {
     myForm!: FormGroup;
     idCategoria!: number;
     categorias!: Categoria[];
@@ -31,7 +31,7 @@ export class Frame18Component implements OnInit {
     private router: Router,
     private farmaciaService: FarmaciaService,
     private route: ActivatedRoute
-  ){ 
+  ){
     this.reactiveForm();
     this.getCategorias();
     this.loadId()
@@ -91,7 +91,7 @@ export class Frame18Component implements OnInit {
           duration: 3000
         });
         this.router.navigate([`/ListaDeProductos/${this.idFarmacia}`]);
-      }, 
+      },
       error:(err)=>{
         console.log(err);
       }
@@ -104,7 +104,7 @@ export class Frame18Component implements OnInit {
           duration: 3000
         });
         this.router.navigate(['/ListaDeProductos']);
-      }, 
+      },
       error:(err)=>{
         console.log(err);
       }

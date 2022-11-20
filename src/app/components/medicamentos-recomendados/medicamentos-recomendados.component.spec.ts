@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Frame22Component } from './frame22.component';
+import { MedicamentosRecomendadosComponent } from './medicamentos-recomendados.component';
 
 describe('Frame22Component', () => {
-  let component: Frame22Component;
-  let fixture: ComponentFixture<Frame22Component>;
+  let component: MedicamentosRecomendadosComponent;
+  let fixture: ComponentFixture<MedicamentosRecomendadosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Frame22Component ]
+      declarations: [ MedicamentosRecomendadosComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Frame22Component);
+    fixture = TestBed.createComponent(MedicamentosRecomendadosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,11 +2,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-navbarfarmacia',
-  templateUrl: './navbarfarmacia.component.html',
-  styleUrls: ['./navbarfarmacia.component.css']
+  selector: 'app-navbar-farmacia',
+  templateUrl: './navbar-farmacia.component.html',
+  styleUrls: ['./navbar-farmacia.component.css']
 })
-export class NavbarfarmaciaComponent implements OnInit {
+export class NavbarFarmaciaComponent implements OnInit {
 
   idFarmacia!:any;
 
