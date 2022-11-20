@@ -1,3 +1,4 @@
+import { ReporteProductosVendidosComponent } from './components/reporte-productos-vendidos/reporte-productos-vendidos.component';
 import { ReporteProductoComprasComponent } from './components/reporte-producto-compras/reporte-producto-compras.component';
 import { ReporteFarmaciaVentasComponent } from './components/reporte-farmacia-ventas/reporte-farmacia-ventas.component';
 import { ReporteMontoPorMesComponent } from './components/reporte-monto-por-mes/reporte-monto-por-mes.component';
@@ -65,7 +66,8 @@ const routes: Routes = [
   {path:'ReporteMontoPorMes/:id', component: ReporteMontoPorMesComponent},
   {path:'ReporteFarmaciaVentas/:id', component: ReporteFarmaciaVentasComponent},
   {path:'ReporteProductoCompras/:id', component: ReporteProductoComprasComponent},
-
+  {path:'ReporteProductosVendidos/:id', component: ReporteProductosVendidosComponent},
+  
 ];
 
 @NgModule({
