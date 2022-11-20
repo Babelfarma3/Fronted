@@ -34,6 +34,7 @@ import { FarmaciaventasComponent } from './components/farmaciaventas/farmaciaven
 import { BoletaComponent } from './components/boleta/boleta.component';
 import { MostrarfarmaciasComponent } from './components/mostrarfarmacias/mostrarfarmacias.component';
 import { ReportePorCategoriaComponent } from './components/reporte-por-categoria/reporte-por-categoria.component';
+import { MostrarventasComponent } from './components/mostrarventas/mostrarventas.component';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { ReportePorCategoriaComponent } from './components/reporte-por-categoria
       BoletaComponent,
       MostrarfarmaciasComponent,
       ReportePorCategoriaComponent,
+      MostrarventasComponent,
 
   ],
   imports: [
