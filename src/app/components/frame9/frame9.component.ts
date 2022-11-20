@@ -1,3 +1,5 @@
+import { Farmacia } from './../../models/farmacia';
+import { FarmaciaService } from './../../services/farmacia.service';
 import { Role } from './../../models/role';
 import { getTestBed } from '@angular/core/testing';
 import { ClienteService } from './../../services/cliente.service';
@@ -16,7 +18,8 @@ import { Distrito } from 'src/app/models/distrito';
 })
 export class Frame9Component implements OnInit {
   myForm!: FormGroup;
-  clientes!: Cliente;
+  cliente!: Cliente;
+  farmacia!: Farmacia;
   nombre!: string;
   idDistrito!: number;
   apellidoPaterno!: string;
@@ -29,7 +32,7 @@ export class Frame9Component implements OnInit {
     private clienteService: ClienteService,
     private snackBar: MatSnackBar,
     private router: Router,
-
+    private farmaciaService: FarmaciaService,
     ) {
   }
 
@@ -47,7 +50,7 @@ export class Frame9Component implements OnInit {
     
     if(this.myForm.get('id')!.value >= 10000000 && this.myForm.get('id')!.value <= 99999999){
       this.clienteService.getClienteDniCorreo(this.myForm.get('id')!.value, this.myForm.get('correo')!.value).subscribe((data: Cliente)=>{
-        this.clientes={
+        this.cliente={
           id: data.id,
           dni: data.dni,
           nombres: data.nombres,
@@ -62,7 +65,7 @@ export class Frame9Component implements OnInit {
           contraseña: this.myForm.get('contrasenia')!.value,
           role: data.role,
         }
-        this.clienteService.updateCliente(this.clientes.id, this.clientes).subscribe({
+        this.clienteService.updateCliente(this.cliente.id, this.cliente).subscribe({
           next: (data) => {
             this.snackBar.open('Se actualizó correctamente la contraseña', '', {
               duration: 3000,
@@ -76,8 +79,34 @@ export class Frame9Component implements OnInit {
       });
 
     }
-    else if(this.myForm.get('id')!.value>= 10000000000 && this.myForm.get('id')!.value<=99999999999){
-
+    else if(this.myForm.get('id')!.value >= 10000000000 && this.myForm.get('id')!.value <= 99999999999){
+      this.farmaciaService.getFarmaciaRucCorreo(this.myForm.get('id')!.value, this.myForm.get('correo')!.value).subscribe((data: Farmacia)=>{
+        this.farmacia={
+          id: data.id,
+          ruc: data.ruc,
+          nombresDuenio: data.nombresDuenio,
+          apellidosDuenio: data.apellidosDuenio,
+          nombreEstablecimiento: data.nombreEstablecimiento,
+          direccion: data.direccion,
+          correoContacto: data.correoContacto,
+          telefonoContacto: data.telefonoContacto,
+          distrito: data.distrito,
+          contraseña: this.myForm.get('contrasenia')!.value,
+          role: data.role,
+        }
+        this.farmaciaService.updateFarmacia(this.farmacia.id, this.farmacia).subscribe({
+          next: (data) => {
+            this.snackBar.open('Se actualizó correctamente la contraseña', '', {
+              duration: 3000,
+            });
+            this.router.navigate(['/Login']);
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
+        console.log(this.farmacia);
+      });
     }
     else{
       this.snackBar.open('Por favor verifique su RUC/DNI', '', {

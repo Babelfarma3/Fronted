@@ -22,6 +22,10 @@ export class FarmaciaService {
     return this.http.get<Farmacia>(`${this.basePath}/farmacias/${id}`);
   }
 
+  getFarmaciaRucCorreo(ruc: any, correo: any){
+    return this.http.get<Farmacia>(`${this.basePath}/farmacias/ruc/${ruc}/correo/${correo}`);
+  }
+
   getFarmaciaDireccion(direccion: string){
     return this.http.get<Farmacia[]>(`${this.basePath}/farmacias/buscardireccion/${direccion}`);
   }
