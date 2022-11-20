@@ -44,7 +44,7 @@ export class Frame5Component implements OnInit {
       celular: ['', [Validators.required]],
       fechaNacimiento: ['', [Validators.required]],
       direccion: ['', [Validators.required]],
-      contraseña: ['', [Validators.required]],
+      contraseña: ['', [Validators.required, Validators.minLength(8)]],
       distrito: ['', [Validators.required]],
       confContraseña: ['', [Validators.required]],
     });

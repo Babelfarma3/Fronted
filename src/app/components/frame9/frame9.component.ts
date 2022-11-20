@@ -41,7 +41,7 @@ export class Frame9Component implements OnInit {
     this.myForm = this.fb.group({
       id: ['', [Validators.required]],
       correo: ['', [Validators.required]],
-      contrasenia: ['', [Validators.required]],
+      contrasenia: ['', [Validators.required,Validators.minLength(8)]],
       confContrasenia: ['', [Validators.required]],
     })
   }

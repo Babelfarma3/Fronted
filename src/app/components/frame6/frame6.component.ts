@@ -49,7 +49,7 @@ export class Frame6Component implements OnInit {
       distrito: ['', [Validators.required]],
       correoContacto: ['', [Validators.required]],
       telefonoContacto: ['', [Validators.required]],
-      contraseña: ['', [Validators.required]],
+      contraseña: ['', [Validators.required, Validators.minLength(8)]],
       confContraseña:['', [Validators.required]]
     })
   }
