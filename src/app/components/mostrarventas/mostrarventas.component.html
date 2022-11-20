@@ -1,7 +1,19 @@
 <body>
     <app-navbarfarmacia></app-navbarfarmacia>
     <div class="fondotabla">
+      <form [formGroup]="MyForm" class="Mat_tab_options">
+      <mat-tab-group class="filtros" #tab>
+        <mat-tab label="Buscar por nombre del producto">
+        <mat-form-field>
+          <input matInput placeholder="Nombre del cliente" formControlName="nombre" (keyup)="search()"/>
+        </mat-form-field>
+      </mat-tab>
+      <button class="tab__button" mat-raised-button color="primary" type="submit" (click)="search()">Buscar</button>
+	    <button class="tab__button" mat-raised-button color="primary" (click)="getVentas()">Borrar filtros</button>
+      </mat-tab-group>
+    </form>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>Código</th>
           <td mat-cell *matCellDef="let element"> {{element.id}} </td>

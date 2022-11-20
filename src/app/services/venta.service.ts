@@ -18,6 +18,12 @@ export class VentaService {
     return this.http.get<Venta[]>(`${this.basePath}/ventas/buscarporfarmacia/${farmaciaId}`)
   }
 
+  getVentasByClienteName(nombre:any, idFarmacia:any)
+  {
+    return this.http.get<Venta[]>(`${this.basePath}/ventas/buscarporcliente/${nombre}/${idFarmacia}`)
+
+  }
+
   addVenta(venta: Venta){
     return this.http.post<Venta>(
       `${this.basePath}/ventas`,
