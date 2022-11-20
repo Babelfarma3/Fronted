@@ -64,8 +64,8 @@ body{
     padding: 1rem 2rem;
     border-radius: 5rem;
     min-width: 10rem;
+    margin: 10px 10px 10px 0;
 }
-
 .btn-outline-dark{
     border: 2px solid var(--color-dark-xx);
     background-color: transparent;
